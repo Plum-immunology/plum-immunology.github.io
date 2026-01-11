@@ -1,5 +1,28 @@
-@import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900");
+/* Source Sans 3 - Localized and Mapped to 'Source Sans Pro' */
+
+/* Light (300) */
+@font-face {
+  font-family: 'Source Sans Pro'; /* We keep this name so the template doesn't break */
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/source-sans-3-v19-latin-300.woff2') format('woff2');
+}
+
+/* Bold (700) */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/source-sans-3-v19-latin-700.woff2') format('woff2');
+}
+
+/* Black (900) */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/source-sans-3-v19-latin-900.woff2') format('woff2');
+}
 
 /*
 	Phantom by HTML5 UP
