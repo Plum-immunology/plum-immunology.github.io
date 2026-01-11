@@ -2648,9 +2648,25 @@ input, select, textarea {
 			-ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
 			transition: transform 0.5s ease, opacity 0.5s ease;
 			position: relative;
-			width: calc(33.33333% - 2.5em);
+			width: calc(20% - 2.5em);
 			margin: 2.5em 0 0 2.5em;
 		}
+
+		/* Tablet view: 3 per row */
+@media screen and (max-width: 1280px) {
+    .tiles article {
+        width: calc(33.33333% - 1.25em);
+        margin: 1.25em 0 0 1.25em;
+    }
+}
+
+/* Mobile view: 1 per row */
+@media screen and (max-width: 736px) {
+    .tiles article {
+        width: 100%;
+        margin: 1.25em 0 0 0;
+    }
+}
 
 			.tiles article > .image {
 				-moz-transition: -moz-transform 0.5s ease;
@@ -2753,6 +2769,7 @@ input, select, textarea {
 
 				.tiles article > a h2 {
 					margin: 0;
+					font-size: 0.9em; /* Slightly smaller to fit the 20% width */
 				}
 
 				.tiles article > a .content {
