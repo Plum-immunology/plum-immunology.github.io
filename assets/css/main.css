@@ -1851,30 +1851,35 @@ input, select, textarea {
 	}
 
 /* Icon */
+.icon {
+    text-decoration: none;
+    border-bottom: none;
+    position: relative;
+}
 
-    .icon {
-        text-decoration: none;
-        border-bottom: none;
-        position: relative;
-    }
+.icon:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    text-transform: none !important;
+    font-family: 'Font Awesome 7 Free'; /* Updated to v7 */
+    font-weight: 400;
+}
 
-        .icon:before {
-            -moz-osx-font-smoothing: grayscale;
-            -webkit-font-smoothing: antialiased;
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            line-height: 1;
-            text-transform: none !important;
-            font-family: 'Font Awesome 5 Free'; /* Default */
-            font-weight: 400;
-        }
+/* Fix for Brands */
+.icon.brands:before {
+    font-family: 'Font Awesome 7 Brands' !important;
+}
 
-        /* This is the key fix for Brands like Bluesky/GitHub */
-        .icon.brands:before {
-            font-family: 'Font Awesome 5 Brands' !important;
-        }
+/* Fix for Solid */
+.icon.solid:before {
+    font-family: 'Font Awesome 7 Free' !important;
+    font-weight: 900;
+}
 
         .icon.solid:before {
             font-weight: 900;
@@ -3340,7 +3345,7 @@ input, select, textarea {
 		}
 		
 /* v7.1.0 Icon Mapping */
-.fa-bluesky:before {
+.fa-bluesky-square:before {
     content: "\e671"; /* This is the specific code for the Bluesky butterfly */
 }
 .fa-github-square:before {
