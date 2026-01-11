@@ -3345,12 +3345,12 @@ input, select, textarea {
 		}
 		
 /* v7.1.0 Icon Mapping */
-.fa-bluesky-square:before {
+.fa-bluesky:before {
     content: "\e671"; /* This is the specific code for the Bluesky butterfly */
 }
-.fa-github-square:before {
+.fa-github:before {
     content: "\f092";
 }
-.fa-phone-square:before {
+.fa-phone:before {
     content: "\f098";
 }
