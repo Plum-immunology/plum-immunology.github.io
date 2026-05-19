@@ -11,20 +11,186 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	<style>
-		.news-article { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 2em 0; }
+		/* ── Shared article frame ── */
+		.news-article { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 1.8em 0; }
 		.news-article:first-of-type { padding-top: 0; }
 		.news-article:last-of-type { border-bottom: none; }
-		.news-date { font-size: 0.72em; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); display: block; margin-bottom: 0.5em; }
-		.news-article h2 { font-size: 1.35em; margin: 0 0 0.6em; }
-		.news-article h2 a { color: inherit; text-decoration: none; border: none; }
-		.news-article h2 a:hover { color: #fff; }
-		.lab-note { border-left: 3px solid rgba(255,255,255,0.12); padding: 0.35em 0.75em; margin: 0.8em 0; font-style: italic; color: rgba(255,255,255,0.45); font-size: 0.9em; }
-		.repost-by { font-size: 0.82em; color: rgba(255,255,255,0.3); margin: 0 0 0.6em; }
-		.embed-card { border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; padding: 0.55em 0.85em; margin: 0.8em 0; font-size: 0.88em; }
-		.embed-card a { color: rgba(255,255,255,0.45); border-bottom: none; }
-		.embed-card a:hover { color: rgba(255,255,255,0.8); }
+		.news-date { font-size: 0.70em; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); display: block; margin-bottom: 0.6em; }
 		.tag { display: inline-block; font-size: 0.65em; border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 0.05em 0.4em; color: rgba(255,255,255,0.3); vertical-align: middle; margin-left: 0.4em; text-transform: uppercase; letter-spacing: 0.05em; }
 		.tag-paper { border-color: rgba(80,160,80,0.4); color: rgba(120,200,120,0.7); }
+
+		/* ── Composed post (news article) ── */
+		.news-article h2 { font-size: 1.0em; font-weight: 600; margin: 0 0 0.5em; }
+		.news-article h2 a { color: inherit; text-decoration: none; border: none; }
+		.news-article h2 a:hover { color: #fff; }
+		.news-body { font-size: 0.92em; color: rgba(255,255,255,0.6); margin: 0 0 0.7em; line-height: 1.55; }
+		.lab-note { border-left: 3px solid rgba(255,255,255,0.12); padding: 0.35em 0.75em; margin: 0.75em 0; font-style: italic; color: rgba(255,255,255,0.45); font-size: 0.88em; }
+
+		/* ── Bluesky post card ── */
+		.bsky-repost-label {
+			font-size: 0.74em;
+			color: rgba(255,255,255,0.3);
+			display: flex;
+			align-items: center;
+			gap: 0.35em;
+			margin-bottom: 0.55em;
+		}
+		.bsky-repost-label svg { opacity: 0.5; }
+		.bsky-card {
+			border: 1px solid rgba(255,255,255,0.1);
+			border-radius: 12px;
+			padding: 1em 1.1em 0.9em;
+			background: rgba(255,255,255,0.02);
+		}
+		.bsky-card-header {
+			display: flex;
+			align-items: flex-start;
+			gap: 0.65em;
+			margin-bottom: 0.8em;
+		}
+		.bsky-avatar {
+			width: 38px;
+			height: 38px;
+			border-radius: 50%;
+			flex-shrink: 0;
+			background: rgba(0,133,255,0.18);
+			border: 1px solid rgba(0,133,255,0.25);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.0em;
+			font-weight: 700;
+			color: rgba(0,133,255,0.85);
+			text-transform: uppercase;
+			user-select: none;
+		}
+		.bsky-author {
+			flex: 1;
+			min-width: 0;
+			line-height: 1.25;
+		}
+		.bsky-author-name {
+			display: block;
+			font-weight: 700;
+			font-size: 0.88em;
+			color: rgba(255,255,255,0.88);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.bsky-author-handle {
+			display: block;
+			font-size: 0.80em;
+			color: rgba(255,255,255,0.38);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.bsky-logo {
+			flex-shrink: 0;
+			margin-top: 2px;
+			opacity: 0.55;
+		}
+		.bsky-body {
+			font-size: 0.92em;
+			color: rgba(255,255,255,0.78);
+			line-height: 1.55;
+			margin-bottom: 0.8em;
+			word-break: break-word;
+		}
+		.bsky-body p { margin: 0 0 0.45em; }
+		.bsky-body p:last-child { margin-bottom: 0; }
+		/* ── Link card (Bluesky style: image on top) ── */
+		.bsky-link {
+			border: 1px solid rgba(255,255,255,0.1);
+			border-radius: 10px;
+			overflow: hidden;
+			text-decoration: none;
+			color: inherit;
+			display: block;
+			margin-top: 0.75em;
+			transition: border-color 0.15s;
+		}
+		.bsky-link:hover { border-color: rgba(255,255,255,0.26); }
+		.bsky-link-img {
+			width: 100%;
+			display: block;
+			max-height: 260px;
+			object-fit: cover;
+		}
+		.bsky-link-body {
+			padding: 0.6em 0.85em 0.7em;
+			display: flex;
+			flex-direction: column;
+			gap: 3px;
+		}
+		.bsky-link-domain {
+			font-size: 0.74em;
+			color: rgba(255,255,255,0.32);
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		.bsky-link-title {
+			font-size: 0.88em;
+			font-weight: 600;
+			color: rgba(255,255,255,0.82);
+			line-height: 1.3;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+		.bsky-link-desc {
+			font-size: 0.79em;
+			color: rgba(255,255,255,0.42);
+			line-height: 1.4;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+		/* ── Quoted post inner card ── */
+		.bsky-quoted {
+			border: 1px solid rgba(255,255,255,0.08);
+			border-radius: 8px;
+			padding: 0.6em 0.85em;
+			margin-top: 0.75em;
+			background: rgba(255,255,255,0.015);
+			font-size: 0.86em;
+			color: rgba(255,255,255,0.38);
+		}
+		.bsky-quoted a { color: rgba(255,255,255,0.45); text-decoration: none; border: none; }
+		.bsky-quoted a:hover { color: rgba(255,255,255,0.75); }
+		/* ── Card footer ── */
+		.bsky-footer {
+			margin-top: 0.75em;
+			padding-top: 0.6em;
+			border-top: 1px solid rgba(255,255,255,0.05);
+			font-size: 0.74em;
+			color: rgba(255,255,255,0.28);
+			display: flex;
+			align-items: center;
+			gap: 0.5em;
+			flex-wrap: wrap;
+		}
+		.bsky-footer a {
+			color: rgba(255,255,255,0.38);
+			text-decoration: none;
+			border: none;
+			transition: color 0.15s;
+		}
+		.bsky-footer a:hover { color: rgba(255,255,255,0.72); }
+
+		/* Composed post link card (kept for source=composed) */
+		.embed-card { border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden; margin: 0.8em 0; display: flex; gap: 0; text-decoration: none; color: inherit; }
+		.embed-card:hover { border-color: rgba(255,255,255,0.22); }
+		.embed-card-img { flex: 0 0 90px; width: 90px; }
+		.embed-card-img img { width: 90px; height: 90px; object-fit: cover; display: block; }
+		.embed-card-body { flex: 1; padding: 0.6em 0.85em; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 0.2em; }
+		.embed-card-title { font-size: 0.88em; font-weight: 600; color: rgba(255,255,255,0.8); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+		.embed-card-desc { font-size: 0.80em; color: rgba(255,255,255,0.4); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4; }
+		.embed-card-url { font-size: 0.75em; color: rgba(255,255,255,0.25); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 	</style>
 </head>
 <body class="is-preload">
@@ -69,210 +235,551 @@
 
 			
 			<article class="news-article">
+
+				
+				
 				<span class="news-date">
 					19 May 2026<span class="tag tag-paper">paper</span><span class="tag">repost</span>
 				</span>
-				<h2><a href="https://plum.science/news/2026-05-01-wired-for-immunity-neuroimmune-control-of-the-lung-by-s.html">Wired for immunity: neuroimmune control of the lung by sensory neurons — a</a></h2>
 
 				
-				<p class="repost-by">&#8629; From Nature Reviews Neuroscience &middot; @natrevneuro.nature.com</p>
-				
-
-				<p>Wired for immunity: neuroimmune control of the lung by sensory neurons — a Review by Anna M. Ehlers, Idaira M. Guerrero-Fonseca, Christophe Altier, Bryan G. Yipp &amp; Sebastien Talbot
-#neuroscience #neuroskyence
-www.nature.com/articles/s41...</p>
-
-				
-
-				
-				<div class="embed-card">
-					<a href="https://www.nature.com/articles/s41583-026-01046-0?utm_source=bluesky&amp;utm_medium=social&amp;utm_campaign=nrn" target="_blank" rel="noopener">Wired for immunity: neuroimmune control of the lung by sensory neurons - Nature Reviews Neuroscience</a>
+				<div class="bsky-repost-label">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="13" height="13"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
+					Plum Lab reposted
 				</div>
 				
 
-				<ul class="actions">
+				
+				
+				
+				
+				
+
+				<div class="bsky-card">
+					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
+						<div class="bsky-author">
+							<span class="bsky-author-name">Nature Reviews Neuroscience</span>
+							<span class="bsky-author-handle">@natrevneuro.nature.com</span>
+						</div>
+						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
+					</div>
+
+					<div class="bsky-body"><p>Wired for immunity: neuroimmune control of the lung by sensory neurons — a Review by Anna M. Ehlers, Idaira M. Guerrero-Fonseca, Christophe Altier, Bryan G. Yipp & Sebastien Talbot</p>
+<p>#neuroscience #neuroskyence</p>
+<p>www.nature.com/articles/s41...</p></div>
+
+					
+					<a class="bsky-link" href="https://www.nature.com/articles/s41583-026-01046-0?utm_source=bluesky&amp;utm_medium=social&amp;utm_campaign=nrn" target="_blank" rel="noopener">
+						
+						<div class="bsky-link-body">
+							<span class="bsky-link-domain">nature.com</span>
+							<span class="bsky-link-title">Wired for immunity: neuroimmune control of the lung by sensory neurons - Nature Reviews Neuroscience</span>
+							
+						</div>
+					</a>
+					
+
+					
+
+					
+
+					<div class="bsky-footer">
+						<span>01 May 2026</span>
+						
+						<span>·</span>
+						<a href="https://bsky.app/profile/natrevneuro.nature.com/post/3mksf2jcqsc2o" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
+						
+					</div>
+				</div>
+
+				
+
+				<ul class="actions" style="margin-top:1em;margin-bottom:0;">
 					<li><a href="https://plum.science/news/2026-05-01-wired-for-immunity-neuroimmune-control-of-the-lung-by-s.html" class="button small">Read more</a></li>
 				</ul>
+
 			</article>
 			
 			<article class="news-article">
+
+				
+				
 				<span class="news-date">
 					17 May 2026
 				</span>
-				<h2><a href="https://plum.science/news/2025-10-22-congrats-katharina.html">congrats Katharina!</a></h2>
-
-				
-
-				<p>congrats Katharina!</p>
 
 				
 
 				
+				
+				
+				
+				
 
-				<ul class="actions">
+				<div class="bsky-card">
+					<div class="bsky-card-header">
+						<div class="bsky-avatar">P</div>
+						<div class="bsky-author">
+							<span class="bsky-author-name">Plum Lab</span>
+							<span class="bsky-author-handle">@plumlab.bsky.social</span>
+						</div>
+						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
+					</div>
+
+					<div class="bsky-body"><p>congrats Katharina!</p></div>
+
+					
+
+					
+
+					
+
+					<div class="bsky-footer">
+						<span>22 Oct 2025</span>
+						
+						<span>·</span>
+						<a href="https://bsky.app/profile/plumlab.bsky.social/post/3m3rg6qenr222" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
+						
+					</div>
+				</div>
+
+				
+
+				<ul class="actions" style="margin-top:1em;margin-bottom:0;">
 					<li><a href="https://plum.science/news/2025-10-22-congrats-katharina.html" class="button small">Read more</a></li>
 				</ul>
+
 			</article>
 			
 			<article class="news-article">
+
+				
+				
 				<span class="news-date">
 					17 May 2026<span class="tag">quote</span>
 				</span>
-				<h2><a href="https://plum.science/news/2025-09-06-another-piece-of-the-puzzle-pointing-towards-the-existe.html">Another piece of the puzzle pointing towards the existence of a continuum of</a></h2>
-
-				
-
-				<p>Another piece of the puzzle pointing towards the existence of a continuum of host defenses. Classical immunology (search and destroy) and neural protective reflexes/anticipatory reactions go hand in hand to maintain health. Exciting times to study neuroimmunology!</p>
 
 				
 
 				
+				
+				
+				
+				
 
-				<ul class="actions">
+				<div class="bsky-card">
+					<div class="bsky-card-header">
+						<div class="bsky-avatar">P</div>
+						<div class="bsky-author">
+							<span class="bsky-author-name">Plum Lab</span>
+							<span class="bsky-author-handle">@plumlab.bsky.social</span>
+						</div>
+						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
+					</div>
+
+					<div class="bsky-body"><p>Another piece of the puzzle pointing towards the existence of a continuum of host defenses. Classical immunology (search and destroy) and neural protective reflexes/anticipatory reactions go hand in hand to maintain health. Exciting times to study neuroimmunology!</p></div>
+
+					
+
+					
+					<div class="bsky-quoted">
+						<a href="https://bsky.app/profile/did:plc:5cwlsllivpy4zi6iz37ingjh/post/3ly6fr2uk622u" target="_blank" rel="noopener">View quoted post on Bluesky &#8599;</a>
+					</div>
+					
+
+					
+
+					<div class="bsky-footer">
+						<span>06 Sep 2025</span>
+						
+						<span>·</span>
+						<a href="https://bsky.app/profile/plumlab.bsky.social/post/3ly6iiaoqlc25" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
+						
+					</div>
+				</div>
+
+				
+
+				<ul class="actions" style="margin-top:1em;margin-bottom:0;">
 					<li><a href="https://plum.science/news/2025-09-06-another-piece-of-the-puzzle-pointing-towards-the-existe.html" class="button small">Read more</a></li>
 				</ul>
+
 			</article>
 			
 			<article class="news-article">
+
+				
+				
 				<span class="news-date">
 					17 May 2026
 				</span>
-				<h2><a href="https://plum.science/news/2025-01-30-congrats-dan-and-andrew.html">Congrats Dan and Andrew!</a></h2>
-
-				
-
-				<p>Congrats Dan and Andrew!</p>
 
 				
 
 				
+				
+				
+				
+				
 
-				<ul class="actions">
+				<div class="bsky-card">
+					<div class="bsky-card-header">
+						<div class="bsky-avatar">P</div>
+						<div class="bsky-author">
+							<span class="bsky-author-name">Plum Lab</span>
+							<span class="bsky-author-handle">@plumlab.bsky.social</span>
+						</div>
+						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
+					</div>
+
+					<div class="bsky-body"><p>Congrats Dan and Andrew!</p></div>
+
+					
+
+					
+
+					
+
+					<div class="bsky-footer">
+						<span>30 Jan 2025</span>
+						
+						<span>·</span>
+						<a href="https://bsky.app/profile/plumlab.bsky.social/post/3lgygc4louk2z" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
+						
+					</div>
+				</div>
+
+				
+
+				<ul class="actions" style="margin-top:1em;margin-bottom:0;">
 					<li><a href="https://plum.science/news/2025-01-30-congrats-dan-and-andrew.html" class="button small">Read more</a></li>
 				</ul>
+
 			</article>
 			
 			<article class="news-article">
+
+				
+				
 				<span class="news-date">
 					17 May 2026
 				</span>
-				<h2><a href="https://plum.science/news/2024-12-10-happy-to-share-our-latest-review-beyond-classical-immun.html">Happy to share our latest review, &#39;Beyond classical immunity: Mast cells as</a></h2>
-
-				
-
-				<p>Happy to share our latest review, &#39;Beyond classical immunity: Mast cells as signal converters between tissues and neurons&#39;. Mast cells finally emerge as important mediators of neuro-immune communication and host-protective behavior!  🔗 tinyurl.com/3f7eufsm</p>
 
 				
 
 				
-				<div class="embed-card">
-					<a href="https://tinyurl.com/3f7eufsm" target="_blank" rel="noopener">Beyond classical immunity: Mast cells as signal converters between tissues and neurons</a>
+				
+				
+				
+				
+
+				<div class="bsky-card">
+					<div class="bsky-card-header">
+						<div class="bsky-avatar">P</div>
+						<div class="bsky-author">
+							<span class="bsky-author-name">Plum Lab</span>
+							<span class="bsky-author-handle">@plumlab.bsky.social</span>
+						</div>
+						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
+					</div>
+
+					<div class="bsky-body"><p>Happy to share our latest review, 'Beyond classical immunity: Mast cells as signal converters between tissues and neurons'. Mast cells finally emerge as important mediators of neuro-immune communication and host-protective behavior!  🔗 tinyurl.com/3f7eufsm</p></div>
+
+					
+					<a class="bsky-link" href="https://tinyurl.com/3f7eufsm" target="_blank" rel="noopener">
+						
+						<div class="bsky-link-body">
+							<span class="bsky-link-domain">tinyurl.com</span>
+							<span class="bsky-link-title">Beyond classical immunity: Mast cells as signal converters between tissues and neurons</span>
+							
+						</div>
+					</a>
+					
+
+					
+
+					
+
+					<div class="bsky-footer">
+						<span>10 Dec 2024</span>
+						
+						<span>·</span>
+						<a href="https://bsky.app/profile/plumlab.bsky.social/post/3lcxrbt6cqc22" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
+						
+					</div>
 				</div>
+
 				
 
-				<ul class="actions">
+				<ul class="actions" style="margin-top:1em;margin-bottom:0;">
 					<li><a href="https://plum.science/news/2024-12-10-happy-to-share-our-latest-review-beyond-classical-immun.html" class="button small">Read more</a></li>
 				</ul>
+
 			</article>
 			
 			<article class="news-article">
+
+				
+				
 				<span class="news-date">
 					17 May 2026
 				</span>
-				<h2><a href="https://plum.science/news/2024-12-10-lets-talk-about-the-fascinating-future-of-mast-cellsdro.html">Let’s talk about the fascinating future of mast cells—drop your thoughts below!</a></h2>
-
-				
-
-				<p>Let’s talk about the fascinating future of mast cells—drop your thoughts below! 👇</p>
 
 				
 
 				
+				
+				
+				
+				
 
-				<ul class="actions">
+				<div class="bsky-card">
+					<div class="bsky-card-header">
+						<div class="bsky-avatar">P</div>
+						<div class="bsky-author">
+							<span class="bsky-author-name">Plum Lab</span>
+							<span class="bsky-author-handle">@plumlab.bsky.social</span>
+						</div>
+						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
+					</div>
+
+					<div class="bsky-body"><p>Let’s talk about the fascinating future of mast cells—drop your thoughts below! 👇</p></div>
+
+					
+
+					
+
+					
+
+					<div class="bsky-footer">
+						<span>10 Dec 2024</span>
+						
+						<span>·</span>
+						<a href="https://bsky.app/profile/plumlab.bsky.social/post/3lcxmnja33d2t" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
+						
+					</div>
+				</div>
+
+				
+
+				<ul class="actions" style="margin-top:1em;margin-bottom:0;">
 					<li><a href="https://plum.science/news/2024-12-10-lets-talk-about-the-fascinating-future-of-mast-cellsdro.html" class="button small">Read more</a></li>
 				</ul>
+
 			</article>
 			
 			<article class="news-article">
+
+				
+				
 				<span class="news-date">
 					17 May 2026
 				</span>
-				<h2><a href="https://plum.science/news/2024-12-10-future-directions-understanding-mechanisms-of-mast-cell.html">💡 Future directions?</a></h2>
-
-				
-
-				<p>💡 Future directions? Understanding mechanisms of mast cell-modulated behaviors by identification of specific mediators and neural pathways downstream of mast cells.</p>
 
 				
 
 				
+				
+				
+				
+				
 
-				<ul class="actions">
+				<div class="bsky-card">
+					<div class="bsky-card-header">
+						<div class="bsky-avatar">P</div>
+						<div class="bsky-author">
+							<span class="bsky-author-name">Plum Lab</span>
+							<span class="bsky-author-handle">@plumlab.bsky.social</span>
+						</div>
+						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
+					</div>
+
+					<div class="bsky-body"><p>💡 Future directions? Understanding mechanisms of mast cell-modulated behaviors by identification of specific mediators and neural pathways downstream of mast cells.</p></div>
+
+					
+
+					
+
+					
+
+					<div class="bsky-footer">
+						<span>10 Dec 2024</span>
+						
+						<span>·</span>
+						<a href="https://bsky.app/profile/plumlab.bsky.social/post/3lcxmnja2432t" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
+						
+					</div>
+				</div>
+
+				
+
+				<ul class="actions" style="margin-top:1em;margin-bottom:0;">
 					<li><a href="https://plum.science/news/2024-12-10-future-directions-understanding-mechanisms-of-mast-cell.html" class="button small">Read more</a></li>
 				</ul>
+
 			</article>
 			
 			<article class="news-article">
+
+				
+				
 				<span class="news-date">
 					17 May 2026
 				</span>
-				<h2><a href="https://plum.science/news/2024-12-10-reflexive-behaviors-such-as-avoidance-itch-nausea-and-s.html">Reflexive behaviors such as avoidance, itch, nausea, and sneezing protect</a></h2>
-
-				
-
-				<p>Reflexive behaviors such as avoidance, itch, nausea, and sneezing protect against intoxication, inflammation, and tissue damage, representing a form of non-classical immunological defense.</p>
 
 				
 
 				
+				
+				
+				
+				
 
-				<ul class="actions">
+				<div class="bsky-card">
+					<div class="bsky-card-header">
+						<div class="bsky-avatar">P</div>
+						<div class="bsky-author">
+							<span class="bsky-author-name">Plum Lab</span>
+							<span class="bsky-author-handle">@plumlab.bsky.social</span>
+						</div>
+						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
+					</div>
+
+					<div class="bsky-body"><p>Reflexive behaviors such as avoidance, itch, nausea, and sneezing protect against intoxication, inflammation, and tissue damage, representing a form of non-classical immunological defense.</p></div>
+
+					
+
+					
+
+					
+
+					<div class="bsky-footer">
+						<span>10 Dec 2024</span>
+						
+						<span>·</span>
+						<a href="https://bsky.app/profile/plumlab.bsky.social/post/3lcxmnj7z4t2t" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
+						
+					</div>
+				</div>
+
+				
+
+				<ul class="actions" style="margin-top:1em;margin-bottom:0;">
 					<li><a href="https://plum.science/news/2024-12-10-reflexive-behaviors-such-as-avoidance-itch-nausea-and-s.html" class="button small">Read more</a></li>
 				</ul>
+
 			</article>
 			
 			<article class="news-article">
+
+				
+				
 				<span class="news-date">
 					17 May 2026
 				</span>
-				<h2><a href="https://plum.science/news/2024-12-10-key-insights-mast-cells-dont-just-fight-parasites-or-dr.html">🔑 Key insights:
-Mast cells don’t just fight parasites or drive allergic</a></h2>
-
-				
-
-				<p>🔑 Key insights:Mast cells don’t just fight parasites or drive allergic pathology; they detect antigens, stress, tissue damage, and inflammation and act as signal converters, translating antigen and tissue cues into organ-specific reflexes via neuronal activation.</p>
 
 				
 
 				
+				
+				
+				
+				
 
-				<ul class="actions">
+				<div class="bsky-card">
+					<div class="bsky-card-header">
+						<div class="bsky-avatar">P</div>
+						<div class="bsky-author">
+							<span class="bsky-author-name">Plum Lab</span>
+							<span class="bsky-author-handle">@plumlab.bsky.social</span>
+						</div>
+						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
+					</div>
+
+					<div class="bsky-body"><p>🔑 Key insights:<br>Mast cells don’t just fight parasites or drive allergic pathology; they detect antigens, stress, tissue damage, and inflammation and act as signal converters, translating antigen and tissue cues into organ-specific reflexes via neuronal activation.</p></div>
+
+					
+
+					
+
+					
+
+					<div class="bsky-footer">
+						<span>10 Dec 2024</span>
+						
+						<span>·</span>
+						<a href="https://bsky.app/profile/plumlab.bsky.social/post/3lcxmnj7z4s2t" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
+						
+					</div>
+				</div>
+
+				
+
+				<ul class="actions" style="margin-top:1em;margin-bottom:0;">
 					<li><a href="https://plum.science/news/2024-12-10-key-insights-mast-cells-dont-just-fight-parasites-or-dr.html" class="button small">Read more</a></li>
 				</ul>
+
 			</article>
 			
 			<article class="news-article">
+
+				
+				
 				<span class="news-date">
 					17 May 2026
 				</span>
-				<h2><a href="https://plum.science/news/2024-11-24-excited-to-join-bluesky-we-study-the-interactions-betwe.html">Excited to join BlueSky!</a></h2>
-
-				
-
-				<p>Excited to join BlueSky! 🌌 We study the interactions between mast cells and neurons, focusing on how they drive behaviors like itch, cough, and sneezing. Follow along for updates on our research and discoveries here and on our twitter x.com/Plum_immunol...! 🧬✨</p>
 
 				
 
 				
-				<div class="embed-card">
-					<a href="https://x.com/Plum_immunology" target="_blank" rel="noopener">x.com</a>
+				
+				
+				
+				
+
+				<div class="bsky-card">
+					<div class="bsky-card-header">
+						<div class="bsky-avatar">P</div>
+						<div class="bsky-author">
+							<span class="bsky-author-name">Plum Lab</span>
+							<span class="bsky-author-handle">@plumlab.bsky.social</span>
+						</div>
+						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
+					</div>
+
+					<div class="bsky-body"><p>Excited to join BlueSky! 🌌 We study the interactions between mast cells and neurons, focusing on how they drive behaviors like itch, cough, and sneezing. Follow along for updates on our research and discoveries here and on our twitter x.com/Plum_immunol...! 🧬✨</p></div>
+
+					
+					<a class="bsky-link" href="https://x.com/Plum_immunology" target="_blank" rel="noopener">
+						
+						<div class="bsky-link-body">
+							<span class="bsky-link-domain">x.com</span>
+							<span class="bsky-link-title">x.com</span>
+							
+						</div>
+					</a>
+					
+
+					
+
+					
+
+					<div class="bsky-footer">
+						<span>24 Nov 2024</span>
+						
+						<span>·</span>
+						<a href="https://bsky.app/profile/plumlab.bsky.social/post/3lbpvexiti22p" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
+						
+					</div>
 				</div>
+
 				
 
-				<ul class="actions">
+				<ul class="actions" style="margin-top:1em;margin-bottom:0;">
 					<li><a href="https://plum.science/news/2024-11-24-excited-to-join-bluesky-we-study-the-interactions-betwe.html" class="button small">Read more</a></li>
 				</ul>
+
 			</article>
 			
 
