@@ -36,6 +36,15 @@ go.nature.com/40woBkB" />
 		.embed-card-desc { display: block; font-size: 0.84em; color: rgba(0,0,0,0.48); line-height: 1.45; }
 		.embed-card-url { display: block; font-size: 0.78em; color: rgba(0,0,0,0.35); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
+		/* ── Bluesky post row (card + optional sidenote) ── */
+		.bsky-post-row { display: flex; align-items: flex-start; gap: 1.5em; }
+		.bsky-post-row > .bsky-card { flex: 0 0 600px; max-width: 600px; }
+		.bsky-sidenote { flex: 1; min-width: 180px; margin: 0; }
+		@media (max-width: 860px) {
+			.bsky-post-row { flex-direction: column; }
+			.bsky-post-row > .bsky-card { flex: none; max-width: 100%; width: 100%; }
+		}
+
 		/* ── Bluesky post card ── */
 		.bsky-repost-label {
 			font-size: 0.78em;
@@ -230,6 +239,7 @@ go.nature.com/40woBkB" />
 			
 			
 
+			<div class="bsky-post-row">
 			<div class="bsky-card">
 				<div class="bsky-card-header">
 					<div class="bsky-author">
@@ -257,10 +267,6 @@ go.nature.com/40woBkB" />
 
 				
 
-				
-				<div class="lab-note" style="margin-top:1em;margin-bottom:0;">This commentary by Chatila highlights a study by Erickson et al. demonstrating that exposure to microbe-rich environments (such as pet-shop housing) drives environmental immune imprinting that closes the early-life window of allergy susceptibility. This protection is mediated by two distinct pathways: a history of pathogen exposure that primes a broad, highly cross-reactive IgG-mediated type 1 immunity capable of intercepting unfamiliar allergens, and a non-inflammatory oral tolerance pathway where dietary exposures generate cross-protective, regulatory T cell-mediated resistance to antigenically related foods.</div>
-				
-
 				<div class="bsky-footer">
 					<span>01 Mar 2026</span>
 					
@@ -268,6 +274,10 @@ go.nature.com/40woBkB" />
 					<a href="https://bsky.app/profile/nature.com/post/3mfyi2r6ez22l" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					
 				</div>
+			</div>
+			
+			<div class="lab-note bsky-sidenote">This commentary by Chatila highlights a study by Erickson et al. demonstrating that exposure to microbe-rich environments (such as pet-shop housing) drives environmental immune imprinting that closes the early-life window of allergy susceptibility. This protection is mediated by two distinct pathways: a history of pathogen exposure that primes a broad, highly cross-reactive IgG-mediated type 1 immunity capable of intercepting unfamiliar allergens, and a non-inflammatory oral tolerance pathway where dietary exposures generate cross-protective, regulatory T cell-mediated resistance to antigenically related foods.</div>
+			
 			</div>
 
 			

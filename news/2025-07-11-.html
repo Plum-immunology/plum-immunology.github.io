@@ -35,6 +35,15 @@
 		.embed-card-desc { display: block; font-size: 0.84em; color: rgba(0,0,0,0.48); line-height: 1.45; }
 		.embed-card-url { display: block; font-size: 0.78em; color: rgba(0,0,0,0.35); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
+		/* ── Bluesky post row (card + optional sidenote) ── */
+		.bsky-post-row { display: flex; align-items: flex-start; gap: 1.5em; }
+		.bsky-post-row > .bsky-card { flex: 0 0 600px; max-width: 600px; }
+		.bsky-sidenote { flex: 1; min-width: 180px; margin: 0; }
+		@media (max-width: 860px) {
+			.bsky-post-row { flex-direction: column; }
+			.bsky-post-row > .bsky-card { flex: none; max-width: 100%; width: 100%; }
+		}
+
 		/* ── Bluesky post card ── */
 		.bsky-repost-label {
 			font-size: 0.78em;
@@ -229,6 +238,7 @@
 			
 			
 
+			<div class="bsky-post-row">
 			<div class="bsky-card">
 				<div class="bsky-card-header">
 					<div class="bsky-author">
@@ -255,10 +265,6 @@
 
 				
 
-				
-				<div class="lab-note" style="margin-top:1em;margin-bottom:0;">This paper by Janssen et al. shows that T cell-intrinsic DOCK8 expression is required to restrain mucosal mast cell expansion and prevent susceptibility to oral anaphylaxis. Mechanistically, DOCK8 deficiency causes a loss of intestinal Th17 cells, leading to microbial dysbiosis and elevated IL-25 production, which drives IL-4 secretion by Th2 cells to expand mucosal mast cells and increase intestinal permeability. This pathogenic cascade is left unrestrained because DOCK8-deficient regulatory T cells concurrently fail to suppress the intestinal IL-4 production and mast cell expansion.</div>
-				
-
 				<div class="bsky-footer">
 					<span>11 Jul 2025</span>
 					
@@ -266,6 +272,10 @@
 					<a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3ltov7f5bdn2i" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					
 				</div>
+			</div>
+			
+			<div class="lab-note bsky-sidenote">This paper by Janssen et al. shows that T cell-intrinsic DOCK8 expression is required to restrain mucosal mast cell expansion and prevent susceptibility to oral anaphylaxis. Mechanistically, DOCK8 deficiency causes a loss of intestinal Th17 cells, leading to microbial dysbiosis and elevated IL-25 production, which drives IL-4 secretion by Th2 cells to expand mucosal mast cells and increase intestinal permeability. This pathogenic cascade is left unrestrained because DOCK8-deficient regulatory T cells concurrently fail to suppress the intestinal IL-4 production and mast cell expansion.</div>
+			
 			</div>
 
 			

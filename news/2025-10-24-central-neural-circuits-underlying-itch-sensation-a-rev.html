@@ -37,6 +37,15 @@ www.nature.com/articles/s41..." />
 		.embed-card-desc { display: block; font-size: 0.84em; color: rgba(0,0,0,0.48); line-height: 1.45; }
 		.embed-card-url { display: block; font-size: 0.78em; color: rgba(0,0,0,0.35); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
+		/* ── Bluesky post row (card + optional sidenote) ── */
+		.bsky-post-row { display: flex; align-items: flex-start; gap: 1.5em; }
+		.bsky-post-row > .bsky-card { flex: 0 0 600px; max-width: 600px; }
+		.bsky-sidenote { flex: 1; min-width: 180px; margin: 0; }
+		@media (max-width: 860px) {
+			.bsky-post-row { flex-direction: column; }
+			.bsky-post-row > .bsky-card { flex: none; max-width: 100%; width: 100%; }
+		}
+
 		/* ── Bluesky post card ── */
 		.bsky-repost-label {
 			font-size: 0.78em;
@@ -231,6 +240,7 @@ www.nature.com/articles/s41..." />
 			
 			
 
+			<div class="bsky-post-row">
 			<div class="bsky-card">
 				<div class="bsky-card-header">
 					<div class="bsky-author">
@@ -259,8 +269,6 @@ www.nature.com/articles/s41..." />
 
 				
 
-				
-
 				<div class="bsky-footer">
 					<span>24 Oct 2025</span>
 					
@@ -268,6 +276,8 @@ www.nature.com/articles/s41..." />
 					<a href="https://bsky.app/profile/natrevneuro.nature.com/post/3m3wvlqa4gk2c" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					
 				</div>
+			</div>
+			
 			</div>
 
 			

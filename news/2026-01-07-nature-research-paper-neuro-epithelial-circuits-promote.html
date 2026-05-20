@@ -36,6 +36,15 @@ go.nature.com/4qeRjlt" />
 		.embed-card-desc { display: block; font-size: 0.84em; color: rgba(0,0,0,0.48); line-height: 1.45; }
 		.embed-card-url { display: block; font-size: 0.78em; color: rgba(0,0,0,0.35); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
+		/* ── Bluesky post row (card + optional sidenote) ── */
+		.bsky-post-row { display: flex; align-items: flex-start; gap: 1.5em; }
+		.bsky-post-row > .bsky-card { flex: 0 0 600px; max-width: 600px; }
+		.bsky-sidenote { flex: 1; min-width: 180px; margin: 0; }
+		@media (max-width: 860px) {
+			.bsky-post-row { flex-direction: column; }
+			.bsky-post-row > .bsky-card { flex: none; max-width: 100%; width: 100%; }
+		}
+
 		/* ── Bluesky post card ── */
 		.bsky-repost-label {
 			font-size: 0.78em;
@@ -230,6 +239,7 @@ go.nature.com/4qeRjlt" />
 			
 			
 
+			<div class="bsky-post-row">
 			<div class="bsky-card">
 				<div class="bsky-card-header">
 					<div class="bsky-author">
@@ -257,10 +267,6 @@ go.nature.com/4qeRjlt" />
 
 				
 
-				
-				<div class="lab-note" style="margin-top:1em;margin-bottom:0;">This paper by Zhang et al. demonstrates that TRPV1+ pain-sensing nociceptors cooperate with chemosensory epithelial tuft cells via CGRP signaling to drive intestinal type 2 inflammation and anti-helminth immunity, showing that nociceptor activation promotes epithelial progenitor proliferation and that epithelial/tuft cell-intrinsic CGRP receptors are required for this tissue adaptation.</div>
-				
-
 				<div class="bsky-footer">
 					<span>07 Jan 2026</span>
 					
@@ -268,6 +274,10 @@ go.nature.com/4qeRjlt" />
 					<a href="https://bsky.app/profile/nature.com/post/3mbtyincctb2y" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					
 				</div>
+			</div>
+			
+			<div class="lab-note bsky-sidenote">This paper by Zhang et al. demonstrates that TRPV1+ pain-sensing nociceptors cooperate with chemosensory epithelial tuft cells via CGRP signaling to drive intestinal type 2 inflammation and anti-helminth immunity, showing that nociceptor activation promotes epithelial progenitor proliferation and that epithelial/tuft cell-intrinsic CGRP receptors are required for this tissue adaptation.</div>
+			
 			</div>
 
 			
