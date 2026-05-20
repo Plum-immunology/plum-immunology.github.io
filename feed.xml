@@ -8,7 +8,16 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 13:47:45 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 13:48:29 +0000</lastBuildDate>
+    
+    <item>
+      <title>Tuft cells promote reactivation of memory Th2 cells and are required for protective immunity to intestinal helminth re-infection</title>
+      <link>https://plum.science/news/2026-03-27-online-now-tuft-cells-promote-reactivation-of-memory-th.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2026-03-27-online-now-tuft-cells-promote-reactivation-of-memory-th.html</guid>
+      <pubDate>Wed, 20 May 2026 13:48:29 +0000</pubDate>
+      <description>Online now:  Tuft cells promote reactivation of memory Th2 cells and are required for protective immunity to intestinal helminth re-infection</description>
+      <content:encoded><![CDATA[<p>Online now:  Tuft cells promote reactivation of memory Th2 cells and are required for protective immunity to intestinal helminth re-infection</p><aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This paper by Stanbery et al. demonstrates that intestinal tuft cells are essential for protective immunity against secondary Heligmosomoides polygyrus bakeri infection by releasing IL-25 and LTC4 to reactivate memory Th2 cells. These tissue-specific cues drive Th2 cell production of IL-13, which acts in tandem with granuloma formation to mediate effective worm expulsion from the intestinal lumen.</aside>]]></content:encoded>
+    </item>
     
     <item>
       <title>Early life allergen sensitivity starts in the skin</title>
@@ -197,15 +206,6 @@ go.nature.com/3Il0e3x</description>
       <pubDate>Wed, 20 May 2026 13:16:28 +0000</pubDate>
       <description>Online now:  Long-lived IgE plasma cells that reside in the spleen contribute to the persistence of the IgE response</description>
       <content:encoded><![CDATA[<p>Online now:  Long-lived IgE plasma cells that reside in the spleen contribute to the persistence of the IgE response</p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>DOCK8 in T cells promotes Th17 and Treg cell functionality to restrain mucosal mast cells and limit susceptibility to oral anaphylaxis</title>
-      <link>https://plum.science/news/2025-06-25-online-now-dock8-in-t-cells-promotes-th17-and-treg-cell.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2025-06-25-online-now-dock8-in-t-cells-promotes-th17-and-treg-cell.html</guid>
-      <pubDate>Wed, 20 May 2026 12:33:43 +0000</pubDate>
-      <description>This paper by Janssen et al. demonstrates that DOCK8 deficiency drives food allergy and oral anaphylaxis by disrupting T regulatory cell and Th17 function, causing dysbiosis and an IL-25/IL-4 cascade that expands mucosal mast cells and increases intestinal permeability.</description>
-      <content:encoded><![CDATA[<p>This paper by Janssen et al. demonstrates that DOCK8 deficiency drives food allergy and oral anaphylaxis by disrupting T regulatory cell and Th17 function, causing dysbiosis and an IL-25/IL-4 cascade that expands mucosal mast cells and increases intestinal permeability.</p>]]></content:encoded>
     </item>
     
   </channel>
