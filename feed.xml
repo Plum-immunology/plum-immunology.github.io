@@ -8,7 +8,16 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 13:03:02 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 13:09:54 +0000</lastBuildDate>
+    
+    <item>
+      <title>In a new #ScienceImmunology Review, researchers discuss how interactions</title>
+      <link>https://plum.science/news/2025-05-22-in-a-new-scienceimmunology-review-researchers-discuss-h.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2025-05-22-in-a-new-scienceimmunology-review-researchers-discuss-h.html</guid>
+      <pubDate>Wed, 20 May 2026 13:09:54 +0000</pubDate>
+      <description>In a new #ScienceImmunology Review by the Molofsky lab, researchers discuss how interactions between the nervous and immune systems could impact neurological disorders and allergy-related behaviors like food avoidance. scim.ag/4mpgzE5</description>
+      <content:encoded><![CDATA[<p>In a new #ScienceImmunology Review by the Molofsky lab, researchers discuss how interactions between the nervous and immune systems could impact neurological disorders and allergy-related behaviors like food avoidance. scim.ag/4mpgzE5</p>]]></content:encoded>
+    </item>
     
     <item>
       <title>DOCK8 in T cells promotes Th17 and Treg cell functionality to restrain mucosal mast cells and limit susceptibility to oral anaphylaxis</title>
