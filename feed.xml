@@ -8,7 +8,7 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 10:55:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 10:55:12 +0000</lastBuildDate>
     
     <item>
       <title></title>
@@ -57,15 +57,6 @@ www.nature.com/articles/s41...</description>
       <pubDate>Sun, 17 May 2026 19:47:59 +0000</pubDate>
       <description>Happy to share our latest review, &#39;Beyond classical immunity: Mast cells as signal converters between tissues and neurons&#39;. Mast cells finally emerge as important mediators of neuro-immune communication and host-protective behavior!  🔗 tinyurl.com/3f7eufsm</description>
       <content:encoded><![CDATA[<p>Happy to share our latest review, 'Beyond classical immunity: Mast cells as signal converters between tissues and neurons'. Mast cells finally emerge as important mediators of neuro-immune communication and host-protective behavior!  🔗 tinyurl.com/3f7eufsm</p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Let’s talk about the fascinating future of mast cells—drop your thoughts below!</title>
-      <link>https://plum.science/news/2024-12-10-lets-talk-about-the-fascinating-future-of-mast-cellsdro.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2024-12-10-lets-talk-about-the-fascinating-future-of-mast-cellsdro.html</guid>
-      <pubDate>Sun, 17 May 2026 19:47:59 +0000</pubDate>
-      <description>Let’s talk about the fascinating future of mast cells—drop your thoughts below! 👇</description>
-      <content:encoded><![CDATA[<p>Let’s talk about the fascinating future of mast cells—drop your thoughts below! 👇</p>]]></content:encoded>
     </item>
     
   </channel>
