@@ -8,7 +8,18 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 13:39:10 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 13:40:03 +0000</lastBuildDate>
+    
+    <item>
+      <title>Neuro-epithelial circuits promote sensory convergence and intestinal immunity</title>
+      <link>https://plum.science/news/2026-01-07-nature-research-paper-neuro-epithelial-circuits-promote.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2026-01-07-nature-research-paper-neuro-epithelial-circuits-promote.html</guid>
+      <pubDate>Wed, 20 May 2026 13:40:03 +0000</pubDate>
+      <description>Nature research paper: Neuro-epithelial circuits promote sensory convergence and intestinal immunity
+go.nature.com/4qeRjlt</description>
+      <content:encoded><![CDATA[<p>Nature research paper: Neuro-epithelial circuits promote sensory convergence and intestinal immunity</p>
+<p>go.nature.com/4qeRjlt</p><aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This paper by Zhang et al. demonstrates that TRPV1+ pain-sensing nociceptors cooperate with chemosensory epithelial tuft cells via CGRP signaling to drive intestinal type 2 inflammation and anti-helminth immunity, showing that nociceptor activation promotes epithelial progenitor proliferation and that epithelial/tuft cell-intrinsic CGRP receptors are required for this tissue adaptation.</aside>]]></content:encoded>
+    </item>
     
     <item>
       <title>Mast cell-specific CysLT2 receptor signaling inhibits cysteinyl leukotriene-dependent mast cell activation and type 2 allergic lung inflammation</title>
@@ -193,15 +204,6 @@ https://go.nature.com/4aJpL0r</description>
       <pubDate>Wed, 20 May 2026 10:50:29 +0000</pubDate>
       <description>This review by Kothari and Dong outlines how bidirectional neuroimmune crosstalk—where immune signaling molecules directly activate sensory neurons and neuropeptides modulate local immune responses—drives pathologic itch, highlighting tissue-specific mechanisms and novel targetable pathways for pruritic diseases.</description>
       <content:encoded><![CDATA[<p>This review by Kothari and Dong outlines how bidirectional neuroimmune crosstalk—where immune signaling molecules directly activate sensory neurons and neuropeptides modulate local immune responses—drives pathologic itch, highlighting tissue-specific mechanisms and novel targetable pathways for pruritic diseases.</p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Neuroanatomical organization of electroacupuncture in modulating gastric function in mice and humans</title>
-      <link>https://plum.science/news/2025-07-25-online-now.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2025-07-25-online-now.html</guid>
-      <pubDate>Wed, 20 May 2026 10:49:06 +0000</pubDate>
-      <description>This paper by Dong et al. demonstrates that electroacupuncture drives a somatosensory-vagal-gastric reflex to improve gastric motility in both mice and human patients via the activation of deep fascial nociceptors and gastro-projecting vagal motor neurons.</description>
-      <content:encoded><![CDATA[<p>This paper by Dong et al. demonstrates that electroacupuncture drives a somatosensory-vagal-gastric reflex to improve gastric motility in both mice and human patients via the activation of deep fascial nociceptors and gastro-projecting vagal motor neurons.</p>]]></content:encoded>
     </item>
     
   </channel>
