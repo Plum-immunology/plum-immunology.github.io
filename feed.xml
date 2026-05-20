@@ -8,7 +8,16 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 13:51:56 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 13:53:05 +0000</lastBuildDate>
+    
+    <item>
+      <title>DOCK8 in T cells promotes Th17 and Treg cell functionality to restrain mucosal mast cells and limit susceptibility to oral anaphylaxis</title>
+      <link>https://plum.science/news/2025-07-11-.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2025-07-11-.html</guid>
+      <pubDate>Wed, 20 May 2026 13:53:05 +0000</pubDate>
+      <description></description>
+      <content:encoded><![CDATA[<aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This paper by Janssen et al. shows that T cell-intrinsic DOCK8 expression is required to restrain mucosal mast cell expansion and prevent susceptibility to oral anaphylaxis. Mechanistically, DOCK8 deficiency causes a loss of intestinal Th17 cells, leading to microbial dysbiosis and elevated IL-25 production, which drives IL-4 secretion by Th2 cells to expand mucosal mast cells and increase intestinal permeability. This pathogenic cascade is left unrestrained because DOCK8-deficient regulatory T cells concurrently fail to suppress the intestinal IL-4 production and mast cell expansion.</aside>]]></content:encoded>
+    </item>
     
     <item>
       <title>Interleukin-4-producing type 2 innate lymphoid cells in the lymph node promote proallergic Tfh13 cell differentiation</title>
@@ -193,17 +202,6 @@ go.nature.com/3UPz8Vm</description>
 go.nature.com/45Y9aUQ</description>
       <content:encoded><![CDATA[<p>The causes of early-life eczema have been unclear, but evidence indicates that changes to fetal immune cells and sensory neurons during pregnancy play a key part</p>
 <p>go.nature.com/45Y9aUQ</p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>The sneezing, itchy eyes and coughing elicited by some allergens are caused by proteins creating holes in airway cells.</title>
-      <link>https://plum.science/news/2025-07-31-the-sneezing-itchy-eyes-and-coughing-elicited-by-some-a.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2025-07-31-the-sneezing-itchy-eyes-and-coughing-elicited-by-some-a.html</guid>
-      <pubDate>Wed, 20 May 2026 13:22:08 +0000</pubDate>
-      <description>This paper by Shi et al. (reported by Nature) identifies that unrelated allergens trigger allergic airway inflammation across species via conserved pore-forming proteins that create membrane holes, allowing calcium influx to initiate the primary danger signals that drive the type 2 immune response.
-go.nature.com/3H9B1cd</description>
-      <content:encoded><![CDATA[<p>This paper by Shi et al. (reported by Nature) identifies that unrelated allergens trigger allergic airway inflammation across species via conserved pore-forming proteins that create membrane holes, allowing calcium influx to initiate the primary danger signals that drive the type 2 immune response.</p>
-<p>go.nature.com/3H9B1cd</p>]]></content:encoded>
     </item>
     
   </channel>
