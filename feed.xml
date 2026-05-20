@@ -8,7 +8,16 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 13:51:04 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 13:51:56 +0000</lastBuildDate>
+    
+    <item>
+      <title>Interleukin-4-producing type 2 innate lymphoid cells in the lymph node promote proallergic Tfh13 cell differentiation</title>
+      <link>https://plum.science/news/2026-05-19-online-now-interleukin-4-producing-type-2-innate-lympho.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2026-05-19-online-now-interleukin-4-producing-type-2-innate-lympho.html</guid>
+      <pubDate>Wed, 20 May 2026 13:51:56 +0000</pubDate>
+      <description>Online now:  Interleukin-4-producing type 2 innate lymphoid cells in the lymph node promote proallergic Tfh13 cell differentiation</description>
+      <content:encoded><![CDATA[<p>Online now:  Interleukin-4-producing type 2 innate lymphoid cells in the lymph node promote proallergic Tfh13 cell differentiation</p><aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This paper by Lee et al. demonstrates that lymph node-resident ILC2s selectively drive the differentiation of proallergic Tfh13 cells, which are required for high-affinity anaphylactic IgE responses. Mechanistically, ILC2s traffic into draining lymph nodes in a CCR8-dependent manner and produce IL-4, providing a specialized molecular signal necessary for the induction of pathogenic Tfh13 cells but dispensable for conventional Tfh2 cells.</aside>]]></content:encoded>
+    </item>
     
     <item>
       <title>Vip+ vagal neurons control allergen-induced responses</title>
@@ -195,15 +204,6 @@ go.nature.com/45Y9aUQ</description>
 go.nature.com/3H9B1cd</description>
       <content:encoded><![CDATA[<p>This paper by Shi et al. (reported by Nature) identifies that unrelated allergens trigger allergic airway inflammation across species via conserved pore-forming proteins that create membrane holes, allowing calcium influx to initiate the primary danger signals that drive the type 2 immune response.</p>
 <p>go.nature.com/3H9B1cd</p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Mast cells regulate the brain-dura interface and CSF dynamics</title>
-      <link>https://plum.science/news/2025-07-24-excited-to-share-our-new-work-led-by-an-exceptional-gra.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2025-07-24-excited-to-share-our-new-work-led-by-an-exceptional-gra.html</guid>
-      <pubDate>Wed, 20 May 2026 13:21:00 +0000</pubDate>
-      <description>Excited to share our new work, led by an exceptional graduate student, Tornike Mamuladze, on the role of meningeal mast cells in regulation of brain/dura access points, with implications to CSF flow dynamics and meningitis ||  www.cell.com/cell/fulltex...</description>
-      <content:encoded><![CDATA[<p>Excited to share our new work, led by an exceptional graduate student, Tornike Mamuladze, on the role of meningeal mast cells in regulation of brain/dura access points, with implications to CSF flow dynamics and meningitis ||  www.cell.com/cell/fulltex...</p><aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This paper by Mamuladze et al. reveals that dural mast cells regulate cerebrospinal fluid (CSF) dynamics at arachnoid cuff exit (ACE) points, where degranulation-induced histamine release dilates bridging veins to restrict CSF flow, thereby recruiting neutrophils and forming a critical barrier that prevents pathogens from spreading into the brain during meningitis.</aside>]]></content:encoded>
     </item>
     
   </channel>
