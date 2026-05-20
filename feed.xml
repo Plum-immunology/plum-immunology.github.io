@@ -8,7 +8,16 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 13:19:32 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 13:21:00 +0000</lastBuildDate>
+    
+    <item>
+      <title>Mast cells regulate the brain-dura interface and CSF dynamics</title>
+      <link>https://plum.science/news/2025-07-24-excited-to-share-our-new-work-led-by-an-exceptional-gra.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2025-07-24-excited-to-share-our-new-work-led-by-an-exceptional-gra.html</guid>
+      <pubDate>Wed, 20 May 2026 13:21:00 +0000</pubDate>
+      <description>Excited to share our new work, led by an exceptional graduate student, Tornike Mamuladze, on the role of meningeal mast cells in regulation of brain/dura access points, with implications to CSF flow dynamics and meningitis ||  www.cell.com/cell/fulltex...</description>
+      <content:encoded><![CDATA[<p>Excited to share our new work, led by an exceptional graduate student, Tornike Mamuladze, on the role of meningeal mast cells in regulation of brain/dura access points, with implications to CSF flow dynamics and meningitis ||  www.cell.com/cell/fulltex...</p><aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This paper by Mamuladze et al. reveals that dural mast cells regulate cerebrospinal fluid (CSF) dynamics at arachnoid cuff exit (ACE) points, where degranulation-induced histamine release dilates bridging veins to restrict CSF flow, thereby recruiting neutrophils and forming a critical barrier that prevents pathogens from spreading into the brain during meningitis.</aside>]]></content:encoded>
+    </item>
     
     <item>
       <title>A speedy imaging method can map the nerves running from a mouse’s brain and</title>
