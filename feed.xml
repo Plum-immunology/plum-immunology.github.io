@@ -8,7 +8,16 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 13:33:36 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 13:34:40 +0000</lastBuildDate>
+    
+    <item>
+      <title>Germline-encoded recognition of peanut underlies development of convergent antibodies in humans</title>
+      <link>https://plum.science/news/2026-01-01-humans-may-be-genetically-programmed-to-produce-antibod.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2026-01-01-humans-may-be-genetically-programmed-to-produce-antibod.html</guid>
+      <pubDate>Wed, 20 May 2026 13:34:40 +0000</pubDate>
+      <description>Humans may be genetically programmed to produce antibodies against peanut, suggests a #ScienceTranslationalMedicine study showing nonallergic people harbor convergent, germline-encoded antibodies against the allergen Ara h 2. https://scim.ag/3LqfEp9</description>
+      <content:encoded><![CDATA[<p>Humans may be genetically programmed to produce antibodies against peanut, suggests a #ScienceTranslationalMedicine study showing nonallergic people harbor convergent, germline-encoded antibodies against the allergen Ara h 2. <a href="https://scim.ag/3LqfEp9">https://scim.ag/3LqfEp9</a></p><aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This paper by Marini-Rapoport et al. reveals that human IgG recognition of the immunodominant peanut allergen Ara h 2 is intrinsically programmed by the germline antibody repertoire, driven by structural convergence across diverse, highly prevalent gene rearrangements that target a common public epitope in both allergic and non-allergic individuals.</aside>]]></content:encoded>
+    </item>
     
     <item>
       <title>In a #ScienceImmunology Review from earlier this year, researchers discuss how</title>
@@ -197,15 +206,6 @@ www.nature.com/articles/s41...</description>
       <content:encoded><![CDATA[<p>Wired for immunity: neuroimmune control of the lung by sensory neurons — a Review by Anna M. Ehlers, Idaira M. Guerrero-Fonseca, Christophe Altier, Bryan G. Yipp & Sebastien Talbot</p>
 <p>#neuroscience #neuroskyence</p>
 <p>www.nature.com/articles/s41...</p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Happy to share our latest review, &#39;Beyond classical immunity: Mast cells as</title>
-      <link>https://plum.science/news/2024-12-10-happy-to-share-our-latest-review-beyond-classical-immun.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2024-12-10-happy-to-share-our-latest-review-beyond-classical-immun.html</guid>
-      <pubDate>Sun, 17 May 2026 19:47:59 +0000</pubDate>
-      <description>Happy to share our latest review, &#39;Beyond classical immunity: Mast cells as signal converters between tissues and neurons&#39;. Mast cells finally emerge as important mediators of neuro-immune communication and host-protective behavior!  🔗 tinyurl.com/3f7eufsm</description>
-      <content:encoded><![CDATA[<p>Happy to share our latest review, 'Beyond classical immunity: Mast cells as signal converters between tissues and neurons'. Mast cells finally emerge as important mediators of neuro-immune communication and host-protective behavior!  🔗 tinyurl.com/3f7eufsm</p>]]></content:encoded>
     </item>
     
   </channel>
