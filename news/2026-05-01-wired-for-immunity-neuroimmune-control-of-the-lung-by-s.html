@@ -15,36 +15,31 @@
 	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 	<style>
 		/* ── Shared ── */
-		.post-meta { font-size: 0.70em; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); display: block; margin-bottom: 1em; }
-		.tag { display: inline-block; font-size: 0.9em; border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 0.05em 0.45em; color: rgba(255,255,255,0.3); vertical-align: middle; margin-left: 0.4em; }
-		.tag-paper { border-color: rgba(80,160,80,0.4); color: rgba(120,200,120,0.7); }
-		.lab-note { border-left: 3px solid rgba(255,255,255,0.12); padding: 0.5em 1em; margin: 1.25em 0; font-style: italic; color: rgba(255,255,255,0.45); }
-		.post-nav { margin-top: 2.5em; padding-top: 1.5em; border-top: 1px solid rgba(255,255,255,0.05); }
-		.post-nav a { color: rgba(255,255,255,0.4); border-bottom: none; font-size: 0.9em; }
-		.post-nav a:hover { color: rgba(255,255,255,0.7); }
-
-		/* ── Dark background: Phantom body is #fff; #main needs explicit dark bg ── */
-		#main { background: #1a1c26; }
-		h1 { color: rgba(255,255,255,0.9); }
-		.post-body { color: rgba(255,255,255,0.72); }
-		.post-body a { color: rgba(255,255,255,0.55); border-bottom-color: rgba(255,255,255,0.2); }
-		.post-body a:hover { color: rgba(255,255,255,0.85); }
+		.post-meta { font-size: 0.70em; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,0.38); display: block; margin-bottom: 1em; }
+		.tag { display: inline-block; font-size: 0.9em; border: 1px solid rgba(0,0,0,0.12); border-radius: 3px; padding: 0.05em 0.45em; color: rgba(0,0,0,0.38); vertical-align: middle; margin-left: 0.4em; }
+		.tag-paper { border-color: rgba(80,160,80,0.4); color: rgba(60,140,60,0.8); }
+		.lab-note { border-left: 3px solid rgba(0,0,0,0.15); padding: 0.5em 1em; margin: 1.25em 0; font-style: italic; color: rgba(0,0,0,0.45); }
+		.post-nav { margin-top: 2.5em; padding-top: 1.5em; border-top: 1px solid rgba(0,0,0,0.08); }
+		.post-nav a { color: rgba(0,0,0,0.45); border-bottom: none; font-size: 0.9em; }
+		.post-nav a:hover { color: rgba(0,0,0,0.7); }
 
 		/* ── Composed post body ── */
-		.post-body { font-size: 0.95em; line-height: 1.6; }
-		.embed-card { border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden; margin: 1.5em 0; display: flex; gap: 0; text-decoration: none; color: inherit; }
-		.embed-card:hover { border-color: rgba(255,255,255,0.22); }
+		.post-body { font-size: 0.95em; line-height: 1.6; color: rgba(0,0,0,0.7); }
+		.post-body a { color: rgba(0,0,0,0.55); border-bottom-color: rgba(0,0,0,0.2); }
+		.post-body a:hover { color: rgba(0,0,0,0.82); }
+		.embed-card { border: 1px solid rgba(0,0,0,0.12); border-radius: 8px; overflow: hidden; margin: 1.5em 0; display: flex; gap: 0; text-decoration: none; color: inherit; }
+		.embed-card:hover { border-color: rgba(0,0,0,0.25); }
 		.embed-card-img { flex: 0 0 110px; width: 110px; }
 		.embed-card-img img { width: 110px; height: 110px; object-fit: cover; display: block; }
 		.embed-card-body { flex: 1; padding: 0.75em 1em; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 0.3em; }
-		.embed-card-title { display: block; font-size: 0.92em; font-weight: 600; color: rgba(255,255,255,0.8); }
-		.embed-card-desc { display: block; font-size: 0.84em; color: rgba(255,255,255,0.4); line-height: 1.45; }
-		.embed-card-url { display: block; font-size: 0.78em; color: rgba(255,255,255,0.25); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+		.embed-card-title { display: block; font-size: 0.92em; font-weight: 600; color: rgba(0,0,0,0.78); }
+		.embed-card-desc { display: block; font-size: 0.84em; color: rgba(0,0,0,0.48); line-height: 1.45; }
+		.embed-card-url { display: block; font-size: 0.78em; color: rgba(0,0,0,0.35); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 		/* ── Bluesky post card ── */
 		.bsky-repost-label {
 			font-size: 0.78em;
-			color: rgba(255,255,255,0.3);
+			color: rgba(0,0,0,0.42);
 			display: flex;
 			align-items: center;
 			gap: 0.35em;
@@ -52,10 +47,10 @@
 		}
 		.bsky-repost-label svg { opacity: 0.5; }
 		.bsky-card {
-			border: 1px solid rgba(255,255,255,0.1);
+			border: 1px solid rgba(0,0,0,0.1);
 			border-radius: 12px;
 			padding: 1.1em 1.2em 1em;
-			background: rgba(255,255,255,0.02);
+			background: rgba(0,0,0,0.02);
 		}
 		.bsky-card-header {
 			display: flex;
@@ -68,7 +63,7 @@
 			height: 42px;
 			border-radius: 50%;
 			flex-shrink: 0;
-			background: rgba(0,133,255,0.18);
+			background: rgba(0,133,255,0.12);
 			border: 1px solid rgba(0,133,255,0.25);
 			display: flex;
 			align-items: center;
@@ -88,7 +83,7 @@
 			display: block;
 			font-weight: 700;
 			font-size: 0.92em;
-			color: rgba(255,255,255,0.9);
+			color: rgba(0,0,0,0.82);
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
@@ -96,7 +91,7 @@
 		.bsky-author-handle {
 			display: block;
 			font-size: 0.82em;
-			color: rgba(255,255,255,0.38);
+			color: rgba(0,0,0,0.42);
 		}
 		.bsky-logo {
 			flex-shrink: 0;
@@ -105,7 +100,7 @@
 		}
 		.bsky-body {
 			font-size: 0.95em;
-			color: rgba(255,255,255,0.82);
+			color: rgba(0,0,0,0.72);
 			line-height: 1.6;
 			margin-bottom: 0.9em;
 			word-break: break-word;
@@ -113,7 +108,7 @@
 		.bsky-body p { margin: 0 0 0.5em; }
 		.bsky-body p:last-child { margin-bottom: 0; }
 		.bsky-link {
-			border: 1px solid rgba(255,255,255,0.1);
+			border: 1px solid rgba(0,0,0,0.12);
 			border-radius: 10px;
 			overflow: hidden;
 			text-decoration: none;
@@ -122,7 +117,7 @@
 			margin-top: 0.85em;
 			transition: border-color 0.15s;
 		}
-		.bsky-link:hover { border-color: rgba(255,255,255,0.26); }
+		.bsky-link:hover { border-color: rgba(0,0,0,0.28); }
 		.bsky-link-img {
 			width: 100%;
 			display: block;
@@ -137,7 +132,7 @@
 		}
 		.bsky-link-domain {
 			font-size: 0.76em;
-			color: rgba(255,255,255,0.32);
+			color: rgba(0,0,0,0.38);
 			overflow: hidden;
 			white-space: nowrap;
 			text-overflow: ellipsis;
@@ -145,43 +140,43 @@
 		.bsky-link-title {
 			font-size: 0.90em;
 			font-weight: 600;
-			color: rgba(255,255,255,0.84);
+			color: rgba(0,0,0,0.8);
 			line-height: 1.35;
 		}
 		.bsky-link-desc {
 			font-size: 0.82em;
-			color: rgba(255,255,255,0.45);
+			color: rgba(0,0,0,0.48);
 			line-height: 1.45;
 		}
 		.bsky-quoted {
-			border: 1px solid rgba(255,255,255,0.08);
+			border: 1px solid rgba(0,0,0,0.08);
 			border-radius: 8px;
 			padding: 0.65em 0.9em;
 			margin-top: 0.85em;
-			background: rgba(255,255,255,0.015);
+			background: rgba(0,0,0,0.02);
 			font-size: 0.88em;
-			color: rgba(255,255,255,0.38);
+			color: rgba(0,0,0,0.42);
 		}
-		.bsky-quoted a { color: rgba(255,255,255,0.45); text-decoration: none; border: none; }
-		.bsky-quoted a:hover { color: rgba(255,255,255,0.75); }
+		.bsky-quoted a { color: rgba(0,0,0,0.5); text-decoration: none; border: none; }
+		.bsky-quoted a:hover { color: rgba(0,0,0,0.75); }
 		.bsky-footer {
 			margin-top: 0.85em;
 			padding-top: 0.65em;
-			border-top: 1px solid rgba(255,255,255,0.05);
+			border-top: 1px solid rgba(0,0,0,0.08);
 			font-size: 0.76em;
-			color: rgba(255,255,255,0.28);
+			color: rgba(0,0,0,0.38);
 			display: flex;
 			align-items: center;
 			gap: 0.5em;
 			flex-wrap: wrap;
 		}
 		.bsky-footer a {
-			color: rgba(255,255,255,0.38);
+			color: rgba(0,0,0,0.42);
 			text-decoration: none;
 			border: none;
 			transition: color 0.15s;
 		}
-		.bsky-footer a:hover { color: rgba(255,255,255,0.72); }
+		.bsky-footer a:hover { color: rgba(0,0,0,0.72); }
 	</style>
 </head>
 <body class="is-preload">
