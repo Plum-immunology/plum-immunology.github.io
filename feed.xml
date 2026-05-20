@@ -8,7 +8,16 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 13:41:47 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 13:42:41 +0000</lastBuildDate>
+    
+    <item>
+      <title>Hyperactivation of sympathetic nerves fuels basophil infiltration in atopic dermatitis</title>
+      <link>https://plum.science/news/2026-02-20-online-now-hyperactivation-of-sympathetic-nerves-fuels-.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2026-02-20-online-now-hyperactivation-of-sympathetic-nerves-fuels-.html</guid>
+      <pubDate>Wed, 20 May 2026 13:42:41 +0000</pubDate>
+      <description>Online now:  Hyperactivation of sympathetic nerves fuels basophil infiltration in atopic dermatitis</description>
+      <content:encoded><![CDATA[<p>Online now:  Hyperactivation of sympathetic nerves fuels basophil infiltration in atopic dermatitis</p><aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This paper by Xie et al. identifies a sympathetic nervous system-basophil axis where atopic dermatitis-induced anxiety hyperactivates skin sympathetic neurons, releasing norepinephrine to stimulate beta2-adrenergic receptors on basophils. This signaling enhances basophil motility and activates the CCL6-CCR1 chemokine pathway (CCL23-CCR1 in humans), fueling basophil infiltration and amplifying chronic skin inflammation.</aside>]]></content:encoded>
+    </item>
     
     <item>
       <title>Nature research paper: Environmentally driven immune imprinting protects</title>
@@ -195,17 +204,6 @@ go.nature.com/3Il0e3x</description>
       <pubDate>Wed, 20 May 2026 10:56:29 +0000</pubDate>
       <description>Why scratching makes a rash worse and a potential benefit to scratching--it reduced S. aureus on skin.  Andrew Liu&#39;s paper from our lab is out now at #science #neuroimmune #immunology www.science.org/doi/10.1126/...</description>
       <content:encoded><![CDATA[<p>Why scratching makes a rash worse and a potential benefit to scratching--it reduced S. aureus on skin.  Andrew Liu's paper from our lab is out now at #science #neuroimmune #immunology www.science.org/doi/10.1126/...</p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Scratching a mosquito bite can offer a moment of bliss, and now scientists have</title>
-      <link>https://plum.science/news/2025-01-30-scratching-a-mosquito-bite-can-offer-a-moment-of-bliss-.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2025-01-30-scratching-a-mosquito-bite-can-offer-a-moment-of-bliss-.html</guid>
-      <pubDate>Wed, 20 May 2026 10:56:12 +0000</pubDate>
-      <description>Scratching a mosquito bite can offer a moment of bliss, and now scientists have learnt why: scratching activates an immune response that helps to protect the skin against harmful infections, at least in mice.
-https://go.nature.com/4aJpL0r</description>
-      <content:encoded><![CDATA[<p>Scratching a mosquito bite can offer a moment of bliss, and now scientists have learnt why: scratching activates an immune response that helps to protect the skin against harmful infections, at least in mice.</p>
-<p><a href="https://go.nature.com/4aJpL0r">https://go.nature.com/4aJpL0r</a></p>]]></content:encoded>
     </item>
     
   </channel>
