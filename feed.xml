@@ -8,7 +8,16 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 13:46:47 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 13:47:45 +0000</lastBuildDate>
+    
+    <item>
+      <title>Early life allergen sensitivity starts in the skin</title>
+      <link>https://plum.science/news/2026-03-10-early-life-allergen-sensitivity-starts-in-the-skin.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2026-03-10-early-life-allergen-sensitivity-starts-in-the-skin.html</guid>
+      <pubDate>Wed, 20 May 2026 13:47:45 +0000</pubDate>
+      <description>Early life allergen sensitivity starts in the skin</description>
+      <content:encoded><![CDATA[<p>Early life allergen sensitivity starts in the skin</p><aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This research highlight by Bird summarizes a study by Xing et al. showing that a post-natal window of hypothalamic-pituitary-adrenal axis immaturity results in low glucocorticoid levels, allowing dermal cDC2s to act as &#34;peripheral immune inducers&#34; that directly trigger acute type 17 skin inflammation in response to allergens. This localized dermal inflammation drives helper T 2 cell sensitization in draining lymph nodes, establishing enhanced susceptibility to subsequent systemic and respiratory allergic challenges.</aside>]]></content:encoded>
+    </item>
     
     <item>
       <title>Interaction between airway basal cells, mast cells and type 2 immunity contributes to epithelial barrier dysfunction in allergic rhinitis</title>
@@ -197,15 +206,6 @@ go.nature.com/3Il0e3x</description>
       <pubDate>Wed, 20 May 2026 12:33:43 +0000</pubDate>
       <description>This paper by Janssen et al. demonstrates that DOCK8 deficiency drives food allergy and oral anaphylaxis by disrupting T regulatory cell and Th17 function, causing dysbiosis and an IL-25/IL-4 cascade that expands mucosal mast cells and increases intestinal permeability.</description>
       <content:encoded><![CDATA[<p>This paper by Janssen et al. demonstrates that DOCK8 deficiency drives food allergy and oral anaphylaxis by disrupting T regulatory cell and Th17 function, causing dysbiosis and an IL-25/IL-4 cascade that expands mucosal mast cells and increases intestinal permeability.</p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>🚨New paper with @thexavierlab.bsky.social @science.org on the critical role of</title>
-      <link>https://plum.science/news/2025-05-23-new-paper-with-thexavierlabbskysocial-scienceorg-on-the.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2025-05-23-new-paper-with-thexavierlabbskysocial-scienceorg-on-the.html</guid>
-      <pubDate>Wed, 20 May 2026 12:32:18 +0000</pubDate>
-      <description>🚨New paper with @thexavierlab.bsky.social @science.org on the critical role of 🔄neuroimmune crosstalk in immune defense in the gut🪱🪱.🧪@genelayinstitute.bsky.social @mgbresearch.bsky.social @harvardmed.bsky.social @broadinstitute.org www.science.org/doi/10.1126/...</description>
-      <content:encoded><![CDATA[<p>🚨New paper with @thexavierlab.bsky.social @science.org on the critical role of 🔄neuroimmune crosstalk in immune defense in the gut🪱🪱.<br>🧪@genelayinstitute.bsky.social @mgbresearch.bsky.social @harvardmed.bsky.social @broadinstitute.org <br>www.science.org/doi/10.1126/...</p>]]></content:encoded>
     </item>
     
   </channel>
