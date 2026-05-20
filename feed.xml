@@ -8,7 +8,16 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 13:28:49 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 13:32:02 +0000</lastBuildDate>
+    
+    <item>
+      <title>An anti-allergy vaccine protects mice from anaphylaxis for as long as one year,</title>
+      <link>https://plum.science/news/2025-12-03-an-anti-allergy-vaccine-protects-mice-from-anaphylaxis-.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2025-12-03-an-anti-allergy-vaccine-protects-mice-from-anaphylaxis-.html</guid>
+      <pubDate>Wed, 20 May 2026 13:32:02 +0000</pubDate>
+      <description>This paper by Conde et al. demonstrates that a conjugate vaccine coupling a mutated human IgE fragment to a CRM carrier induces durable, neutralizing anti-IgE autoantibodies in humanized mice, providing long-term protection against systemic and cutaneous anaphylaxis without compromising anti-helminth immunity. #ScienceTranslationalMedicine. https://scim.ag/3XxHAdi</description>
+      <content:encoded><![CDATA[<p>This paper by Conde et al. demonstrates that a conjugate vaccine coupling a mutated human IgE fragment to a CRM carrier induces durable, neutralizing anti-IgE autoantibodies in humanized mice, providing long-term protection against systemic and cutaneous anaphylaxis without compromising anti-helminth immunity. #ScienceTranslationalMedicine. <a href="https://scim.ag/3XxHAdi">https://scim.ag/3XxHAdi</a></p>]]></content:encoded>
+    </item>
     
     <item>
       <title>Central neural circuits underlying itch sensation — a Review by Yan-Gang</title>
