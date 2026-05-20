@@ -8,7 +8,16 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 13:42:41 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 13:43:41 +0000</lastBuildDate>
+    
+    <item>
+      <title>Sensory neuron production of substance P and TAFA4 promotes disease tolerance during viral infection</title>
+      <link>https://plum.science/news/2026-02-25-online-now-sensory-neuron-production-of-substance-p-and.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2026-02-25-online-now-sensory-neuron-production-of-substance-p-and.html</guid>
+      <pubDate>Wed, 20 May 2026 13:43:41 +0000</pubDate>
+      <description>Online now:  Sensory neuron production of substance P and TAFA4 promotes disease tolerance during viral infection</description>
+      <content:encoded><![CDATA[<p>Online now:  Sensory neuron production of substance P and TAFA4 promotes disease tolerance during viral infection</p><aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This paper by Roger et al. demonstrates that herpes simplex virus type 1 directly activates sensory neurons to release substance P and TAFA4, which independently promote disease tolerance by limiting immunopathology without altering viral clearance. In the skin, TRPV1+ neuron-derived substance P restricts neutrophil infiltration via MRGPRA1 to accelerate healing, while in the dorsal root ganglia, a TAFA4-IL10 axis acts post-viral clearance to resolve inflammation.</aside>]]></content:encoded>
+    </item>
     
     <item>
       <title>Hyperactivation of sympathetic nerves fuels basophil infiltration in atopic dermatitis</title>
@@ -195,15 +204,6 @@ go.nature.com/3Il0e3x</description>
       <pubDate>Wed, 20 May 2026 11:10:37 +0000</pubDate>
       <description>This review by Brian Kim and David Artis details how peripheral sensory neuroimmunology has emerged as a distinct field by revealing critical interactions between the immune and sensory nervous systems that govern allergy, infection, autoimmunity, and tissue homeostasis.</description>
       <content:encoded><![CDATA[<p>This review by Brian Kim and David Artis details how peripheral sensory neuroimmunology has emerged as a distinct field by revealing critical interactions between the immune and sensory nervous systems that govern allergy, infection, autoimmunity, and tissue homeostasis.</p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Why scratching makes a rash worse and a potential benefit to scratching--it</title>
-      <link>https://plum.science/news/2025-01-30-why-scratching-makes-a-rash-worse-and-a-potential-benef.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2025-01-30-why-scratching-makes-a-rash-worse-and-a-potential-benef.html</guid>
-      <pubDate>Wed, 20 May 2026 10:56:29 +0000</pubDate>
-      <description>Why scratching makes a rash worse and a potential benefit to scratching--it reduced S. aureus on skin.  Andrew Liu&#39;s paper from our lab is out now at #science #neuroimmune #immunology www.science.org/doi/10.1126/...</description>
-      <content:encoded><![CDATA[<p>Why scratching makes a rash worse and a potential benefit to scratching--it reduced S. aureus on skin.  Andrew Liu's paper from our lab is out now at #science #neuroimmune #immunology www.science.org/doi/10.1126/...</p>]]></content:encoded>
     </item>
     
   </channel>
