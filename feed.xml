@@ -8,7 +8,7 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 10:53:55 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 10:54:37 +0000</lastBuildDate>
     
     <item>
       <title></title>
@@ -84,16 +84,6 @@ www.nature.com/articles/s41...</description>
       <pubDate>Sun, 17 May 2026 19:47:59 +0000</pubDate>
       <description>Reflexive behaviors such as avoidance, itch, nausea, and sneezing protect against intoxication, inflammation, and tissue damage, representing a form of non-classical immunological defense.</description>
       <content:encoded><![CDATA[<p>Reflexive behaviors such as avoidance, itch, nausea, and sneezing protect against intoxication, inflammation, and tissue damage, representing a form of non-classical immunological defense.</p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>🔑 Key insights:
-Mast cells don’t just fight parasites or drive allergic</title>
-      <link>https://plum.science/news/2024-12-10-key-insights-mast-cells-dont-just-fight-parasites-or-dr.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2024-12-10-key-insights-mast-cells-dont-just-fight-parasites-or-dr.html</guid>
-      <pubDate>Sun, 17 May 2026 19:47:59 +0000</pubDate>
-      <description>🔑 Key insights:Mast cells don’t just fight parasites or drive allergic pathology; they detect antigens, stress, tissue damage, and inflammation and act as signal converters, translating antigen and tissue cues into organ-specific reflexes via neuronal activation.</description>
-      <content:encoded><![CDATA[<p>🔑 Key insights:<br>Mast cells don’t just fight parasites or drive allergic pathology; they detect antigens, stress, tissue damage, and inflammation and act as signal converters, translating antigen and tissue cues into organ-specific reflexes via neuronal activation.</p>]]></content:encoded>
     </item>
     
   </channel>
