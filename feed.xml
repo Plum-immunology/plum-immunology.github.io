@@ -8,7 +8,18 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 13:43:41 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 13:44:44 +0000</lastBuildDate>
+    
+    <item>
+      <title>The most influential explanation of a recent surge in allergies is the hygiene hypothesis</title>
+      <link>https://plum.science/news/2026-03-01-the-most-influential-explanation-of-a-recent-surge-in-a.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2026-03-01-the-most-influential-explanation-of-a-recent-surge-in-a.html</guid>
+      <pubDate>Wed, 20 May 2026 13:44:44 +0000</pubDate>
+      <description>The most influential explanation of a recent surge in allergies is the hygiene hypothesis
+go.nature.com/40woBkB</description>
+      <content:encoded><![CDATA[<p>The most influential explanation of a recent surge in allergies is the hygiene hypothesis</p>
+<p>go.nature.com/40woBkB</p><aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This commentary by Chatila highlights a study by Erickson et al. demonstrating that exposure to microbe-rich environments (such as pet-shop housing) drives environmental immune imprinting that closes the early-life window of allergy susceptibility. This protection is mediated by two distinct pathways: a history of pathogen exposure that primes a broad, highly cross-reactive IgG-mediated type 1 immunity capable of intercepting unfamiliar allergens, and a non-inflammatory oral tolerance pathway where dietary exposures generate cross-protective, regulatory T cell-mediated resistance to antigenically related foods.</aside>]]></content:encoded>
+    </item>
     
     <item>
       <title>Sensory neuron production of substance P and TAFA4 promotes disease tolerance during viral infection</title>
@@ -195,15 +206,6 @@ go.nature.com/3Il0e3x</description>
       <pubDate>Wed, 20 May 2026 12:30:19 +0000</pubDate>
       <description></description>
       <content:encoded><![CDATA[<p></p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>The sensory neuroimmune frontier</title>
-      <link>https://plum.science/news/2025-05-04-online-now-the-sensory-neuroimmune-frontier.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2025-05-04-online-now-the-sensory-neuroimmune-frontier.html</guid>
-      <pubDate>Wed, 20 May 2026 11:10:37 +0000</pubDate>
-      <description>This review by Brian Kim and David Artis details how peripheral sensory neuroimmunology has emerged as a distinct field by revealing critical interactions between the immune and sensory nervous systems that govern allergy, infection, autoimmunity, and tissue homeostasis.</description>
-      <content:encoded><![CDATA[<p>This review by Brian Kim and David Artis details how peripheral sensory neuroimmunology has emerged as a distinct field by revealing critical interactions between the immune and sensory nervous systems that govern allergy, infection, autoimmunity, and tissue homeostasis.</p>]]></content:encoded>
     </item>
     
   </channel>
