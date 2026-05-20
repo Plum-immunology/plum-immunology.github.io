@@ -8,7 +8,16 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 13:37:30 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 13:39:10 +0000</lastBuildDate>
+    
+    <item>
+      <title>Mast cell-specific CysLT2 receptor signaling inhibits cysteinyl leukotriene-dependent mast cell activation and type 2 allergic lung inflammation</title>
+      <link>https://plum.science/news/2026-01-04-mast-cell-specific-cyslt2-receptor-signaling-inhibits-c.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2026-01-04-mast-cell-specific-cyslt2-receptor-signaling-inhibits-c.html</guid>
+      <pubDate>Wed, 20 May 2026 13:39:10 +0000</pubDate>
+      <description>Mast cell-specific CysLT2 receptor signaling inhibits cysteinyl leukotriene-dependent mast cell activation and type 2 allergic lung inflammation</description>
+      <content:encoded><![CDATA[<p>Mast cell-specific CysLT2 receptor signaling inhibits cysteinyl leukotriene-dependent mast cell activation and type 2 allergic lung inflammation</p><aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This paper by Nagai et al. identifies mast cell-intrinsic CysLT2R as a checkpoint molecule that inhibits CysLT1R-mediated mast cell activation and dust mite-induced type 2 lung inflammation by leveraging G-beta-gamma-dependent adenylate cyclase potentiation to enhance cAMP/PKA signaling.</aside>]]></content:encoded>
+    </item>
     
     <item>
       <title>Mechanisms and clinical implications of gut-brain interactions</title>
@@ -193,19 +202,6 @@ https://go.nature.com/4aJpL0r</description>
       <pubDate>Wed, 20 May 2026 10:49:06 +0000</pubDate>
       <description>This paper by Dong et al. demonstrates that electroacupuncture drives a somatosensory-vagal-gastric reflex to improve gastric motility in both mice and human patients via the activation of deep fascial nociceptors and gastro-projecting vagal motor neurons.</description>
       <content:encoded><![CDATA[<p>This paper by Dong et al. demonstrates that electroacupuncture drives a somatosensory-vagal-gastric reflex to improve gastric motility in both mice and human patients via the activation of deep fascial nociceptors and gastro-projecting vagal motor neurons.</p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Wired for immunity: neuroimmune control of the lung by sensory neurons — a</title>
-      <link>https://plum.science/news/2026-05-01-wired-for-immunity-neuroimmune-control-of-the-lung-by-s.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2026-05-01-wired-for-immunity-neuroimmune-control-of-the-lung-by-s.html</guid>
-      <pubDate>Tue, 19 May 2026 06:36:40 +0000</pubDate>
-      <description>Wired for immunity: neuroimmune control of the lung by sensory neurons — a Review by Anna M. Ehlers, Idaira M. Guerrero-Fonseca, Christophe Altier, Bryan G. Yipp &amp; Sebastien Talbot
-#neuroscience #neuroskyence
-www.nature.com/articles/s41...</description>
-      <content:encoded><![CDATA[<p>Wired for immunity: neuroimmune control of the lung by sensory neurons — a Review by Anna M. Ehlers, Idaira M. Guerrero-Fonseca, Christophe Altier, Bryan G. Yipp & Sebastien Talbot</p>
-<p>#neuroscience #neuroskyence</p>
-<p>www.nature.com/articles/s41...</p>]]></content:encoded>
     </item>
     
   </channel>
