@@ -8,7 +8,18 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 13:40:03 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 13:41:47 +0000</lastBuildDate>
+    
+    <item>
+      <title>Nature research paper: Environmentally driven immune imprinting protects</title>
+      <link>https://plum.science/news/2026-02-04-nature-research-paper-environmentally-driven-immune-imp.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2026-02-04-nature-research-paper-environmentally-driven-immune-imp.html</guid>
+      <pubDate>Wed, 20 May 2026 13:41:47 +0000</pubDate>
+      <description>Nature research paper: Environmentally driven immune imprinting protects against allergy
+go.nature.com/46lGExb</description>
+      <content:encoded><![CDATA[<p>Nature research paper: Environmentally driven immune imprinting protects against allergy</p>
+<p>go.nature.com/46lGExb</p>]]></content:encoded>
+    </item>
     
     <item>
       <title>Neuro-epithelial circuits promote sensory convergence and intestinal immunity</title>
@@ -195,15 +206,6 @@ go.nature.com/3Il0e3x</description>
 https://go.nature.com/4aJpL0r</description>
       <content:encoded><![CDATA[<p>Scratching a mosquito bite can offer a moment of bliss, and now scientists have learnt why: scratching activates an immune response that helps to protect the skin against harmful infections, at least in mice.</p>
 <p><a href="https://go.nature.com/4aJpL0r">https://go.nature.com/4aJpL0r</a></p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>The neuroimmune axis: Integrating two systems to decipher itch</title>
-      <link>https://plum.science/news/2026-01-29-.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2026-01-29-.html</guid>
-      <pubDate>Wed, 20 May 2026 10:50:29 +0000</pubDate>
-      <description>This review by Kothari and Dong outlines how bidirectional neuroimmune crosstalk—where immune signaling molecules directly activate sensory neurons and neuropeptides modulate local immune responses—drives pathologic itch, highlighting tissue-specific mechanisms and novel targetable pathways for pruritic diseases.</description>
-      <content:encoded><![CDATA[<p>This review by Kothari and Dong outlines how bidirectional neuroimmune crosstalk—where immune signaling molecules directly activate sensory neurons and neuropeptides modulate local immune responses—drives pathologic itch, highlighting tissue-specific mechanisms and novel targetable pathways for pruritic diseases.</p>]]></content:encoded>
     </item>
     
   </channel>
