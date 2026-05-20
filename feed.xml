@@ -8,7 +8,7 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 10:54:37 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 10:54:52 +0000</lastBuildDate>
     
     <item>
       <title></title>
@@ -75,15 +75,6 @@ www.nature.com/articles/s41...</description>
       <pubDate>Sun, 17 May 2026 19:47:59 +0000</pubDate>
       <description>💡 Future directions? Understanding mechanisms of mast cell-modulated behaviors by identification of specific mediators and neural pathways downstream of mast cells.</description>
       <content:encoded><![CDATA[<p>💡 Future directions? Understanding mechanisms of mast cell-modulated behaviors by identification of specific mediators and neural pathways downstream of mast cells.</p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Reflexive behaviors such as avoidance, itch, nausea, and sneezing protect</title>
-      <link>https://plum.science/news/2024-12-10-reflexive-behaviors-such-as-avoidance-itch-nausea-and-s.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2024-12-10-reflexive-behaviors-such-as-avoidance-itch-nausea-and-s.html</guid>
-      <pubDate>Sun, 17 May 2026 19:47:59 +0000</pubDate>
-      <description>Reflexive behaviors such as avoidance, itch, nausea, and sneezing protect against intoxication, inflammation, and tissue damage, representing a form of non-classical immunological defense.</description>
-      <content:encoded><![CDATA[<p>Reflexive behaviors such as avoidance, itch, nausea, and sneezing protect against intoxication, inflammation, and tissue damage, representing a form of non-classical immunological defense.</p>]]></content:encoded>
     </item>
     
   </channel>
