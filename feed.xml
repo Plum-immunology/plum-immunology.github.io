@@ -8,7 +8,7 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 20 May 2026 10:54:52 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 10:55:00 +0000</lastBuildDate>
     
     <item>
       <title></title>
@@ -66,15 +66,6 @@ www.nature.com/articles/s41...</description>
       <pubDate>Sun, 17 May 2026 19:47:59 +0000</pubDate>
       <description>Let’s talk about the fascinating future of mast cells—drop your thoughts below! 👇</description>
       <content:encoded><![CDATA[<p>Let’s talk about the fascinating future of mast cells—drop your thoughts below! 👇</p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>💡 Future directions?</title>
-      <link>https://plum.science/news/2024-12-10-future-directions-understanding-mechanisms-of-mast-cell.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2024-12-10-future-directions-understanding-mechanisms-of-mast-cell.html</guid>
-      <pubDate>Sun, 17 May 2026 19:47:59 +0000</pubDate>
-      <description>💡 Future directions? Understanding mechanisms of mast cell-modulated behaviors by identification of specific mediators and neural pathways downstream of mast cells.</description>
-      <content:encoded><![CDATA[<p>💡 Future directions? Understanding mechanisms of mast cell-modulated behaviors by identification of specific mediators and neural pathways downstream of mast cells.</p>]]></content:encoded>
     </item>
     
   </channel>
