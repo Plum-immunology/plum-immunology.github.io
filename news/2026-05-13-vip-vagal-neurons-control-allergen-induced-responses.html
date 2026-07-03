@@ -1,319 +1,154 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
 	<title>Vip+ vagal neurons control allergen-induced responses &mdash; plum.science</title>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<!-- Open Graph (Bluesky link-card embed) -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta property="og:title" content="Vip+ vagal neurons control allergen-induced responses" />
 	<meta property="og:description" content="Vip+ vagal neurons control allergen-induced responses" />
 	<meta property="og:url" content="https://plum.science/news/2026-05-13-vip-vagal-neurons-control-allergen-induced-responses.html" />
 	<meta property="og:type" content="article" />
 	<meta property="og:site_name" content="plum.science" />
-	<link rel="stylesheet" href="../assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="https://plum.science/assets/css/plum.css" />
+	<link rel="icon" href="https://plum.science/images/plum-favicon.ico" />
 	<style>
-		/* ── Shared ── */
-		.post-meta { font-size: 0.70em; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,0.38); display: block; margin-bottom: 1em; }
-		.tag { display: inline-block; font-size: 0.9em; border: 1px solid rgba(0,0,0,0.12); border-radius: 3px; padding: 0.05em 0.45em; color: rgba(0,0,0,0.38); vertical-align: middle; margin-left: 0.4em; }
-		.tag-paper { border-color: rgba(80,160,80,0.4); color: rgba(60,140,60,0.8); }
-		.lab-note { border-left: 3px solid rgba(0,0,0,0.15); padding: 0.5em 1em; margin: 1.25em 0; font-style: italic; color: rgba(0,0,0,0.45); }
-		.post-nav { margin-top: 2.5em; padding-top: 1.5em; border-top: 1px solid rgba(0,0,0,0.08); }
-		.post-nav a { color: rgba(0,0,0,0.45); border-bottom: none; font-size: 0.9em; }
-		.post-nav a:hover { color: rgba(0,0,0,0.7); }
-
-		/* ── Composed post body ── */
-		.post-body { font-size: 0.95em; line-height: 1.6; color: rgba(0,0,0,0.7); }
-		.post-body a { color: rgba(0,0,0,0.55); border-bottom-color: rgba(0,0,0,0.2); }
-		.post-body a:hover { color: rgba(0,0,0,0.82); }
-		.embed-card { border: 1px solid rgba(0,0,0,0.12); border-radius: 8px; overflow: hidden; margin: 1.5em 0; display: flex; gap: 0; text-decoration: none; color: inherit; }
-		.embed-card:hover { border-color: rgba(0,0,0,0.25); }
-		.embed-card-img { flex: 0 0 110px; width: 110px; }
+		.post-wrap { padding-block: clamp(2rem,5vw,3.2rem) clamp(2.5rem,6vw,4rem); max-width: 720px; }
+		.post-meta { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+			display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.4rem; }
+		.post-meta .tag { border: 1px solid var(--hair); border-radius: 4px; padding: 0.1em 0.45em; font-size: 0.92em; }
+		.post-meta .tag.paper { color: var(--accent-ink); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+		.post-title { font-size: clamp(1.7rem,4vw,2.4rem); margin: 0 0 1.2rem; }
+		.post-body { font-size: 1.02rem; line-height: 1.7; }
+		.post-body p { margin: 0 0 1rem; }
+		.labnote { border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 7%, transparent);
+			padding: 0.7em 1em; margin: 1.5em 0; font-style: italic; color: var(--muted); border-radius: 0 6px 6px 0; }
+		.post-nav { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--hair); }
+		.post-nav a { text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+		/* Bluesky card */
+		.bsky-card { width: 100%; max-width: 600px; background: var(--card-bg); border: 1px solid var(--hair);
+			border-radius: 14px; padding: 1.1em 1.2em 1em; }
+		.bsky-card-header { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.75rem; }
+		.bsky-avatar { width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center;
+			font-weight: 700; color: var(--blue-500); background: color-mix(in srgb, var(--blue-500) 14%, transparent);
+			border: 1px solid color-mix(in srgb, var(--blue-500) 30%, transparent); text-transform: uppercase; }
+		.bsky-author { flex: 1; min-width: 0; }
+		.bsky-author-name { display: block; font-weight: 700; font-size: 0.92rem; }
+		.bsky-author-handle { display: block; font-size: 0.82rem; color: var(--muted); }
+		.bsky-logo { flex-shrink: 0; opacity: 0.75; }
+		.bsky-body { font-size: 0.98rem; line-height: 1.6; margin-bottom: 0.8rem; word-break: break-word; }
+		.bsky-body p { margin: 0 0 0.5em; } .bsky-body p:last-child { margin-bottom: 0; }
+		.bsky-link { display: block; border: 1px solid var(--hair); border-radius: 10px; overflow: hidden;
+			text-decoration: none; color: inherit; margin-top: 0.85em; }
+		.bsky-link:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--hair)); }
+		.bsky-link-img { width: 100%; display: block; aspect-ratio: 1200 / 630; object-fit: cover;
+			background: color-mix(in srgb, var(--blue-500) 12%, var(--card-bg)); }
+		.bsky-link-body { padding: 0.7em 0.95em 0.8em; display: flex; flex-direction: column; gap: 4px; }
+		.bsky-link-domain { font-size: 0.76rem; color: var(--muted); }
+		.bsky-link-title { font-size: 0.9rem; font-weight: 600; line-height: 1.35; }
+		.bsky-link-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.45; }
+		.bsky-quoted { border: 1px solid var(--hair); border-radius: 8px; padding: 0.65em 0.9em; margin-top: 0.85em;
+			background: color-mix(in srgb, var(--blue-500) 6%, transparent); font-size: 0.88rem; }
+		.bsky-quoted a { text-decoration: none; }
+		.bsky-footer { margin-top: 0.85em; padding-top: 0.65em; border-top: 1px solid var(--hair);
+			font-size: 0.78rem; color: var(--muted); display: flex; gap: 0.5em; flex-wrap: wrap; }
+		.bsky-footer a { text-decoration: none; color: var(--muted); } .bsky-footer a:hover { color: var(--accent-ink); }
+		/* composed embed card */
+		.embed-card { display: flex; border: 1px solid var(--hair); border-radius: 10px; overflow: hidden;
+			text-decoration: none; color: inherit; max-width: 600px; margin: 1.5em 0; }
+		.embed-card:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--hair)); }
 		.embed-card-img img { width: 110px; height: 110px; object-fit: cover; display: block; }
-		.embed-card-body { flex: 1; padding: 0.75em 1em; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 0.3em; }
-		.embed-card-title { display: block; font-size: 0.92em; font-weight: 600; color: rgba(0,0,0,0.78); }
-		.embed-card-desc { display: block; font-size: 0.84em; color: rgba(0,0,0,0.48); line-height: 1.45; }
-		.embed-card-url { display: block; font-size: 0.78em; color: rgba(0,0,0,0.35); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-		/* ── Bluesky post row (card + optional sidenote) ── */
-		.bsky-post-row { display: flex; align-items: flex-start; gap: 1.5em; }
-		.bsky-post-row > .bsky-card { flex: 0 0 600px; max-width: 600px; }
-		.bsky-sidenote { flex: 1; min-width: 180px; margin: 0; }
-		@media (max-width: 860px) {
-			.bsky-post-row { flex-direction: column; }
-			.bsky-post-row > .bsky-card { flex: none; max-width: 100%; width: 100%; }
-		}
-
-		/* ── Bluesky post card ── */
-		.bsky-repost-label {
-			font-size: 0.78em;
-			color: rgba(0,0,0,0.42);
-			display: flex;
-			align-items: center;
-			gap: 0.35em;
-			margin-bottom: 0.6em;
-		}
-		.bsky-repost-label svg { opacity: 0.5; }
-		.bsky-card {
-			border: 1px solid rgba(0,0,0,0.1);
-			border-radius: 12px;
-			padding: 1.1em 1.2em 1em;
-			background: rgba(0,0,0,0.02);
-		}
-		.bsky-card-header {
-			display: flex;
-			align-items: flex-start;
-			gap: 0.7em;
-			margin-bottom: 0.9em;
-		}
-		.bsky-avatar {
-			width: 42px;
-			height: 42px;
-			border-radius: 50%;
-			flex-shrink: 0;
-			background: rgba(0,133,255,0.12);
-			border: 1px solid rgba(0,133,255,0.25);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 1.1em;
-			font-weight: 700;
-			color: rgba(0,133,255,0.85);
-			text-transform: uppercase;
-			user-select: none;
-		}
-		.bsky-author {
-			flex: 1;
-			min-width: 0;
-			line-height: 1.3;
-		}
-		.bsky-author-name {
-			display: block;
-			font-weight: 700;
-			font-size: 0.92em;
-			color: rgba(0,0,0,0.82);
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-		.bsky-author-handle {
-			display: block;
-			font-size: 0.82em;
-			color: rgba(0,0,0,0.42);
-		}
-		.bsky-logo {
-			flex-shrink: 0;
-			margin-top: 2px;
-			opacity: 0.55;
-		}
-		.bsky-body {
-			font-size: 0.95em;
-			color: rgba(0,0,0,0.72);
-			line-height: 1.6;
-			margin-bottom: 0.9em;
-			word-break: break-word;
-		}
-		.bsky-body p { margin: 0 0 0.5em; }
-		.bsky-body p:last-child { margin-bottom: 0; }
-		.bsky-link {
-			border: 1px solid rgba(0,0,0,0.12);
-			border-radius: 10px;
-			overflow: hidden;
-			text-decoration: none;
-			color: inherit;
-			display: block;
-			margin-top: 0.85em;
-			transition: border-color 0.15s;
-		}
-		.bsky-link:hover { border-color: rgba(0,0,0,0.28); }
-		.bsky-link-img {
-			width: 100%;
-			display: block;
-			aspect-ratio: 1200 / 630;
-			object-fit: cover;
-		}
-		.bsky-link-body {
-			padding: 0.7em 0.95em 0.8em;
-			display: flex;
-			flex-direction: column;
-			gap: 4px;
-		}
-		.bsky-link-domain {
-			font-size: 0.76em;
-			color: rgba(0,0,0,0.38);
-			overflow: hidden;
-			white-space: nowrap;
-			text-overflow: ellipsis;
-		}
-		.bsky-link-title {
-			font-size: 0.90em;
-			font-weight: 600;
-			color: rgba(0,0,0,0.8);
-			line-height: 1.35;
-		}
-		.bsky-link-desc {
-			font-size: 0.82em;
-			color: rgba(0,0,0,0.48);
-			line-height: 1.45;
-		}
-		.bsky-quoted {
-			border: 1px solid rgba(0,0,0,0.08);
-			border-radius: 8px;
-			padding: 0.65em 0.9em;
-			margin-top: 0.85em;
-			background: rgba(0,0,0,0.02);
-			font-size: 0.88em;
-			color: rgba(0,0,0,0.42);
-		}
-		.bsky-quoted a { color: rgba(0,0,0,0.5); text-decoration: none; border: none; }
-		.bsky-quoted a:hover { color: rgba(0,0,0,0.75); }
-		.bsky-footer {
-			margin-top: 0.85em;
-			padding-top: 0.65em;
-			border-top: 1px solid rgba(0,0,0,0.08);
-			font-size: 0.76em;
-			color: rgba(0,0,0,0.38);
-			display: flex;
-			align-items: center;
-			gap: 0.5em;
-			flex-wrap: wrap;
-		}
-		.bsky-footer a {
-			color: rgba(0,0,0,0.42);
-			text-decoration: none;
-			border: none;
-			transition: color 0.15s;
-		}
-		.bsky-footer a:hover { color: rgba(0,0,0,0.72); }
+		.embed-card-body { padding: 0.75em 1em; display: flex; flex-direction: column; justify-content: center; gap: 0.3em; min-width: 0; }
+		.embed-card-title { font-weight: 600; font-size: 0.92rem; }
+		.embed-card-desc { font-size: 0.84rem; color: var(--muted); }
+		.embed-card-url { font-size: 0.78rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 	</style>
 </head>
-<body class="is-preload">
-<div id="wrapper">
+<body>
 
-	<!-- Header -->
-	<header id="header">
-		<div class="inner">
-			<a href="https://plum.science/" class="logo">
-				<span class="symbol"><img src="../images/logo.svg" alt="" /></span><span class="title">Plum Lab</span>
-			</a>
+<header class="site">
+	<div class="wrap">
+		<a class="brand" href="https://plum.science/"><img src="https://plum.science/images/logo.svg" alt="Plum Lab logo"><b>Plum Lab</b></a>
+		<nav class="top">
+			<a href="https://plum.science/science.html">Science</a>
+			<a href="https://plum.science/people.html">People</a>
+			<a href="https://plum.science/publications.html">Publications</a>
+			<a href="https://plum.science/resources.html">Resources</a>
+			<a href="https://plum.science/contact.html">Contact</a>
+		</nav>
+		<details class="mnav">
+			<summary aria-label="Open menu">&#9776;</summary>
 			<nav>
-				<ul>
-					<li><a href="#menu">Menu</a></li>
-				</ul>
+				<a href="https://plum.science/science.html">Science</a>
+				<a href="https://plum.science/people.html">People</a>
+				<a href="https://plum.science/publications.html">Publications</a>
+				<a href="https://plum.science/resources.html">Resources</a>
+				<a href="https://plum.science/contact.html">Contact</a>
 			</nav>
-		</div>
-	</header>
-
-	<!-- Menu -->
-	<nav id="menu">
-		<h2>Menu</h2>
-		<ul>
-			<li><a href="https://plum.science/">Home</a></li>
-			<li><a href="https://plum.science/science.html">Science</a></li>
-			<li><a href="https://plum.science/people.html">People</a></li>
-			<li><a href="https://plum.science/publications.html">Publications</a></li>
-			<li><a href="https://plum.science/resources.html">Resources</a></li>
-			<li><a href="https://plum.science/contact.html">Contact</a></li>
-			<li><a href="https://mastcell.cloudflareaccess.com/#/Launcher">Internal</a></li>
-		</ul>
-	</nav>
-
-	<!-- Main -->
-	<div id="main">
-		<div class="inner">
-
-			<span class="post-meta">
-				13 May 2026
-				
-				<span class="tag">repost</span>
-				
-			</span>
-
-			
-			
-
-			
-			
-			
-			
-			
-
-			<div class="bsky-post-row">
-			<div class="bsky-card">
-				<div class="bsky-card-header">
-					<div class="bsky-author">
-						<span class="bsky-author-name">Cell Reports</span>
-						<span class="bsky-author-handle">@cp-cellreports.bsky.social</span>
-					</div>
-					<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="20" height="20"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
-				</div>
-
-				<div class="bsky-body"><p>Vip+ vagal neurons control allergen-induced responses</p></div>
-
-				
-				<a class="bsky-link" href="http://dlvr.it/TSWwFh" target="_blank" rel="noopener">
-					
-					<img class="bsky-link-img" src="https://plum.science/news/images/2026-05-13-vip-vagal-neurons-control-allergen-induced-responses-card.webp" alt="Vip+ vagal neurons control allergen-induced responses">
-					
-					<div class="bsky-link-body">
-						<span class="bsky-link-domain">dlvr.it</span>
-						<span class="bsky-link-title">Vip+ vagal neurons control allergen-induced responses</span>
-						
-					</div>
-				</a>
-				
-
-				
-
-				<div class="bsky-footer">
-					<span>13 May 2026</span>
-					
-					<span>·</span>
-					<a href="https://bsky.app/profile/cp-cellreports.bsky.social/post/3mlr3au4mo32u" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-					
-				</div>
-			</div>
-			
-			<div class="lab-note bsky-sidenote">This paper by Zhu et al. identifies Vip+ vagal sensory neurons as a distinct subset necessary and sufficient for allergen-induced airway hyperreactivity and type 2 cytokine expression in the lung. Mechanistically, these neurons relay peripheral lung allergen signals to the nucleus of the solitary tract (nTS) in the brainstem and drive asthmatic pathology via NGFR signaling, defining a specific body-brain neuroimmune axis in asthma.</div>
-			
-			</div>
-
-			
-
-			<div class="post-nav">
-				<a href="https://plum.science/">&#8592; All news</a>
-			</div>
-
-		</div>
+		</details>
 	</div>
+</header>
 
-	<!-- Footer -->
-	<footer id="footer">
-		<div class="inner">
-			<section>
-				<h2>Location</h2>
-				<p>Plum Lab<br />
-				Coming soon!<br />
-				Stay tuned.</p>
-			</section>
-			<section>
-				<h2>Follow</h2>
-				<ul class="icons">
-					<li><a href="https://bsky.app/profile/plumlab.bsky.social" class="icon brands style2 fa-bluesky"><span class="label">Bluesky</span></a></li>
-					<li><a href="https://github.com/Plum-immunology/" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-				</ul>
-			</section>
-			<ul class="copyright">
-				<li>&copy; Thomas Plum 2026 - <a href="https://plum.science/impressum.html">Impressum</a> - <a href="https://plum.science/datenschutz.html">Datenschutz</a></li><li>Design <a href="http://html5up.net">HTML5 UP</a></li>
-			</ul>
+<main>
+	<div class="wrap post-wrap">
+		<div class="post-meta">
+			<span>13 May 2026</span>
+			
+			<span class="tag">repost</span>
+			
 		</div>
-	</footer>
 
-</div>
-<script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/browser.min.js"></script>
-<script src="../assets/js/breakpoints.min.js"></script>
-<script src="../assets/js/util.js"></script>
-<script src="../assets/js/main.js"></script>
+		
+		
+		
+		
+		
+		
+		<div class="bsky-card">
+			<div class="bsky-card-header">
+				<div class="bsky-avatar">C</div>
+				<div class="bsky-author">
+					<span class="bsky-author-name">Cell Reports</span>
+					<span class="bsky-author-handle">@cp-cellreports.bsky.social</span>
+				</div>
+				<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="20" height="20"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
+			</div>
+			<div class="bsky-body"><p>Vip+ vagal neurons control allergen-induced responses</p></div>
+			
+			<a class="bsky-link" href="http://dlvr.it/TSWwFh" target="_blank" rel="noopener">
+				
+				<img class="bsky-link-img" src="https://plum.science/news/images/2026-05-13-vip-vagal-neurons-control-allergen-induced-responses-card.webp" alt="Vip+ vagal neurons control allergen-induced responses">
+				
+				<div class="bsky-link-body">
+					<span class="bsky-link-domain">dlvr.it</span>
+					<span class="bsky-link-title">Vip+ vagal neurons control allergen-induced responses</span>
+					
+				</div>
+			</a>
+			
+			
+			<div class="labnote">This paper by Zhu et al. identifies Vip+ vagal sensory neurons as a distinct subset necessary and sufficient for allergen-induced airway hyperreactivity and type 2 cytokine expression in the lung. Mechanistically, these neurons relay peripheral lung allergen signals to the nucleus of the solitary tract (nTS) in the brainstem and drive asthmatic pathology via NGFR signaling, defining a specific body-brain neuroimmune axis in asthma.</div>
+			<div class="bsky-footer">
+				<span>13 May 2026</span>
+				<span>&middot;</span><a href="https://bsky.app/profile/cp-cellreports.bsky.social/post/3mlr3au4mo32u" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
+			</div>
+		</div>
+		
+
+		<div class="post-nav"><a href="https://plum.science/">&#8592; All news</a></div>
+	</div>
+</main>
+
+<footer class="site">
+	<div class="wrap">
+		<div>&copy; Thomas Plum 2026 &middot; Plum Lab for Peripheral Neuroimmunology</div>
+		<nav class="fnav">
+			<a href="https://bsky.app/profile/plumlab.bsky.social" aria-label="Bluesky" title="Bluesky"><svg viewBox="0 0 64 57" xmlns="http://www.w3.org/2000/svg"><path d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg></a>
+			<a href="https://github.com/Plum-immunology/" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+			<a href="https://plum.science/impressum.html">Impressum</a>
+			<a href="https://plum.science/datenschutz.html">Datenschutz</a>
+		</nav>
+	</div>
+</footer>
+
 </body>
 </html>
