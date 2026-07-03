@@ -1,266 +1,274 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-	<title>plum.science &mdash; Lab News</title>
+	<title>Plum Lab &mdash; Peripheral Neuroimmunology</title>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<meta property="og:title" content="plum.science &mdash; Plum Lab" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="The Plum Lab studies how mast cells sense environmental and tissue cues and convert them into rapid, protective responses — the interface between the immune and nervous systems." />
+	<meta property="og:title" content="Plum Lab — Peripheral Neuroimmunology" />
+	<meta property="og:description" content="Mast cells are the body's neuroimmune sentinels. Lab news, science, and people from the Plum Lab." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://plum.science/" />
 	<link rel="alternate" type="application/rss+xml" title="plum.science Lab News" href="https://plum.science/feed.xml" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<link rel="icon" href="https://plum.science/images/plum-favicon.ico" />
 	<style>
-		/* ── Shared article frame ── */
-		.news-article { border-bottom: 1px solid rgba(0,0,0,0.08); padding: 1.8em 0; }
-		.news-article:first-of-type { padding-top: 0; }
-		.news-article:last-of-type { border-bottom: none; }
-		.news-date { font-size: 0.70em; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,0,0,0.38); display: block; margin-bottom: 0.6em; }
-		.tag { display: inline-block; font-size: 0.65em; border: 1px solid rgba(0,0,0,0.12); border-radius: 3px; padding: 0.05em 0.4em; color: rgba(0,0,0,0.38); vertical-align: middle; margin-left: 0.4em; text-transform: uppercase; letter-spacing: 0.05em; }
-		.tag-paper { border-color: rgba(80,160,80,0.4); color: rgba(60,140,60,0.8); }
+		:root {
+			/* palette derived from the lab logo: plum bursting into mast-cell granules + a firing neuron */
+			--plum-800: #3a1230; --plum-700: #5e2455; --wine-600: #7c2a63;
+			--amber-500: #e67e2e; --amber-400: #f2a65a; --blue-500: #3d6fa6;
+			--paper: #f7f1ec; --card: #fffdfb; --ink: #22101b;
+			--muted: #6d5c64; --hair: rgba(60,20,45,0.12);
+			--bg: var(--paper); --fg: var(--ink); --accent: var(--amber-500);
+			--accent-ink: #9a4a12; --card-bg: var(--card);
+			--display: "Iowan Old Style", "Charter", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+			--body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+			--pad: clamp(1.25rem, 4vw, 2.75rem);
+		}
+		@media (prefers-color-scheme: dark) {
+			:root {
+				--bg: #1a0c16; --fg: #f2e6ec; --paper: #1a0c16; --card-bg: #271221;
+				--muted: #b598a7; --hair: rgba(242,166,90,0.14); --accent-ink: var(--amber-400);
+			}
+		}
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body { margin: 0; background: var(--bg); color: var(--fg);
+			font-family: var(--body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+		.wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding-inline: var(--pad); }
+		a { color: var(--accent-ink); text-underline-offset: 3px; }
+		h1, h2, h3 { font-family: var(--display); font-weight: 600; text-wrap: balance; line-height: 1.12; }
 
-		/* ── Composed post (news article) ── */
-		.news-article h2 { font-size: 1.0em; font-weight: 600; margin: 0 0 0.5em; }
-		.news-article h2 a { color: inherit; text-decoration: none; border: none; }
-		.news-article h2 a:hover { color: #3d3d3d; }
-		.news-body { font-size: 0.92em; color: rgba(0,0,0,0.6); margin: 0 0 0.7em; line-height: 1.55; }
-		.lab-note { border-left: 3px solid rgba(0,0,0,0.15); padding: 0.35em 0.75em; margin: 0.75em 0; font-style: italic; color: rgba(0,0,0,0.45); font-size: 0.88em; }
+		/* ── Header ── */
+		header.site { position: sticky; top: 0; z-index: 20;
+			background: color-mix(in srgb, var(--bg) 88%, transparent);
+			backdrop-filter: blur(8px); border-bottom: 1px solid var(--hair); }
+		header.site .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 66px; gap: 1rem; }
+		.brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--fg); }
+		.brand img { width: 34px; height: 34px; display: block; }
+		.brand b { font-family: var(--display); font-weight: 600; font-size: 1.05rem; letter-spacing: 0.02em; }
+		nav.top { display: flex; gap: 1.4rem; font-size: 0.9rem; }
+		nav.top a { color: var(--muted); text-decoration: none; }
+		nav.top a:hover, nav.top a:focus-visible { color: var(--accent-ink); }
+		/* no-JS mobile menu */
+		.mnav { display: none; position: relative; }
+		.mnav summary { list-style: none; cursor: pointer; padding: 0.4rem 0.55rem; border: 1px solid var(--hair);
+			border-radius: 8px; color: var(--fg); font-size: 1.1rem; line-height: 1; }
+		.mnav summary::-webkit-details-marker { display: none; }
+		.mnav[open] > nav { display: flex; }
+		.mnav > nav { display: none; position: absolute; right: 0; top: calc(100% + 8px); flex-direction: column;
+			gap: 0.25rem; background: var(--card-bg); border: 1px solid var(--hair); border-radius: 10px;
+			padding: 0.5rem; min-width: 180px; box-shadow: 0 12px 30px rgba(20,6,18,0.18); }
+		.mnav > nav a { color: var(--fg); text-decoration: none; padding: 0.5rem 0.7rem; border-radius: 7px; font-size: 0.95rem; }
+		.mnav > nav a:hover { background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent-ink); }
+		@media (max-width: 680px) { nav.top { display: none; } .mnav { display: block; } }
 
-		/* ── Bluesky post card ── */
-		.bsky-repost-label {
-			font-size: 0.74em;
-			color: rgba(0,0,0,0.42);
-			display: flex;
-			align-items: center;
-			gap: 0.35em;
-			margin-bottom: 0.55em;
-		}
-		.bsky-repost-label svg { opacity: 0.5; }
-		.bsky-card {
-			border: 1px solid rgba(0,0,0,0.1);
-			border-radius: 12px;
-			padding: 1em 1.1em 0.9em;
-			background: rgba(0,0,0,0.02);
-			width: 100%;
-			max-width: 600px;
-		}
-		.bsky-card-header {
-			display: flex;
-			align-items: flex-start;
-			gap: 0.65em;
-			margin-bottom: 0.8em;
-		}
-		.bsky-avatar {
-			width: 38px;
-			height: 38px;
-			border-radius: 50%;
-			flex-shrink: 0;
-			background: rgba(0,133,255,0.12);
-			border: 1px solid rgba(0,133,255,0.25);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 1.0em;
-			font-weight: 700;
-			color: rgba(0,133,255,0.85);
-			text-transform: uppercase;
-			user-select: none;
-		}
-		.bsky-author {
-			flex: 1;
-			min-width: 0;
-			line-height: 1.25;
-		}
-		.bsky-author-name {
-			display: block;
-			font-weight: 700;
-			font-size: 0.88em;
-			color: rgba(0,0,0,0.82);
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-		.bsky-author-handle {
-			display: block;
-			font-size: 0.80em;
-			color: rgba(0,0,0,0.42);
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-		.bsky-logo {
-			flex-shrink: 0;
-			margin-top: 2px;
-			opacity: 0.55;
-		}
-		.bsky-body {
-			font-size: 0.92em;
-			color: rgba(0,0,0,0.7);
-			line-height: 1.55;
-			margin-bottom: 0.8em;
-			word-break: break-word;
-		}
-		.bsky-body p { margin: 0 0 0.45em; }
-		.bsky-body p:last-child { margin-bottom: 0; }
-		/* ── Link card (Bluesky style: image on top) ── */
-		.bsky-link {
-			border: 1px solid rgba(0,0,0,0.12);
-			border-radius: 10px;
-			overflow: hidden;
-			text-decoration: none;
-			color: inherit;
-			display: block;
-			margin-top: 0.75em;
-			transition: border-color 0.15s;
-		}
-		.bsky-link:hover { border-color: rgba(0,0,0,0.28); }
-		.bsky-link-img {
-			width: 100%;
-			display: block;
-			aspect-ratio: 1200 / 630;
-			object-fit: cover;
-		}
-		.bsky-link-body {
-			padding: 0.6em 0.85em 0.7em;
-			display: flex;
-			flex-direction: column;
-			gap: 3px;
-		}
-		.bsky-link-domain {
-			font-size: 0.74em;
-			color: rgba(0,0,0,0.38);
-			overflow: hidden;
-			white-space: nowrap;
-			text-overflow: ellipsis;
-		}
-		.bsky-link-title {
-			font-size: 0.88em;
-			font-weight: 600;
-			color: rgba(0,0,0,0.8);
-			line-height: 1.3;
-			display: -webkit-box;
-			-webkit-line-clamp: 2;
-			-webkit-box-orient: vertical;
-			overflow: hidden;
-		}
-		.bsky-link-desc {
-			font-size: 0.79em;
-			color: rgba(0,0,0,0.48);
-			line-height: 1.4;
-			display: -webkit-box;
-			-webkit-line-clamp: 2;
-			-webkit-box-orient: vertical;
-			overflow: hidden;
-		}
-		/* ── Quoted post inner card ── */
-		.bsky-quoted {
-			border: 1px solid rgba(0,0,0,0.08);
-			border-radius: 8px;
-			padding: 0.6em 0.85em;
-			margin-top: 0.75em;
-			background: rgba(0,0,0,0.02);
-			font-size: 0.86em;
-			color: rgba(0,0,0,0.42);
-		}
-		.bsky-quoted a { color: rgba(0,0,0,0.5); text-decoration: none; border: none; }
-		.bsky-quoted a:hover { color: rgba(0,0,0,0.75); }
-		/* ── Card footer ── */
-		.bsky-footer {
-			margin-top: 0.75em;
-			padding-top: 0.6em;
-			border-top: 1px solid rgba(0,0,0,0.08);
-			font-size: 0.74em;
-			color: rgba(0,0,0,0.38);
-			display: flex;
-			align-items: center;
-			gap: 0.5em;
-			flex-wrap: wrap;
-		}
-		.bsky-footer a {
-			color: rgba(0,0,0,0.42);
-			text-decoration: none;
-			border: none;
-			transition: color 0.15s;
-		}
-		.bsky-footer a:hover { color: rgba(0,0,0,0.72); }
+		/* ── Hero: the thesis, over the lab's own confocal skin whole-mount ── */
+		.hero { position: relative; overflow: hidden; color: #f3e8ee; background: #0d0508; }
+		.hero .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+			object-position: 50% 42%; opacity: 0.92; }
+		.hero::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+			background:
+				linear-gradient(100deg, rgba(18,6,14,0.86) 0%, rgba(30,10,32,0.52) 40%, rgba(46,14,44,0.12) 66%, rgba(46,14,44,0.04) 100%),
+				linear-gradient(0deg, rgba(13,5,8,0.55) 0%, transparent 34%),
+				linear-gradient(0deg, rgba(58,18,48,0.14) 0%, rgba(58,18,48,0.14) 100%); }
+		.hero .wrap { position: relative; z-index: 1; padding-block: clamp(3.5rem, 10vw, 6.5rem); }
+		.eyebrow { font-family: var(--body); text-transform: uppercase; letter-spacing: 0.18em;
+			font-size: 0.72rem; font-weight: 700; color: var(--amber-400); margin: 0 0 1.1rem;
+			text-shadow: 0 1px 8px rgba(13,5,8,0.7); }
+		.hero h1 { font-size: clamp(2.1rem, 5.6vw, 3.7rem); margin: 0 0 1.2rem; color: #fff; max-width: 16ch;
+			text-shadow: 0 2px 16px rgba(13,5,8,0.72), 0 1px 3px rgba(13,5,8,0.6); }
+		.hero h1 .lede-accent { color: var(--amber-400); font-style: italic; }
+		.hero p.lead { max-width: 48ch; color: rgba(245,236,241,0.95); margin: 0 0 1.7rem; text-shadow: 0 1px 10px rgba(13,5,8,0.8); }
+		.caption { position: absolute; z-index: 1; right: var(--pad); bottom: 0.8rem;
+			font-size: 0.68rem; letter-spacing: 0.03em; color: rgba(243,232,238,0.6); text-align: right; }
+		@media (max-width: 640px) { .caption { display: none; } }
+		.cta-row { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+		.btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.15rem;
+			border-radius: 999px; font-size: 0.9rem; font-weight: 600; text-decoration: none; }
+		.btn-primary { background: var(--amber-500); color: #2a1305; }
+		.btn-primary:hover { background: var(--amber-400); }
+		.btn-ghost { border: 1px solid rgba(255,255,255,0.4); color: #fff; }
+		.btn-ghost:hover { border-color: var(--amber-400); color: var(--amber-400); }
 
-		/* Composed post link card (kept for source=composed) */
-		.embed-card { border: 1px solid rgba(0,0,0,0.12); border-radius: 8px; overflow: hidden; margin: 0.8em 0; display: flex; gap: 0; text-decoration: none; color: inherit; }
-		.embed-card:hover { border-color: rgba(0,0,0,0.25); }
-		.embed-card-img { flex: 0 0 90px; width: 90px; }
-		.embed-card-img img { width: 90px; height: 90px; object-fit: cover; display: block; }
-		.embed-card-body { flex: 1; padding: 0.6em 0.85em; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 0.2em; }
-		.embed-card-title { font-size: 0.88em; font-weight: 600; color: rgba(0,0,0,0.78); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-		.embed-card-desc { font-size: 0.80em; color: rgba(0,0,0,0.48); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4; }
-		.embed-card-url { font-size: 0.75em; color: rgba(0,0,0,0.35); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+		/* ── Science pillars ── */
+		.pillars { padding-block: clamp(2.5rem, 6vw, 4rem); }
+		.section-label { font-family: var(--body); text-transform: uppercase; letter-spacing: 0.16em;
+			font-size: 0.72rem; font-weight: 700; color: var(--accent-ink); margin: 0 0 1.8rem;
+			display: flex; align-items: center; gap: 0.75rem; }
+		.section-label::after { content: ""; flex: 1; height: 1px;
+			background: repeating-linear-gradient(90deg, var(--hair) 0 6px, transparent 6px 12px); }
+		.pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+		@media (max-width: 760px) { .pillar-grid { grid-template-columns: 1fr; gap: 1.1rem; } }
+		.pillar { border-top: 2px solid var(--accent); padding-top: 1rem; }
+		.pillar h3 { font-size: 1.15rem; margin: 0 0 0.5rem; }
+		.pillar p { margin: 0; font-size: 0.94rem; color: var(--muted); }
+		.pillar .cite { display: inline-block; margin-top: 0.7rem; font-size: 0.82rem; }
+
+		/* ── News feed ── */
+		.feed { padding-block: clamp(2rem, 5vw, 3.5rem); border-top: 1px solid var(--hair); }
+		.feed-intro { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+		.feed-intro h2 { font-size: 1.6rem; margin: 0; }
+		.feed-intro a { font-size: 0.85rem; }
+		.stream { margin-top: 2rem; display: flex; flex-direction: column; gap: 2.2rem; }
+		.item { display: grid; grid-template-columns: 92px 1fr; gap: 1.3rem; }
+		@media (max-width: 640px) { .item { grid-template-columns: 1fr; gap: 0.55rem; } }
+		.item-date { font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-top: 0.2rem; }
+		.item-date .tag { display: inline-block; margin-top: 0.5rem; font-size: 0.62rem; letter-spacing: 0.06em;
+			border: 1px solid var(--hair); border-radius: 4px; padding: 0.1em 0.45em; color: var(--muted); }
+		.item-date .tag.paper { color: var(--accent-ink); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+		@media (max-width: 640px) { .item-date { display: flex; align-items: center; gap: 0.6rem; padding-top: 0; }
+			.item-date .tag { margin-top: 0; } }
+
+		/* Bluesky card */
+		.bsky-card { width: 100%; max-width: 600px; background: var(--card-bg);
+			border: 1px solid var(--hair); border-radius: 14px; padding: 1.1em 1.2em 1em; }
+		.bsky-card-header { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.75rem; }
+		.bsky-avatar { width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center;
+			font-weight: 700; color: var(--blue-500); background: color-mix(in srgb, var(--blue-500) 14%, transparent);
+			border: 1px solid color-mix(in srgb, var(--blue-500) 30%, transparent); text-transform: uppercase; }
+		.bsky-author { flex: 1; min-width: 0; line-height: 1.25; }
+		.bsky-author-name { display: block; font-weight: 700; font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+		.bsky-author-handle { display: block; font-size: 0.8rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+		.bsky-logo { flex-shrink: 0; opacity: 0.75; }
+		.bsky-body { font-size: 0.95rem; line-height: 1.55; margin-bottom: 0.7rem; word-break: break-word; }
+		.bsky-body p { margin: 0 0 0.45em; } .bsky-body p:last-child { margin-bottom: 0; }
+		.bsky-link { display: block; border: 1px solid var(--hair); border-radius: 10px; overflow: hidden;
+			text-decoration: none; color: inherit; margin-top: 0.6rem; transition: border-color 0.15s; }
+		.bsky-link:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--hair)); }
+		.bsky-link-img { width: 100%; display: block; aspect-ratio: 1200 / 630; object-fit: cover;
+			background: color-mix(in srgb, var(--blue-500) 12%, var(--card-bg)); }
+		.bsky-link-body { padding: 0.7em 0.9em 0.8em; display: flex; flex-direction: column; gap: 3px; }
+		.bsky-link-domain { font-size: 0.74rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+		.bsky-link-title { font-size: 0.9rem; font-weight: 600; line-height: 1.35;
+			display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+		.bsky-link-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.4;
+			display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+		.bsky-quoted { border: 1px solid var(--hair); border-radius: 8px; padding: 0.6em 0.85em; margin-top: 0.7em;
+			background: color-mix(in srgb, var(--blue-500) 6%, transparent); font-size: 0.86rem; }
+		.bsky-quoted a { text-decoration: none; }
+		.labnote { border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 7%, transparent);
+			padding: 0.6em 0.9em; margin-top: 0.85em; font-size: 0.86rem; font-style: italic; color: var(--muted); border-radius: 0 6px 6px 0; }
+		.bsky-footer { margin-top: 0.85em; padding-top: 0.6em; border-top: 1px solid var(--hair);
+			font-size: 0.76rem; color: var(--muted); display: flex; gap: 0.5em; flex-wrap: wrap; }
+		.bsky-footer a { text-decoration: none; color: var(--muted); } .bsky-footer a:hover { color: var(--accent-ink); }
+
+		/* Composed post */
+		.composed h3 { font-size: 1.2rem; margin: 0 0 0.5rem; }
+		.composed h3 a { color: inherit; text-decoration: none; }
+		.composed h3 a:hover { color: var(--accent-ink); }
+		.composed .excerpt { font-size: 0.94rem; color: var(--muted); margin: 0 0 0.7rem; }
+		.embed-card { display: flex; gap: 0; border: 1px solid var(--hair); border-radius: 10px; overflow: hidden;
+			text-decoration: none; color: inherit; max-width: 600px; margin-top: 0.6rem; }
+		.embed-card:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--hair)); }
+		.embed-card-img img { width: 96px; height: 96px; object-fit: cover; display: block; }
+		.embed-card-body { padding: 0.7em 0.95em; display: flex; flex-direction: column; justify-content: center; gap: 0.25em; min-width: 0; }
+		.embed-card-title { font-size: 0.9rem; font-weight: 600; }
+		.embed-card-desc { font-size: 0.82rem; color: var(--muted); }
+		.read-more { display: inline-block; margin-top: 0.8rem; font-size: 0.85rem; font-weight: 600; text-decoration: none; }
+		.read-more:hover { text-decoration: underline; }
+
+		/* ── Footer ── */
+		footer.site { border-top: 1px solid var(--hair); margin-top: 1rem; padding-block: 2.5rem; color: var(--muted); }
+		footer.site .wrap { display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+		footer.site .fnav { display: flex; gap: 1.1rem; align-items: center; }
+		footer.site a { color: var(--muted); text-decoration: none; display: inline-flex; }
+		footer.site a:hover { color: var(--accent-ink); }
+		footer.site svg { width: 18px; height: 18px; fill: currentColor; }
+
+		@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+		:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
 	</style>
 </head>
-<body class="is-preload">
-<div id="wrapper">
+<body>
 
-	<!-- Header -->
-	<header id="header">
-		<div class="inner">
-			<a href="index.html" class="logo">
-				<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Plum Lab</span>
-			</a>
+<header class="site">
+	<div class="wrap">
+		<a class="brand" href="https://plum.science/"><img src="https://plum.science/images/logo.svg" alt="Plum Lab logo"><b>Plum Lab</b></a>
+		<nav class="top">
+			<a href="https://plum.science/science.html">Science</a>
+			<a href="https://plum.science/people.html">People</a>
+			<a href="https://plum.science/publications.html">Publications</a>
+			<a href="https://plum.science/resources.html">Resources</a>
+			<a href="https://plum.science/contact.html">Contact</a>
+		</nav>
+		<details class="mnav">
+			<summary aria-label="Open menu">&#9776;</summary>
 			<nav>
-				<ul>
-					<li><a href="#menu">Menu</a></li>
-				</ul>
+				<a href="https://plum.science/science.html">Science</a>
+				<a href="https://plum.science/people.html">People</a>
+				<a href="https://plum.science/publications.html">Publications</a>
+				<a href="https://plum.science/resources.html">Resources</a>
+				<a href="https://plum.science/contact.html">Contact</a>
 			</nav>
+		</details>
+	</div>
+</header>
+
+<section class="hero">
+	<img class="hero-img" src="https://plum.science/images/hero-neuroimmune.jpg" alt="Confocal whole-mount of mouse skin: L1CAM-stained sensory nerve fibers in white with avidin-labeled mast cells in green">
+	<div class="wrap">
+		<p class="eyebrow">Peripheral Neuroimmunology &middot; Heidelberg</p>
+		<h1>Mast cells are the body&#39;s <span class="lede-accent">neuroimmune sentinels.</span></h1>
+		<p class="lead">We study how mast cells sense environmental and tissue cues and convert them into rapid, protective responses &mdash; the fast interface between the immune system and the nervous system.</p>
+		<div class="cta-row">
+			<a class="btn btn-primary" href="#feed">Read the lab news</a>
+			<a class="btn btn-ghost" href="https://plum.science/contact.html">Join the lab</a>
 		</div>
-	</header>
+	</div>
+	<p class="caption">Whole-mount mouse skin &middot; nerves, L1CAM (white) &middot; mast cells, avidin (green)</p>
+</section>
 
-	<!-- Menu -->
-	<nav id="menu">
-		<h2>Menu</h2>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="science.html">Science</a></li>
-			<li><a href="people.html">People</a></li>
-			<li><a href="publications.html">Publications</a></li>
-			<li><a href="resources.html">Resources</a></li>
-			<li><a href="contact.html">Contact</a></li>
-			<li><a href="https://mastcell.cloudflareaccess.com/#/Launcher">Internal</a></li>
-		</ul>
-	</nav>
+<section class="pillars">
+	<div class="wrap">
+		<p class="section-label">What we study</p>
+		<div class="pillar-grid">
+			<div class="pillar">
+				<h3>Sentinels, not soldiers</h3>
+				<p>A proteomic atlas showed mast cells are molecularly distinct from classical innate immune cells &mdash; wired for neuroimmune communication at barrier surfaces.</p>
+				<a class="cite" href="https://plum.science/science.html">Read the science &rarr;</a>
+			</div>
+			<div class="pillar">
+				<h3>They shape behavior</h3>
+				<p>Sensitized mice avoid antigen-containing food; mice lacking mast cells or IgE do not. Mast cells drive antigen-avoidance &mdash; direct support for the toxin hypothesis of allergy.</p>
+				<a class="cite" href="https://plum.science/science.html">Read the science &rarr;</a>
+			</div>
+			<div class="pillar">
+				<h3>Signal converters</h3>
+				<p>Mast cells translate immune and tissue states into organ-specific neural responses &mdash; itch, pain, nausea, avoidance &mdash; redefining them as central regulators of physiology.</p>
+				<a class="cite" href="https://plum.science/science.html">Read the science &rarr;</a>
+			</div>
+		</div>
+	</div>
+</section>
 
-	<!-- Main -->
-	<div id="main">
-		<div class="inner">
-			<header>
-				<h1>Plum Lab for Peripheral Neuroimmunology</h1>
-				<p>At the Plum Lab, we investigate how the immune system shapes behavior and physiology to protect the body from harmful environments. We focus on <strong>MAST CELLS</strong> and study how they sense environmental and tissue cues to translate these into rapid protective responses.</p>
-				<p style="margin-top:1.5em;">Lab News &mdash; <a href="https://plum.science/feed.xml">RSS feed</a></p>
-			</header>
+<section class="feed" id="feed">
+	<div class="wrap">
+		<div class="feed-intro">
+			<h2>Lab news</h2>
+			<a href="https://plum.science/feed.xml">RSS feed &rarr;</a>
+		</div>
+		<div class="stream">
 
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					23 Jun 2026<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">23 Jun 2026<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Nature Reviews Immunology</span>
 							<span class="bsky-author-handle">@natrevimmunol.nature.com</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Immunity: from specificity to physiological integration</p></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TTB4hQ" target="_blank" rel="noopener">
 						
@@ -273,49 +281,36 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>23 Jun 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/natrevimmunol.nature.com/post/3moyckoxt522r" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/natrevimmunol.nature.com/post/3moyckoxt522r" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					11 Jul 2025<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">11 Jul 2025<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">I</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Immunity</span>
 							<span class="bsky-author-handle">@cp-immunity.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TLsNpk" target="_blank" rel="noopener">
 						
@@ -328,51 +323,36 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This paper by Janssen et al. shows that T cell-intrinsic DOCK8 expression is required to restrain mucosal mast cell expansion and prevent susceptibility to oral anaphylaxis. Mechanistically, DOCK8 deficiency causes a loss of intestinal Th17 cells, leading to microbial dysbiosis and elevated IL-25 production, which drives IL-4 secretion by Th2 cells to expand mucosal mast cells and increase intestinal permeability. This pathogenic cascade is left unrestrained because DOCK8-deficient regulatory T cells concurrently fail to suppress the intestinal IL-4 production and mast cell expansion.</div>
-					
-
+					<div class="labnote">This paper by Janssen et al. shows that T cell-intrinsic DOCK8 expression is required to restrain mucosal mast cell expansion and prevent susceptibility to oral anaphylaxis. Mechanistically, DOCK8 deficiency causes a loss of intestinal Th17 cells, leading to microbial dysbiosis and elevated IL-25 production, which drives IL-4 secretion by Th2 cells to expand mucosal mast cells and increase intestinal permeability. This pathogenic cascade is left unrestrained because DOCK8-deficient regulatory T cells concurrently fail to suppress the intestinal IL-4 production and mast cell expansion.</div>
 					<div class="bsky-footer">
 						<span>11 Jul 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3ltov7f5bdn2i" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3ltov7f5bdn2i" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					19 May 2026<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">19 May 2026<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">I</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Immunity</span>
 							<span class="bsky-author-handle">@cp-immunity.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Online now:  Interleukin-4-producing type 2 innate lymphoid cells in the lymph node promote proallergic Tfh13 cell differentiation</p></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TSctTV" target="_blank" rel="noopener">
 						
@@ -385,51 +365,36 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This paper by Lee et al. demonstrates that lymph node-resident ILC2s selectively drive the differentiation of proallergic Tfh13 cells, which are required for high-affinity anaphylactic IgE responses. Mechanistically, ILC2s traffic into draining lymph nodes in a CCR8-dependent manner and produce IL-4, providing a specialized molecular signal necessary for the induction of pathogenic Tfh13 cells but dispensable for conventional Tfh2 cells.</div>
-					
-
+					<div class="labnote">This paper by Lee et al. demonstrates that lymph node-resident ILC2s selectively drive the differentiation of proallergic Tfh13 cells, which are required for high-affinity anaphylactic IgE responses. Mechanistically, ILC2s traffic into draining lymph nodes in a CCR8-dependent manner and produce IL-4, providing a specialized molecular signal necessary for the induction of pathogenic Tfh13 cells but dispensable for conventional Tfh2 cells.</div>
 					<div class="bsky-footer">
 						<span>19 May 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3mma6dcbhig2w" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3mma6dcbhig2w" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					13 May 2026<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">13 May 2026<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">C</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Cell Reports</span>
 							<span class="bsky-author-handle">@cp-cellreports.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Vip+ vagal neurons control allergen-induced responses</p></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TSWwFh" target="_blank" rel="noopener">
 						
@@ -442,51 +407,36 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This paper by Zhu et al. identifies Vip+ vagal sensory neurons as a distinct subset necessary and sufficient for allergen-induced airway hyperreactivity and type 2 cytokine expression in the lung. Mechanistically, these neurons relay peripheral lung allergen signals to the nucleus of the solitary tract (nTS) in the brainstem and drive asthmatic pathology via NGFR signaling, defining a specific body-brain neuroimmune axis in asthma.</div>
-					
-
+					<div class="labnote">This paper by Zhu et al. identifies Vip+ vagal sensory neurons as a distinct subset necessary and sufficient for allergen-induced airway hyperreactivity and type 2 cytokine expression in the lung. Mechanistically, these neurons relay peripheral lung allergen signals to the nucleus of the solitary tract (nTS) in the brainstem and drive asthmatic pathology via NGFR signaling, defining a specific body-brain neuroimmune axis in asthma.</div>
 					<div class="bsky-footer">
 						<span>13 May 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/cp-cellreports.bsky.social/post/3mlr3au4mo32u" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/cp-cellreports.bsky.social/post/3mlr3au4mo32u" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					06 May 2026<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">06 May 2026<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">W</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Waggoner Lab</span>
 							<span class="bsky-author-handle">@labwaggoner.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Review @annualreviews.bsky.social <br>The Neuroimmune Circuitry of Peripheral Sensory Neuron Subtypes in Chronic Pain<br>www.annualreviews.org/content/jour...</p></div>
-
 					
 					<a class="bsky-link" href="https://www.annualreviews.org/content/journals/10.1146/annurev-immunol-082924-065848" target="_blank" rel="noopener">
 						
@@ -499,51 +449,36 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This review by Yong and Renthal highlights how distinct peripheral sensory neuron subtypes, identified via single-cell transcriptomics, form context-specific neuroimmune circuits to coordinate tissue repair and immune responses. They detail how the dysregulation of these subtype-specific interactions contributes to neuroinflammatory diseases, including atopic dermatitis, headache, and neuropathic pain, presenting these circuits as precise therapeutic targets.</div>
-					
-
+					<div class="labnote">This review by Yong and Renthal highlights how distinct peripheral sensory neuron subtypes, identified via single-cell transcriptomics, form context-specific neuroimmune circuits to coordinate tissue repair and immune responses. They detail how the dysregulation of these subtype-specific interactions contributes to neuroinflammatory diseases, including atopic dermatitis, headache, and neuropathic pain, presenting these circuits as precise therapeutic targets.</div>
 					<div class="bsky-footer">
 						<span>06 May 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/labwaggoner.bsky.social/post/3ml7a5l6spk27" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/labwaggoner.bsky.social/post/3ml7a5l6spk27" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					27 Mar 2026<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">27 Mar 2026<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">I</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Immunity</span>
 							<span class="bsky-author-handle">@cp-immunity.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Online now:  Tuft cells promote reactivation of memory Th2 cells and are required for protective immunity to intestinal helminth re-infection</p></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TRl1B6" target="_blank" rel="noopener">
 						
@@ -556,51 +491,36 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This paper by Stanbery et al. demonstrates that intestinal tuft cells are essential for protective immunity against secondary Heligmosomoides polygyrus bakeri infection by releasing IL-25 and LTC4 to reactivate memory Th2 cells. These tissue-specific cues drive Th2 cell production of IL-13, which acts in tandem with granuloma formation to mediate effective worm expulsion from the intestinal lumen.</div>
-					
-
+					<div class="labnote">This paper by Stanbery et al. demonstrates that intestinal tuft cells are essential for protective immunity against secondary Heligmosomoides polygyrus bakeri infection by releasing IL-25 and LTC4 to reactivate memory Th2 cells. These tissue-specific cues drive Th2 cell production of IL-13, which acts in tandem with granuloma formation to mediate effective worm expulsion from the intestinal lumen.</div>
 					<div class="bsky-footer">
 						<span>27 Mar 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3mi36opwy7623" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3mi36opwy7623" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					10 Mar 2026<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">10 Mar 2026<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Nature Reviews Immunology</span>
 							<span class="bsky-author-handle">@natrevimmunol.nature.com</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Early life allergen sensitivity starts in the skin</p></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TRPkK6" target="_blank" rel="noopener">
 						
@@ -613,51 +533,36 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This research highlight by Bird summarizes a study by Xing et al. showing that a post-natal window of hypothalamic-pituitary-adrenal axis immaturity results in low glucocorticoid levels, allowing dermal cDC2s to act as &#34;peripheral immune inducers&#34; that directly trigger acute type 17 skin inflammation in response to allergens. This localized dermal inflammation drives helper T 2 cell sensitization in draining lymph nodes, establishing enhanced susceptibility to subsequent systemic and respiratory allergic challenges.</div>
-					
-
+					<div class="labnote">This research highlight by Bird summarizes a study by Xing et al. showing that a post-natal window of hypothalamic-pituitary-adrenal axis immaturity results in low glucocorticoid levels, allowing dermal cDC2s to act as &#34;peripheral immune inducers&#34; that directly trigger acute type 17 skin inflammation in response to allergens. This localized dermal inflammation drives helper T 2 cell sensitization in draining lymph nodes, establishing enhanced susceptibility to subsequent systemic and respiratory allergic challenges.</div>
 					<div class="bsky-footer">
 						<span>10 Mar 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/natrevimmunol.nature.com/post/3mgplwt6hks2u" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/natrevimmunol.nature.com/post/3mgplwt6hks2u" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					09 Mar 2026<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">09 Mar 2026<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">M</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Mucosal Immunology</span>
 							<span class="bsky-author-handle">@mucosalimmunol.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Interaction between airway basal cells, mast cells and type 2 immunity contributes to epithelial barrier dysfunction in allergic rhinitis: www.mucosalimmunology.org/article/S193...</p></div>
-
 					
 					<a class="bsky-link" href="https://www.mucosalimmunology.org/article/S1933-0219(26)00021-8/fulltext" target="_blank" rel="noopener">
 						
@@ -668,52 +573,37 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This paper by Ruysseveldt et al. establishes a bidirectional proinflammatory axis between nasal basal cells and mast cells that drives epithelial barrier dysfunction in allergic rhinitis. They demonstrate that Der p1 acts via PAR2 to trigger basal cell release of cytokines and chemokines, including SCF, which recruits mast cells to the epithelium. In turn, mast cell-derived histamine and tryptase stimulate further basal cell chemokine release, while histamine combined with IL-4 and IL-13 directly impairs basal cell proliferation, mobility, differentiation, and barrier formation.</div>
-					
-
+					<div class="labnote">This paper by Ruysseveldt et al. establishes a bidirectional proinflammatory axis between nasal basal cells and mast cells that drives epithelial barrier dysfunction in allergic rhinitis. They demonstrate that Der p1 acts via PAR2 to trigger basal cell release of cytokines and chemokines, including SCF, which recruits mast cells to the epithelium. In turn, mast cell-derived histamine and tryptase stimulate further basal cell chemokine release, while histamine combined with IL-4 and IL-13 directly impairs basal cell proliferation, mobility, differentiation, and barrier formation.</div>
 					<div class="bsky-footer">
 						<span>09 Mar 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/mucosalimmunol.bsky.social/post/3mgmy23s4pk27" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/mucosalimmunol.bsky.social/post/3mgmy23s4pk27" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					01 Mar 2026<span class="tag tag-paper">paper</span><span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">01 Mar 2026<span class="tag paper">paper</span><span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Nature</span>
 							<span class="bsky-author-handle">@nature.com</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>The most influential explanation of a recent surge in allergies is the hygiene hypothesis</p>
 <p>go.nature.com/40woBkB</p></div>
-
 					
 					<a class="bsky-link" href="https://go.nature.com/40woBkB" target="_blank" rel="noopener">
 						
@@ -726,51 +616,36 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This commentary by Chatila highlights a study by Erickson et al. demonstrating that exposure to microbe-rich environments (such as pet-shop housing) drives environmental immune imprinting that closes the early-life window of allergy susceptibility. This protection is mediated by two distinct pathways: a history of pathogen exposure that primes a broad, highly cross-reactive IgG-mediated type 1 immunity capable of intercepting unfamiliar allergens, and a non-inflammatory oral tolerance pathway where dietary exposures generate cross-protective, regulatory T cell-mediated resistance to antigenically related foods.</div>
-					
-
+					<div class="labnote">This commentary by Chatila highlights a study by Erickson et al. demonstrating that exposure to microbe-rich environments (such as pet-shop housing) drives environmental immune imprinting that closes the early-life window of allergy susceptibility. This protection is mediated by two distinct pathways: a history of pathogen exposure that primes a broad, highly cross-reactive IgG-mediated type 1 immunity capable of intercepting unfamiliar allergens, and a non-inflammatory oral tolerance pathway where dietary exposures generate cross-protective, regulatory T cell-mediated resistance to antigenically related foods.</div>
 					<div class="bsky-footer">
 						<span>01 Mar 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/nature.com/post/3mfyi2r6ez22l" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/nature.com/post/3mfyi2r6ez22l" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					25 Feb 2026<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">25 Feb 2026<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">I</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Immunity</span>
 							<span class="bsky-author-handle">@cp-immunity.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Online now:  Sensory neuron production of substance P and TAFA4 promotes disease tolerance during viral infection</p></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TR96Wd" target="_blank" rel="noopener">
 						
@@ -783,51 +658,36 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This paper by Roger et al. demonstrates that herpes simplex virus type 1 directly activates sensory neurons to release substance P and TAFA4, which independently promote disease tolerance by limiting immunopathology without altering viral clearance. In the skin, TRPV1+ neuron-derived substance P restricts neutrophil infiltration via MRGPRA1 to accelerate healing, while in the dorsal root ganglia, a TAFA4-IL10 axis acts post-viral clearance to resolve inflammation.</div>
-					
-
+					<div class="labnote">This paper by Roger et al. demonstrates that herpes simplex virus type 1 directly activates sensory neurons to release substance P and TAFA4, which independently promote disease tolerance by limiting immunopathology without altering viral clearance. In the skin, TRPV1+ neuron-derived substance P restricts neutrophil infiltration via MRGPRA1 to accelerate healing, while in the dorsal root ganglia, a TAFA4-IL10 axis acts post-viral clearance to resolve inflammation.</div>
 					<div class="bsky-footer">
 						<span>25 Feb 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3mfpky5wqhe2r" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3mfpky5wqhe2r" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					20 Feb 2026<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">20 Feb 2026<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">I</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Immunity</span>
 							<span class="bsky-author-handle">@cp-immunity.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Online now:  Hyperactivation of sympathetic nerves fuels basophil infiltration in atopic dermatitis</p></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TR4F1b" target="_blank" rel="noopener">
 						
@@ -840,52 +700,37 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This paper by Xie et al. identifies a sympathetic nervous system-basophil axis where atopic dermatitis-induced anxiety hyperactivates skin sympathetic neurons, releasing norepinephrine to stimulate beta2-adrenergic receptors on basophils. This signaling enhances basophil motility and activates the CCL6-CCR1 chemokine pathway (CCL23-CCR1 in humans), fueling basophil infiltration and amplifying chronic skin inflammation.</div>
-					
-
+					<div class="labnote">This paper by Xie et al. identifies a sympathetic nervous system-basophil axis where atopic dermatitis-induced anxiety hyperactivates skin sympathetic neurons, releasing norepinephrine to stimulate beta2-adrenergic receptors on basophils. This signaling enhances basophil motility and activates the CCL6-CCR1 chemokine pathway (CCL23-CCR1 in humans), fueling basophil infiltration and amplifying chronic skin inflammation.</div>
 					<div class="bsky-footer">
 						<span>20 Feb 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3mfchgnl6bn2m" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3mfchgnl6bn2m" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					04 Feb 2026<span class="tag tag-paper">paper</span><span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">04 Feb 2026<span class="tag paper">paper</span><span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Nature</span>
 							<span class="bsky-author-handle">@nature.com</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Nature research paper: Environmentally driven immune imprinting protects against allergy</p>
 <p>go.nature.com/46lGExb</p></div>
-
 					
 					<a class="bsky-link" href="https://go.nature.com/46lGExb" target="_blank" rel="noopener">
 						
@@ -898,50 +743,37 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>04 Feb 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/nature.com/post/3mdzrntcp2d2e" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/nature.com/post/3mdzrntcp2d2e" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					07 Jan 2026<span class="tag tag-paper">paper</span><span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">07 Jan 2026<span class="tag paper">paper</span><span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Nature</span>
 							<span class="bsky-author-handle">@nature.com</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Nature research paper: Neuro-epithelial circuits promote sensory convergence and intestinal immunity</p>
 <p>go.nature.com/4qeRjlt</p></div>
-
 					
 					<a class="bsky-link" href="https://go.nature.com/4qeRjlt" target="_blank" rel="noopener">
 						
@@ -954,51 +786,36 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This paper by Zhang et al. demonstrates that TRPV1+ pain-sensing nociceptors cooperate with chemosensory epithelial tuft cells via CGRP signaling to drive intestinal type 2 inflammation and anti-helminth immunity, showing that nociceptor activation promotes epithelial progenitor proliferation and that epithelial/tuft cell-intrinsic CGRP receptors are required for this tissue adaptation.</div>
-					
-
+					<div class="labnote">This paper by Zhang et al. demonstrates that TRPV1+ pain-sensing nociceptors cooperate with chemosensory epithelial tuft cells via CGRP signaling to drive intestinal type 2 inflammation and anti-helminth immunity, showing that nociceptor activation promotes epithelial progenitor proliferation and that epithelial/tuft cell-intrinsic CGRP receptors are required for this tissue adaptation.</div>
 					<div class="bsky-footer">
 						<span>07 Jan 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/nature.com/post/3mbtyincctb2y" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/nature.com/post/3mbtyincctb2y" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					04 Jan 2026<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">04 Jan 2026<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">C</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Cell Reports</span>
 							<span class="bsky-author-handle">@cp-cellreports.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Mast cell-specific CysLT2 receptor signaling inhibits cysteinyl leukotriene-dependent mast cell activation and type 2 allergic lung inflammation</p></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TQ7wW2" target="_blank" rel="noopener">
 						
@@ -1011,51 +828,36 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This paper by Nagai et al. identifies mast cell-intrinsic CysLT2R as a checkpoint molecule that inhibits CysLT1R-mediated mast cell activation and dust mite-induced type 2 lung inflammation by leveraging G-beta-gamma-dependent adenylate cyclase potentiation to enhance cAMP/PKA signaling.</div>
-					
-
+					<div class="labnote">This paper by Nagai et al. identifies mast cell-intrinsic CysLT2R as a checkpoint molecule that inhibits CysLT1R-mediated mast cell activation and dust mite-induced type 2 lung inflammation by leveraging G-beta-gamma-dependent adenylate cyclase potentiation to enhance cAMP/PKA signaling.</div>
 					<div class="bsky-footer">
 						<span>04 Jan 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/cp-cellreports.bsky.social/post/3mbknu2h3522n" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/cp-cellreports.bsky.social/post/3mbknu2h3522n" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					03 Jan 2026<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">03 Jan 2026<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">W</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Waggoner Lab</span>
 							<span class="bsky-author-handle">@labwaggoner.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Review @jci.org <br>Mechanisms and clinical implications of gut-brain interactions<br>www.jci.org/articles/vie...</p></div>
-
 					
 					<a class="bsky-link" href="https://www.jci.org/articles/view/196346" target="_blank" rel="noopener">
 						
@@ -1068,51 +870,36 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This review by Lorsch and Liddle details the specific mechanisms of gut-brain communication—including the enteroendocrine-neural circuit and neuroimmunological pathways—and shows how these connections drive clinical disease and can be therapeutically leveraged by agents like GLP-1 receptor agonists.</div>
-					
-
+					<div class="labnote">This review by Lorsch and Liddle details the specific mechanisms of gut-brain communication—including the enteroendocrine-neural circuit and neuroimmunological pathways—and shows how these connections drive clinical disease and can be therapeutically leveraged by agents like GLP-1 receptor agonists.</div>
 					<div class="bsky-footer">
 						<span>03 Jan 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/labwaggoner.bsky.social/post/3mbieoo5qmc2x" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/labwaggoner.bsky.social/post/3mbieoo5qmc2x" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					01 Jan 2026<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">01 Jan 2026<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">S</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Science Magazine</span>
 							<span class="bsky-author-handle">@science.org</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Humans may be genetically programmed to produce antibodies against peanut, suggests a #ScienceTranslationalMedicine study showing nonallergic people harbor convergent, germline-encoded antibodies against the allergen Ara h 2. <a href="https://scim.ag/3LqfEp9">https://scim.ag/3LqfEp9</a></p></div>
-
 					
 					<a class="bsky-link" href="https://scim.ag/3LqfEp9" target="_blank" rel="noopener">
 						
@@ -1125,51 +912,36 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This paper by Marini-Rapoport et al. reveals that human IgG recognition of the immunodominant peanut allergen Ara h 2 is intrinsically programmed by the germline antibody repertoire, driven by structural convergence across diverse, highly prevalent gene rearrangements that target a common public epitope in both allergic and non-allergic individuals.</div>
-					
-
+					<div class="labnote">This paper by Marini-Rapoport et al. reveals that human IgG recognition of the immunodominant peanut allergen Ara h 2 is intrinsically programmed by the germline antibody repertoire, driven by structural convergence across diverse, highly prevalent gene rearrangements that target a common public epitope in both allergic and non-allergic individuals.</div>
 					<div class="bsky-footer">
 						<span>01 Jan 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/science.org/post/3mberhdimmu2i" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/science.org/post/3mberhdimmu2i" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					27 Dec 2025<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">27 Dec 2025<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">S</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Science Magazine</span>
 							<span class="bsky-author-handle">@science.org</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>In a #ScienceImmunology Review from earlier this year, researchers discuss how interactions between the nervous and immune systems could impact neurological disorders and allergy-related behaviors like food avoidance. <a href="https://scim.ag/3Y1hcsr">https://scim.ag/3Y1hcsr</a></p></div>
-
 					
 					<a class="bsky-link" href="https://scim.ag/3Y1hcsr" target="_blank" rel="noopener">
 						
@@ -1182,95 +954,69 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>27 Dec 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/science.org/post/3maymnes7zn2n" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/science.org/post/3maymnes7zn2n" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					03 Dec 2025<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">03 Dec 2025<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">S</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Science Magazine</span>
 							<span class="bsky-author-handle">@science.org</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>This paper by Conde et al. demonstrates that a conjugate vaccine coupling a mutated human IgE fragment to a CRM carrier induces durable, neutralizing anti-IgE autoantibodies in humanized mice, providing long-term protection against systemic and cutaneous anaphylaxis without compromising anti-helminth immunity. #ScienceTranslationalMedicine. <a href="https://scim.ag/3XxHAdi">https://scim.ag/3XxHAdi</a></p></div>
-
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>03 Dec 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/science.org/post/3m74i2bf3vt2h" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/science.org/post/3m74i2bf3vt2h" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					24 Oct 2025<span class="tag tag-paper">paper</span><span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">24 Oct 2025<span class="tag paper">paper</span><span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Nature Reviews Neuroscience</span>
 							<span class="bsky-author-handle">@natrevneuro.nature.com</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Central neural circuits underlying itch sensation — a Review by Yan-Gang Sun</p>
 <p>#neuroscience #neuroskyence</p>
 <p>www.nature.com/articles/s41...</p></div>
-
 					
 					<a class="bsky-link" href="https://www.nature.com/articles/s41583-025-00981-8?utm_source=bluesky&amp;utm_medium=social&amp;utm_campaign=nrn" target="_blank" rel="noopener">
 						
@@ -1283,50 +1029,37 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>24 Oct 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/natrevneuro.nature.com/post/3m3wvlqa4gk2c" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/natrevneuro.nature.com/post/3m3wvlqa4gk2c" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					03 Sep 2025<span class="tag tag-paper">paper</span><span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">03 Sep 2025<span class="tag paper">paper</span><span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Nature</span>
 							<span class="bsky-author-handle">@nature.com</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Nature research paper: Maternal stress triggers early-life eczema through fetal mast cell programming</p>
 <p>go.nature.com/3UPz8Vm</p></div>
-
 					
 					<a class="bsky-link" href="https://go.nature.com/3UPz8Vm" target="_blank" rel="noopener">
 						
@@ -1339,50 +1072,37 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>03 Sep 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/nature.com/post/3lxw76jhaur2r" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/nature.com/post/3lxw76jhaur2r" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					27 Aug 2025<span class="tag tag-paper">paper</span><span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">27 Aug 2025<span class="tag paper">paper</span><span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Nature</span>
 							<span class="bsky-author-handle">@nature.com</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>The causes of early-life eczema have been unclear, but evidence indicates that changes to fetal immune cells and sensory neurons during pregnancy play a key part</p>
 <p>go.nature.com/45Y9aUQ</p></div>
-
 					
 					<a class="bsky-link" href="https://go.nature.com/45Y9aUQ" target="_blank" rel="noopener">
 						
@@ -1395,50 +1115,37 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>27 Aug 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/nature.com/post/3lxffz4adeu2q" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/nature.com/post/3lxffz4adeu2q" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					31 Jul 2025<span class="tag tag-paper">paper</span><span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">31 Jul 2025<span class="tag paper">paper</span><span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Nature</span>
 							<span class="bsky-author-handle">@nature.com</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>This paper by Shi et al. (reported by Nature) identifies that unrelated allergens trigger allergic airway inflammation across species via conserved pore-forming proteins that create membrane holes, allowing calcium influx to initiate the primary danger signals that drive the type 2 immune response.</p>
 <p>go.nature.com/3H9B1cd</p></div>
-
 					
 					<a class="bsky-link" href="https://go.nature.com/3H9B1cd" target="_blank" rel="noopener">
 						
@@ -1451,49 +1158,36 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>31 Jul 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/nature.com/post/3lvat7dryvs2t" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/nature.com/post/3lvat7dryvs2t" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					24 Jul 2025<span class="tag tag-paper">paper</span><span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">24 Jul 2025<span class="tag paper">paper</span><span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">J</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Jonathan Kipnis</span>
 							<span class="bsky-author-handle">@jonykipnis.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Excited to share our new work, led by an exceptional graduate student, Tornike Mamuladze, on the role of meningeal mast cells in regulation of brain/dura access points, with implications to CSF flow dynamics and meningitis ||  www.cell.com/cell/fulltex...</p></div>
-
 					
 					<a class="bsky-link" href="https://www.cell.com/cell/fulltext/S0092-8674%2825%2900748-2" target="_blank" rel="noopener">
 						
@@ -1506,52 +1200,37 @@
 						</div>
 					</a>
 					
-
 					
-
-					
-					<div class="lab-note" style="margin-top:0.75em;margin-bottom:0;">This paper by Mamuladze et al. reveals that dural mast cells regulate cerebrospinal fluid (CSF) dynamics at arachnoid cuff exit (ACE) points, where degranulation-induced histamine release dilates bridging veins to restrict CSF flow, thereby recruiting neutrophils and forming a critical barrier that prevents pathogens from spreading into the brain during meningitis.</div>
-					
-
+					<div class="labnote">This paper by Mamuladze et al. reveals that dural mast cells regulate cerebrospinal fluid (CSF) dynamics at arachnoid cuff exit (ACE) points, where degranulation-induced histamine release dilates bridging veins to restrict CSF flow, thereby recruiting neutrophils and forming a critical barrier that prevents pathogens from spreading into the brain during meningitis.</div>
 					<div class="bsky-footer">
 						<span>24 Jul 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/jonykipnis.bsky.social/post/3luqdq7vf722e" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/jonykipnis.bsky.social/post/3luqdq7vf722e" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					12 Jul 2025<span class="tag tag-paper">paper</span><span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">12 Jul 2025<span class="tag paper">paper</span><span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Nature</span>
 							<span class="bsky-author-handle">@nature.com</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>A speedy imaging method can map the nerves running from a mouse’s brain and spinal cord to the rest of its body at micrometre-scale resolution</p>
 <p>go.nature.com/3Il0e3x</p></div>
-
 					
 					<a class="bsky-link" href="https://go.nature.com/3Il0e3x" target="_blank" rel="noopener">
 						
@@ -1564,49 +1243,36 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>12 Jul 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/nature.com/post/3ltrn6r2ynq2k" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/nature.com/post/3ltrn6r2ynq2k" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					01 Nov 2025<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">01 Nov 2025<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">I</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Immunity</span>
 							<span class="bsky-author-handle">@cp-immunity.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Online now:  Long-lived IgE plasma cells that reside in the spleen contribute to the persistence of the IgE response</p></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TP153X" target="_blank" rel="noopener">
 						
@@ -1619,49 +1285,36 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>01 Nov 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3m4ladu74d22q" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3m4ladu74d22q" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					25 Jun 2025<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">25 Jun 2025<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">I</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Immunity</span>
 							<span class="bsky-author-handle">@cp-immunity.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>This paper by Janssen et al. demonstrates that DOCK8 deficiency drives food allergy and oral anaphylaxis by disrupting T regulatory cell and Th17 function, causing dysbiosis and an IL-25/IL-4 cascade that expands mucosal mast cells and increases intestinal permeability.</p></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TLYhFm" target="_blank" rel="noopener">
 						
@@ -1674,49 +1327,36 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>25 Jun 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3lshff5onav2w" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3lshff5onav2w" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					23 May 2025<span class="tag tag-paper">paper</span><span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">23 May 2025<span class="tag paper">paper</span><span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">K</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Kuchroo Lab</span>
 							<span class="bsky-author-handle">@kuchroolab.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>🚨New paper with @thexavierlab.bsky.social @science.org on the critical role of 🔄neuroimmune crosstalk in immune defense in the gut🪱🪱.<br>🧪@genelayinstitute.bsky.social @mgbresearch.bsky.social @harvardmed.bsky.social @broadinstitute.org <br>www.science.org/doi/10.1126/...</p></div>
-
 					
 					<a class="bsky-link" href="https://www.science.org/doi/10.1126/science.adn9850#supplementary-materials" target="_blank" rel="noopener">
 						
@@ -1729,49 +1369,36 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>23 May 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/kuchroolab.bsky.social/post/3lpshyppgws2h" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/kuchroolab.bsky.social/post/3lpshyppgws2h" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					16 Nov 2025<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">16 Nov 2025<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">I</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Immunity</span>
 							<span class="bsky-author-handle">@cp-immunity.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p></p></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TPJB4b" target="_blank" rel="noopener">
 						
@@ -1784,49 +1411,36 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>16 Nov 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3m5rltwh6dr2q" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3m5rltwh6dr2q" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					04 May 2025<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">04 May 2025<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">I</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Immunity</span>
 							<span class="bsky-author-handle">@cp-immunity.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>This review by Brian Kim and David Artis details how peripheral sensory neuroimmunology has emerged as a distinct field by revealing critical interactions between the immune and sensory nervous systems that govern allergy, infection, autoimmunity, and tissue homeostasis.</p></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TKYVXH" target="_blank" rel="noopener">
 						
@@ -1839,49 +1453,36 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>04 May 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3loew7n2tfq22" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/cp-immunity.bsky.social/post/3loew7n2tfq22" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					30 Jan 2025<span class="tag tag-paper">paper</span><span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">30 Jan 2025<span class="tag paper">paper</span><span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">D</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Dan Kaplan</span>
 							<span class="bsky-author-handle">@danhkaplan.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Why scratching makes a rash worse and a potential benefit to scratching--it reduced S. aureus on skin.  Andrew Liu's paper from our lab is out now at #science #neuroimmune #immunology www.science.org/doi/10.1126/...</p></div>
-
 					
 					<a class="bsky-link" href="https://www.science.org/doi/10.1126/science.adn9390?utm_source=sfmc&amp;utm_medium=email&amp;utm_content=alert&amp;utm_campaign=SCIeToc&amp;et_rid=17785528&amp;et_cid=5512612" target="_blank" rel="noopener">
 						
@@ -1894,50 +1495,37 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>30 Jan 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/danhkaplan.bsky.social/post/3lgydbxuu6k2y" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/danhkaplan.bsky.social/post/3lgydbxuu6k2y" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					30 Jan 2025<span class="tag tag-paper">paper</span><span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">30 Jan 2025<span class="tag paper">paper</span><span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Nature</span>
 							<span class="bsky-author-handle">@nature.com</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Scratching a mosquito bite can offer a moment of bliss, and now scientists have learnt why: scratching activates an immune response that helps to protect the skin against harmful infections, at least in mice.</p>
 <p><a href="https://go.nature.com/4aJpL0r">https://go.nature.com/4aJpL0r</a></p></div>
-
 					
 					<a class="bsky-link" href="https://go.nature.com/4aJpL0r" target="_blank" rel="noopener">
 						
@@ -1950,49 +1538,36 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>30 Jan 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/nature.com/post/3lgyib4ozxd22" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/nature.com/post/3lgyib4ozxd22" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					29 Jan 2026<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">29 Jan 2026<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Neuron</span>
 							<span class="bsky-author-handle">@cp-neuron.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>This review by Kothari and Dong outlines how bidirectional neuroimmune crosstalk—where immune signaling molecules directly activate sensory neurons and neuropeptides modulate local immune responses—drives pathologic itch, highlighting tissue-specific mechanisms and novel targetable pathways for pruritic diseases.</p></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TQcygm" target="_blank" rel="noopener">
 						
@@ -2005,49 +1580,36 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>29 Jan 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/cp-neuron.bsky.social/post/3mdjipgekiz2w" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/cp-neuron.bsky.social/post/3mdjipgekiz2w" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					25 Jul 2025<span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">25 Jul 2025<span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Neuron</span>
 							<span class="bsky-author-handle">@cp-neuron.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>This paper by Dong et al. demonstrates that electroacupuncture drives a somatosensory-vagal-gastric reflex to improve gastric motility in both mice and human patients via the activation of deep fascial nociceptors and gastro-projecting vagal motor neurons.</p></div>
-
 					
 					<a class="bsky-link" href="http://dlvr.it/TM6jgn" target="_blank" rel="noopener">
 						
@@ -2060,51 +1622,38 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>25 Jul 2025</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/cp-neuron.bsky.social/post/3lusowfxwnz2w" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/cp-neuron.bsky.social/post/3lusowfxwnz2w" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					01 May 2026<span class="tag tag-paper">paper</span><span class="tag">repost</span>
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">01 May 2026<span class="tag paper">paper</span><span class="tag">repost</span></div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">N</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Nature Reviews Neuroscience</span>
 							<span class="bsky-author-handle">@natrevneuro.nature.com</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Wired for immunity: neuroimmune control of the lung by sensory neurons — a Review by Anna M. Ehlers, Idaira M. Guerrero-Fonseca, Christophe Altier, Bryan G. Yipp & Sebastien Talbot</p>
 <p>#neuroscience #neuroskyence</p>
 <p>www.nature.com/articles/s41...</p></div>
-
 					
 					<a class="bsky-link" href="https://www.nature.com/articles/s41583-026-01046-0?utm_source=bluesky&amp;utm_medium=social&amp;utm_campaign=nrn" target="_blank" rel="noopener">
 						
@@ -2117,49 +1666,36 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>01 May 2026</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/natrevneuro.nature.com/post/3mksf2jcqsc2o" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/natrevneuro.nature.com/post/3mksf2jcqsc2o" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
 			
-			<article class="news-article">
-
-				
-				
-				<span class="news-date">
-					10 Dec 2024
-				</span>
-
-				
-				
-				
-				
-				
-
+			
+			
+			
+			
+			
+			
+			
+			
+			<article class="item">
+				<div class="item-date">10 Dec 2024</div>
 				<div class="bsky-card">
 					<div class="bsky-card-header">
+						<div class="bsky-avatar">P</div>
 						<div class="bsky-author">
 							<span class="bsky-author-name">Plum Lab</span>
 							<span class="bsky-author-handle">@plumlab.bsky.social</span>
 						</div>
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
-
 					<div class="bsky-body"><p>Happy to share our latest review, 'Beyond classical immunity: Mast cells as signal converters between tissues and neurons'. Mast cells finally emerge as important mediators of neuro-immune communication and host-protective behavior!  🔗 tinyurl.com/3f7eufsm</p></div>
-
 					
 					<a class="bsky-link" href="https://tinyurl.com/3f7eufsm" target="_blank" rel="noopener">
 						
@@ -2172,55 +1708,33 @@
 						</div>
 					</a>
 					
-
 					
-
 					
-
 					<div class="bsky-footer">
 						<span>10 Dec 2024</span>
-						
-						<span>·</span>
-						<a href="https://bsky.app/profile/plumlab.bsky.social/post/3lcxrbt6cqc22" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
-						
+						<span>&middot;</span><a href="https://bsky.app/profile/plumlab.bsky.social/post/3lcxrbt6cqc22" target="_blank" rel="noopener">View on Bluesky &#8599;</a>
 					</div>
 				</div>
-
-				
-
 			</article>
+
+			
 			
 
 		</div>
 	</div>
+</section>
 
-	<!-- Footer -->
-	<footer id="footer">
-		<div class="inner">
-			<section>
-				<h2>Location</h2>
-				<p>Plum Lab<br />
-				Coming soon!<br />
-				Stay tuned.</p>
-			</section>
-			<section>
-				<h2>Follow</h2>
-				<ul class="icons">
-					<li><a href="https://bsky.app/profile/plumlab.bsky.social" class="icon brands style2 fa-bluesky"><span class="label">Bluesky</span></a></li>
-					<li><a href="https://github.com/Plum-immunology/" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-				</ul>
-			</section>
-			<ul class="copyright">
-				<li>&copy; Thomas Plum 2026 - <a href="impressum.html">Impressum</a> - <a href="datenschutz.html">Datenschutz</a></li><li>Design <a href="http://html5up.net">HTML5 UP</a></li>
-			</ul>
-		</div>
-	</footer>
+<footer class="site">
+	<div class="wrap">
+		<div>&copy; Thomas Plum 2026 &middot; Plum Lab for Peripheral Neuroimmunology</div>
+		<nav class="fnav">
+			<a href="https://bsky.app/profile/plumlab.bsky.social" aria-label="Bluesky" title="Bluesky"><svg viewBox="0 0 64 57" xmlns="http://www.w3.org/2000/svg"><path d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg></a>
+			<a href="https://github.com/Plum-immunology/" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+			<a href="https://plum.science/impressum.html">Impressum</a>
+			<a href="https://plum.science/datenschutz.html">Datenschutz</a>
+		</nav>
+	</div>
+</footer>
 
-</div>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
 </body>
 </html>
