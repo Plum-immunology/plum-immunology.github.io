@@ -137,6 +137,17 @@
 		.bsky-link:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--hair)); }
 		.bsky-link-img { width: 100%; display: block; aspect-ratio: 1200 / 630; object-fit: cover;
 			background: color-mix(in srgb, var(--blue-500) 12%, var(--card-bg)); }
+		/* native image grid (1-4 photos, Bluesky layouts) */
+		.bsky-imgs { margin-top: 0.7em; border-radius: 12px; overflow: hidden; display: grid; gap: 3px; }
+		.bsky-imgs .bsky-img-cell { overflow: hidden; min-height: 0; display: block;
+			background: color-mix(in srgb, var(--blue-500) 10%, var(--card-bg)); }
+		.bsky-imgs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+		.bsky-imgs-1 { grid-template-columns: 1fr; }
+		.bsky-imgs-1 .bsky-img-cell { max-height: 640px; }
+		.bsky-imgs-2 { grid-template-columns: 1fr 1fr; aspect-ratio: 2/1; }
+		.bsky-imgs-3 { grid-template-columns: 1fr 1fr; aspect-ratio: 2/1; }
+		.bsky-imgs-3 .bsky-img-cell:first-child { grid-row: span 2; }
+		.bsky-imgs-4 { grid-template-columns: 1fr 1fr; aspect-ratio: 3/2; }
 		.bsky-link-body { padding: 0.7em 0.9em 0.8em; display: flex; flex-direction: column; gap: 3px; }
 		.bsky-link-domain { font-size: 0.74rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 		.bsky-link-title { font-size: 0.9rem; font-weight: 600; line-height: 1.35;
@@ -270,6 +281,8 @@
 					</div>
 					<div class="bsky-body"><p>Immunity: from specificity to physiological integration</p></div>
 					
+					
+					
 					<a class="bsky-link" href="http://dlvr.it/TTB4hQ" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2026-06-23-immunity-from-specificity-to-physiological-integration-card.webp" alt="Immunity: from specificity to physiological integration" loading="lazy">
@@ -311,6 +324,8 @@
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
 					<div class="bsky-body"></div>
+					
+					
 					
 					<a class="bsky-link" href="http://dlvr.it/TLsNpk" target="_blank" rel="noopener">
 						
@@ -354,6 +369,8 @@
 					</div>
 					<div class="bsky-body"><p>Online now:  Interleukin-4-producing type 2 innate lymphoid cells in the lymph node promote proallergic Tfh13 cell differentiation</p></div>
 					
+					
+					
 					<a class="bsky-link" href="http://dlvr.it/TSctTV" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2026-05-19-online-now-interleukin-4-producing-type-2-innate-lympho-card.webp" alt="Interleukin-4-producing type 2 innate lymphoid cells in the lymph node promote proallergic Tfh13 cell differentiation" loading="lazy">
@@ -395,6 +412,8 @@
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
 					<div class="bsky-body"><p>Vip+ vagal neurons control allergen-induced responses</p></div>
+					
+					
 					
 					<a class="bsky-link" href="http://dlvr.it/TSWwFh" target="_blank" rel="noopener">
 						
@@ -438,9 +457,17 @@
 					</div>
 					<div class="bsky-body"><p>Review @annualreviews.bsky.social <br>The Neuroimmune Circuitry of Peripheral Sensory Neuron Subtypes in Chronic Pain<br>www.annualreviews.org/content/jour...</p></div>
 					
-					<a class="bsky-link" href="https://www.annualreviews.org/content/journals/10.1146/annurev-immunol-082924-065848" target="_blank" rel="noopener">
+					
+					<div class="bsky-imgs bsky-imgs-1">
 						
-						<img class="bsky-link-img" src="https://plum.science/news/images/2026-05-06-review-annualreviewsbskysocial-the-neuroimmune-circuitr-card.png" alt="" loading="lazy">
+						<a class="bsky-img-cell" style="aspect-ratio: 500 / 253;" href="https://plum.science/news/images/2026-05-06-review-annualreviewsbskysocial-the-neuroimmune-circuitr-img0.webp" target="_blank" rel="noopener">
+							<img src="https://plum.science/news/images/2026-05-06-review-annualreviewsbskysocial-the-neuroimmune-circuitr-img0.webp" alt="" loading="lazy">
+						</a>
+						
+					</div>
+					
+					
+					<a class="bsky-link" href="https://www.annualreviews.org/content/journals/10.1146/annurev-immunol-082924-065848" target="_blank" rel="noopener">
 						
 						<div class="bsky-link-body">
 							<span class="bsky-link-domain">annualreviews.org</span>
@@ -479,6 +506,8 @@
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
 					<div class="bsky-body"><p>Online now:  Tuft cells promote reactivation of memory Th2 cells and are required for protective immunity to intestinal helminth re-infection</p></div>
+					
+					
 					
 					<a class="bsky-link" href="http://dlvr.it/TRl1B6" target="_blank" rel="noopener">
 						
@@ -522,6 +551,8 @@
 					</div>
 					<div class="bsky-body"><p>Early life allergen sensitivity starts in the skin</p></div>
 					
+					
+					
 					<a class="bsky-link" href="http://dlvr.it/TRPkK6" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2026-03-10-early-life-allergen-sensitivity-starts-in-the-skin-card.webp" alt="Early life allergen sensitivity starts in the skin" loading="lazy">
@@ -564,6 +595,16 @@
 					</div>
 					<div class="bsky-body"><p>Interaction between airway basal cells, mast cells and type 2 immunity contributes to epithelial barrier dysfunction in allergic rhinitis: www.mucosalimmunology.org/article/S193...</p></div>
 					
+					
+					<div class="bsky-imgs bsky-imgs-1">
+						
+						<a class="bsky-img-cell" style="aspect-ratio: 1999 / 1011;" href="https://plum.science/news/images/2026-03-09-interaction-between-airway-basal-cells-mast-cells-and-t-img0.webp" target="_blank" rel="noopener">
+							<img src="https://plum.science/news/images/2026-03-09-interaction-between-airway-basal-cells-mast-cells-and-t-img0.webp" alt="" loading="lazy">
+						</a>
+						
+					</div>
+					
+					
 					<a class="bsky-link" href="https://www.mucosalimmunology.org/article/S1933-0219(26)00021-8/fulltext" target="_blank" rel="noopener">
 						
 						<div class="bsky-link-body">
@@ -604,6 +645,8 @@
 					</div>
 					<div class="bsky-body"><p>The most influential explanation of a recent surge in allergies is the hygiene hypothesis</p>
 <p>go.nature.com/40woBkB</p></div>
+					
+					
 					
 					<a class="bsky-link" href="https://go.nature.com/40woBkB" target="_blank" rel="noopener">
 						
@@ -647,6 +690,8 @@
 					</div>
 					<div class="bsky-body"><p>Online now:  Sensory neuron production of substance P and TAFA4 promotes disease tolerance during viral infection</p></div>
 					
+					
+					
 					<a class="bsky-link" href="http://dlvr.it/TR96Wd" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2026-02-25-online-now-sensory-neuron-production-of-substance-p-and-card.webp" alt="Sensory neuron production of substance P and TAFA4 promotes disease tolerance during viral infection" loading="lazy">
@@ -688,6 +733,8 @@
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
 					<div class="bsky-body"><p>Online now:  Hyperactivation of sympathetic nerves fuels basophil infiltration in atopic dermatitis</p></div>
+					
+					
 					
 					<a class="bsky-link" href="http://dlvr.it/TR4F1b" target="_blank" rel="noopener">
 						
@@ -732,6 +779,8 @@
 					<div class="bsky-body"><p>Nature research paper: Environmentally driven immune imprinting protects against allergy</p>
 <p>go.nature.com/46lGExb</p></div>
 					
+					
+					
 					<a class="bsky-link" href="https://go.nature.com/46lGExb" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2026-02-04-nature-research-paper-environmentally-driven-immune-imp-card.webp" alt="Environmentally driven immune imprinting protects against allergy - Nature" loading="lazy">
@@ -775,6 +824,8 @@
 					<div class="bsky-body"><p>Nature research paper: Neuro-epithelial circuits promote sensory convergence and intestinal immunity</p>
 <p>go.nature.com/4qeRjlt</p></div>
 					
+					
+					
 					<a class="bsky-link" href="https://go.nature.com/4qeRjlt" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2026-01-07-nature-research-paper-neuro-epithelial-circuits-promote-card.webp" alt="Neuro-epithelial circuits promote sensory convergence and intestinal immunity - Nature" loading="lazy">
@@ -816,6 +867,8 @@
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
 					<div class="bsky-body"><p>Mast cell-specific CysLT2 receptor signaling inhibits cysteinyl leukotriene-dependent mast cell activation and type 2 allergic lung inflammation</p></div>
+					
+					
 					
 					<a class="bsky-link" href="http://dlvr.it/TQ7wW2" target="_blank" rel="noopener">
 						
@@ -859,9 +912,17 @@
 					</div>
 					<div class="bsky-body"><p>Review @jci.org <br>Mechanisms and clinical implications of gut-brain interactions<br>www.jci.org/articles/vie...</p></div>
 					
-					<a class="bsky-link" href="https://www.jci.org/articles/view/196346" target="_blank" rel="noopener">
+					
+					<div class="bsky-imgs bsky-imgs-1">
 						
-						<img class="bsky-link-img" src="https://plum.science/news/images/2026-01-03-review-jciorg-mechanisms-and-clinical-implications-of-g-card.jpg" alt="Mechanisms and clinical implications of gut-brain interactions" loading="lazy">
+						<a class="bsky-img-cell" style="aspect-ratio: 711 / 900;" href="https://plum.science/news/images/2026-01-03-review-jciorg-mechanisms-and-clinical-implications-of-g-img0.webp" target="_blank" rel="noopener">
+							<img src="https://plum.science/news/images/2026-01-03-review-jciorg-mechanisms-and-clinical-implications-of-g-img0.webp" alt="" loading="lazy">
+						</a>
+						
+					</div>
+					
+					
+					<a class="bsky-link" href="https://www.jci.org/articles/view/196346" target="_blank" rel="noopener">
 						
 						<div class="bsky-link-body">
 							<span class="bsky-link-domain">jci.org</span>
@@ -900,6 +961,8 @@
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
 					<div class="bsky-body"><p>Humans may be genetically programmed to produce antibodies against peanut, suggests a #ScienceTranslationalMedicine study showing nonallergic people harbor convergent, germline-encoded antibodies against the allergen Ara h 2. <a href="https://scim.ag/3LqfEp9">https://scim.ag/3LqfEp9</a></p></div>
+					
+					
 					
 					<a class="bsky-link" href="https://scim.ag/3LqfEp9" target="_blank" rel="noopener">
 						
@@ -942,6 +1005,8 @@
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
 					<div class="bsky-body"><p>In a #ScienceImmunology Review from earlier this year, researchers discuss how interactions between the nervous and immune systems could impact neurological disorders and allergy-related behaviors like food avoidance. <a href="https://scim.ag/3Y1hcsr">https://scim.ag/3Y1hcsr</a></p></div>
+					
+					
 					
 					<a class="bsky-link" href="https://scim.ag/3Y1hcsr" target="_blank" rel="noopener">
 						
@@ -986,6 +1051,16 @@
 					<div class="bsky-body"><p>This paper by Conde et al. demonstrates that a conjugate vaccine coupling a mutated human IgE fragment to a CRM carrier induces durable, neutralizing anti-IgE autoantibodies in humanized mice, providing long-term protection against systemic and cutaneous anaphylaxis without compromising anti-helminth immunity. #ScienceTranslationalMedicine. <a href="https://scim.ag/3XxHAdi">https://scim.ag/3XxHAdi</a></p></div>
 					
 					
+					<div class="bsky-imgs bsky-imgs-1">
+						
+						<a class="bsky-img-cell" style="aspect-ratio: 1250 / 1584;" href="https://plum.science/news/images/2025-12-03-an-anti-allergy-vaccine-protects-mice-from-anaphylaxis--img0.webp" target="_blank" rel="noopener">
+							<img src="https://plum.science/news/images/2025-12-03-an-anti-allergy-vaccine-protects-mice-from-anaphylaxis--img0.webp" alt="The cover image shows the surface representation (gray) of the ligand-bound paired immunoglobulin-like type 2 receptor alpha (PILRA) protein. " loading="lazy">
+						</a>
+						
+					</div>
+					
+					
+					
 					
 					<div class="bsky-footer">
 						<span>03 Dec 2025</span>
@@ -1017,6 +1092,8 @@
 					<div class="bsky-body"><p>Central neural circuits underlying itch sensation — a Review by Yan-Gang Sun</p>
 <p>#neuroscience #neuroskyence</p>
 <p>www.nature.com/articles/s41...</p></div>
+					
+					
 					
 					<a class="bsky-link" href="https://www.nature.com/articles/s41583-025-00981-8?utm_source=bluesky&amp;utm_medium=social&amp;utm_campaign=nrn" target="_blank" rel="noopener">
 						
@@ -1061,6 +1138,8 @@
 					<div class="bsky-body"><p>Nature research paper: Maternal stress triggers early-life eczema through fetal mast cell programming</p>
 <p>go.nature.com/3UPz8Vm</p></div>
 					
+					
+					
 					<a class="bsky-link" href="https://go.nature.com/3UPz8Vm" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2025-09-03-nature-research-paper-maternal-stress-triggers-early-li-card.webp" alt="Maternal stress triggers early-life eczema through fetal mast cell programming - Nature" loading="lazy">
@@ -1103,6 +1182,8 @@
 					</div>
 					<div class="bsky-body"><p>The causes of early-life eczema have been unclear, but evidence indicates that changes to fetal immune cells and sensory neurons during pregnancy play a key part</p>
 <p>go.nature.com/45Y9aUQ</p></div>
+					
+					
 					
 					<a class="bsky-link" href="https://go.nature.com/45Y9aUQ" target="_blank" rel="noopener">
 						
@@ -1147,6 +1228,8 @@
 					<div class="bsky-body"><p>This paper by Shi et al. (reported by Nature) identifies that unrelated allergens trigger allergic airway inflammation across species via conserved pore-forming proteins that create membrane holes, allowing calcium influx to initiate the primary danger signals that drive the type 2 immune response.</p>
 <p>go.nature.com/3H9B1cd</p></div>
 					
+					
+					
 					<a class="bsky-link" href="https://go.nature.com/3H9B1cd" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2025-07-31-the-sneezing-itchy-eyes-and-coughing-elicited-by-some-a-card.webp" alt="How allergens make us cough and weeze — by poking holes in airway cells" loading="lazy">
@@ -1188,6 +1271,8 @@
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
 					<div class="bsky-body"><p>Excited to share our new work, led by an exceptional graduate student, Tornike Mamuladze, on the role of meningeal mast cells in regulation of brain/dura access points, with implications to CSF flow dynamics and meningitis ||  www.cell.com/cell/fulltex...</p></div>
+					
+					
 					
 					<a class="bsky-link" href="https://www.cell.com/cell/fulltext/S0092-8674%2825%2900748-2" target="_blank" rel="noopener">
 						
@@ -1232,6 +1317,8 @@
 					<div class="bsky-body"><p>A speedy imaging method can map the nerves running from a mouse’s brain and spinal cord to the rest of its body at micrometre-scale resolution</p>
 <p>go.nature.com/3Il0e3x</p></div>
 					
+					
+					
 					<a class="bsky-link" href="https://go.nature.com/3Il0e3x" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2025-07-12-a-speedy-imaging-method-can-map-the-nerves-running-from-card.webp" alt="Giant map details nerves across a mouse&#39;s body: see stunning pics" loading="lazy">
@@ -1273,6 +1360,8 @@
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
 					<div class="bsky-body"><p>Online now:  Long-lived IgE plasma cells that reside in the spleen contribute to the persistence of the IgE response</p></div>
+					
+					
 					
 					<a class="bsky-link" href="http://dlvr.it/TP153X" target="_blank" rel="noopener">
 						
@@ -1316,6 +1405,8 @@
 					</div>
 					<div class="bsky-body"><p>This paper by Janssen et al. demonstrates that DOCK8 deficiency drives food allergy and oral anaphylaxis by disrupting T regulatory cell and Th17 function, causing dysbiosis and an IL-25/IL-4 cascade that expands mucosal mast cells and increases intestinal permeability.</p></div>
 					
+					
+					
 					<a class="bsky-link" href="http://dlvr.it/TLYhFm" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2025-06-25-online-now-dock8-in-t-cells-promotes-th17-and-treg-cell-card.webp" alt="DOCK8 in T cells promotes Th17 and Treg cell functionality to restrain mucosal mast cells and limit susceptibility to oral anaphylaxis" loading="lazy">
@@ -1357,6 +1448,8 @@
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
 					<div class="bsky-body"><p>🚨New paper with @thexavierlab.bsky.social @science.org on the critical role of 🔄neuroimmune crosstalk in immune defense in the gut🪱🪱.<br>🧪@genelayinstitute.bsky.social @mgbresearch.bsky.social @harvardmed.bsky.social @broadinstitute.org <br>www.science.org/doi/10.1126/...</p></div>
+					
+					
 					
 					<a class="bsky-link" href="https://www.science.org/doi/10.1126/science.adn9850#supplementary-materials" target="_blank" rel="noopener">
 						
@@ -1400,6 +1493,8 @@
 					</div>
 					<div class="bsky-body"><p></p></div>
 					
+					
+					
 					<a class="bsky-link" href="http://dlvr.it/TPJB4b" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2025-11-16--card.webp" alt="Hidden survivors: Long-lived IgE-secreting plasma cells in the spleen" loading="lazy">
@@ -1442,6 +1537,8 @@
 					</div>
 					<div class="bsky-body"><p>This review by Brian Kim and David Artis details how peripheral sensory neuroimmunology has emerged as a distinct field by revealing critical interactions between the immune and sensory nervous systems that govern allergy, infection, autoimmunity, and tissue homeostasis.</p></div>
 					
+					
+					
 					<a class="bsky-link" href="http://dlvr.it/TKYVXH" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2025-05-04-online-now-the-sensory-neuroimmune-frontier-card.webp" alt="The sensory neuroimmune frontier" loading="lazy">
@@ -1483,6 +1580,8 @@
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
 					<div class="bsky-body"><p>Why scratching makes a rash worse and a potential benefit to scratching--it reduced S. aureus on skin.  Andrew Liu's paper from our lab is out now at #science #neuroimmune #immunology www.science.org/doi/10.1126/...</p></div>
+					
+					
 					
 					<a class="bsky-link" href="https://www.science.org/doi/10.1126/science.adn9390?utm_source=sfmc&amp;utm_medium=email&amp;utm_content=alert&amp;utm_campaign=SCIeToc&amp;et_rid=17785528&amp;et_cid=5512612" target="_blank" rel="noopener">
 						
@@ -1527,6 +1626,8 @@
 					<div class="bsky-body"><p>Scratching a mosquito bite can offer a moment of bliss, and now scientists have learnt why: scratching activates an immune response that helps to protect the skin against harmful infections, at least in mice.</p>
 <p><a href="https://go.nature.com/4aJpL0r">https://go.nature.com/4aJpL0r</a></p></div>
 					
+					
+					
 					<a class="bsky-link" href="https://go.nature.com/4aJpL0r" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2025-01-30-scratching-a-mosquito-bite-can-offer-a-moment-of-bliss--card.webp" alt="Why it feels good to scratch that itch: the immune benefits of scratching" loading="lazy">
@@ -1569,6 +1670,8 @@
 					</div>
 					<div class="bsky-body"><p>This review by Kothari and Dong outlines how bidirectional neuroimmune crosstalk—where immune signaling molecules directly activate sensory neurons and neuropeptides modulate local immune responses—drives pathologic itch, highlighting tissue-specific mechanisms and novel targetable pathways for pruritic diseases.</p></div>
 					
+					
+					
 					<a class="bsky-link" href="http://dlvr.it/TQcygm" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2026-01-29--card.webp" alt="The neuroimmune axis: Integrating two systems to decipher itch" loading="lazy">
@@ -1610,6 +1713,8 @@
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
 					<div class="bsky-body"><p>This paper by Dong et al. demonstrates that electroacupuncture drives a somatosensory-vagal-gastric reflex to improve gastric motility in both mice and human patients via the activation of deep fascial nociceptors and gastro-projecting vagal motor neurons.</p></div>
+					
+					
 					
 					<a class="bsky-link" href="http://dlvr.it/TM6jgn" target="_blank" rel="noopener">
 						
@@ -1655,6 +1760,8 @@
 <p>#neuroscience #neuroskyence</p>
 <p>www.nature.com/articles/s41...</p></div>
 					
+					
+					
 					<a class="bsky-link" href="https://www.nature.com/articles/s41583-026-01046-0?utm_source=bluesky&amp;utm_medium=social&amp;utm_campaign=nrn" target="_blank" rel="noopener">
 						
 						<img class="bsky-link-img" src="https://plum.science/news/images/2026-05-01-wired-for-immunity-neuroimmune-control-of-the-lung-by-s-card.webp" alt="Wired for immunity: neuroimmune control of the lung by sensory neurons - Nature Reviews Neuroscience" loading="lazy">
@@ -1696,6 +1803,8 @@
 						<svg class="bsky-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 57" width="18" height="18"><path fill="#0085ff" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/></svg>
 					</div>
 					<div class="bsky-body"><p>Happy to share our latest review, 'Beyond classical immunity: Mast cells as signal converters between tissues and neurons'. Mast cells finally emerge as important mediators of neuro-immune communication and host-protective behavior!  🔗 tinyurl.com/3f7eufsm</p></div>
+					
+					
 					
 					<a class="bsky-link" href="https://tinyurl.com/3f7eufsm" target="_blank" rel="noopener">
 						

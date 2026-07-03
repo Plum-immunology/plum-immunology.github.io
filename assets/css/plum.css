@@ -75,6 +75,18 @@ main { display:block; }
 hr { border:none; border-top:1px solid var(--hair); margin:2.5rem 0; }
 .content section > hr:last-child { display:none; }
 
+/* Bluesky native image grid (1-4 photos) */
+.bsky-imgs { margin-top:0.7em; border-radius:12px; overflow:hidden; display:grid; gap:3px; }
+.bsky-imgs .bsky-img-cell { overflow:hidden; min-height:0; display:block;
+	background:color-mix(in srgb,var(--blue-500) 10%,var(--card-bg)); }
+.bsky-imgs img { width:100%; height:100%; object-fit:cover; display:block; }
+.bsky-imgs-1 { grid-template-columns:1fr; }
+.bsky-imgs-1 .bsky-img-cell { max-height:640px; }
+.bsky-imgs-2 { grid-template-columns:1fr 1fr; aspect-ratio:2/1; }
+.bsky-imgs-3 { grid-template-columns:1fr 1fr; aspect-ratio:2/1; }
+.bsky-imgs-3 .bsky-img-cell:first-child { grid-row:span 2; }
+.bsky-imgs-4 { grid-template-columns:1fr 1fr; aspect-ratio:3/2; }
+
 /* Science highlights: alternating two-column */
 .highlight { display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; align-items:center; margin:0; }
 .highlight .fig img { width:100%; border-radius:12px; display:block; border:1px solid var(--hair); }
