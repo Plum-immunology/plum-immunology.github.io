@@ -13,7 +13,7 @@
 	--maxw:1080px;
 }
 @media (prefers-color-scheme: dark) {
-	:root { --bg:#1a0c16; --fg:#f2e6ec; --paper:#1a0c16; --card-bg:#271221;
+	:root { --bg:#121212; --fg:#f2e6ec; --paper:#121212; --card-bg:#1e1e1e;
 		--muted:#b598a7; --hair:rgba(242,166,90,0.14); --accent-ink:var(--amber-400); }
 }
 

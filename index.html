@@ -26,7 +26,7 @@
 		}
 		@media (prefers-color-scheme: dark) {
 			:root {
-				--bg: #1a0c16; --fg: #f2e6ec; --paper: #1a0c16; --card-bg: #271221;
+				--bg: #121212; --fg: #f2e6ec; --paper: #121212; --card-bg: #1e1e1e;
 				--muted: #b598a7; --hair: rgba(242,166,90,0.14); --accent-ink: var(--amber-400);
 			}
 		}
@@ -63,14 +63,9 @@
 		@media (max-width: 680px) { nav.top { display: none; } .mnav { display: block; } }
 
 		/* ── Hero: the thesis, over the lab's own confocal skin whole-mount ── */
-		.hero { position: relative; overflow: hidden; color: #f3e8ee; background: #0d0508; }
+		.hero { position: relative; overflow: hidden; color: #f3e8ee; background: #000; }
 		.hero .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-			object-position: 50% 42%; opacity: 0.92; }
-		.hero::after { content: ""; position: absolute; inset: 0; pointer-events: none;
-			background:
-				linear-gradient(100deg, rgba(18,6,14,0.86) 0%, rgba(30,10,32,0.52) 40%, rgba(46,14,44,0.12) 66%, rgba(46,14,44,0.04) 100%),
-				linear-gradient(0deg, rgba(13,5,8,0.55) 0%, transparent 34%),
-				linear-gradient(0deg, rgba(58,18,48,0.14) 0%, rgba(58,18,48,0.14) 100%); }
+			object-position: 50% 42%; }
 		.hero .wrap { position: relative; z-index: 1; padding-block: clamp(3.5rem, 10vw, 6.5rem); }
 		.eyebrow { font-family: var(--body); text-transform: uppercase; letter-spacing: 0.18em;
 			font-size: 0.72rem; font-weight: 700; color: var(--amber-400); margin: 0 0 1.1rem;
