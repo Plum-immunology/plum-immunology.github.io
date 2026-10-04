@@ -8,7 +8,16 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 04 Oct 2026 20:22:35 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 20:22:54 +0000</lastBuildDate>
+    
+    <item>
+      <title>Repeated shrimp allergen exposure drives 5-lipoxygenase-dependent avoidance and</title>
+      <link>https://plum.science/news/2026-09-16-repeated-shrimp-allergen-exposure-drives-5-lipoxygenase.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2026-09-16-repeated-shrimp-allergen-exposure-drives-5-lipoxygenase.html</guid>
+      <pubDate>Sun, 04 Oct 2026 20:22:54 +0000</pubDate>
+      <description>Repeated shrimp allergen exposure drives 5-lipoxygenase-dependent avoidance and selective gut-brain activation  https://www.biorxiv.org/content/10.64898/2026.09.09.750437v1</description>
+      <content:encoded><![CDATA[<p>Repeated shrimp allergen exposure drives 5-lipoxygenase-dependent avoidance and selective gut-brain activation  <a href="https://www.biorxiv.org/content/10.64898/2026.09.09.750437v1">https://www.biorxiv.org/content/10.64898/2026.09.09.750437v1</a></p>]]></content:encoded>
+    </item>
     
     <item>
       <title>Online now:  A pulmonary innate lymphoid cell-driven serotonergic neuroimmune</title>
@@ -187,15 +196,6 @@ go.nature.com/4qeRjlt</description>
       <pubDate>Wed, 20 May 2026 13:39:10 +0000</pubDate>
       <description>Mast cell-specific CysLT2 receptor signaling inhibits cysteinyl leukotriene-dependent mast cell activation and type 2 allergic lung inflammation</description>
       <content:encoded><![CDATA[<p>Mast cell-specific CysLT2 receptor signaling inhibits cysteinyl leukotriene-dependent mast cell activation and type 2 allergic lung inflammation</p><aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This paper by Nagai et al. identifies mast cell-intrinsic CysLT2R as a checkpoint molecule that inhibits CysLT1R-mediated mast cell activation and dust mite-induced type 2 lung inflammation by leveraging G-beta-gamma-dependent adenylate cyclase potentiation to enhance cAMP/PKA signaling.</aside>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Mechanisms and clinical implications of gut-brain interactions</title>
-      <link>https://plum.science/news/2026-01-03-review-jciorg-mechanisms-and-clinical-implications-of-g.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2026-01-03-review-jciorg-mechanisms-and-clinical-implications-of-g.html</guid>
-      <pubDate>Wed, 20 May 2026 13:36:36 +0000</pubDate>
-      <description>Review @jci.org Mechanisms and clinical implications of gut-brain interactionswww.jci.org/articles/vie...</description>
-      <content:encoded><![CDATA[<p>Review @jci.org <br>Mechanisms and clinical implications of gut-brain interactions<br>www.jci.org/articles/vie...</p><aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This review by Lorsch and Liddle details the specific mechanisms of gut-brain communication—including the enteroendocrine-neural circuit and neuroimmunological pathways—and shows how these connections drive clinical disease and can be therapeutically leveraged by agents like GLP-1 receptor agonists.</aside>]]></content:encoded>
     </item>
     
   </channel>
