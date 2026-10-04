@@ -8,7 +8,16 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 03 Jul 2026 07:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 20:20:40 +0000</lastBuildDate>
+    
+    <item>
+      <title>It is my great honor to contribute to Biochem. Pharmacol.</title>
+      <link>https://plum.science/news/2026-07-10-it-is-my-great-honor-to-contribute-to-biochem-pharmacol.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2026-07-10-it-is-my-great-honor-to-contribute-to-biochem-pharmacol.html</guid>
+      <pubDate>Sun, 04 Oct 2026 20:20:40 +0000</pubDate>
+      <description>It is my great honor to contribute to Biochem. Pharmacol. Several research groups, including ours, have identified GPR35 as the target of mast cell stabilizers. New possibilities for these long-established drugs are discussed. www.sciencedirect.com/science/arti...</description>
+      <content:encoded><![CDATA[<p>It is my great honor to contribute to Biochem. Pharmacol. Several research groups, including ours, have identified GPR35 as the target of mast cell stabilizers. New possibilities for these long-established drugs are discussed. www.sciencedirect.com/science/arti...</p>]]></content:encoded>
+    </item>
     
     <item>
       <title>Immunity: from specificity to physiological integration</title>
@@ -189,17 +198,6 @@ www.nature.com/articles/s41...</description>
       <content:encoded><![CDATA[<p>Central neural circuits underlying itch sensation — a Review by Yan-Gang Sun</p>
 <p>#neuroscience #neuroskyence</p>
 <p>www.nature.com/articles/s41...</p>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Nature research paper: Maternal stress triggers early-life eczema through fetal</title>
-      <link>https://plum.science/news/2025-09-03-nature-research-paper-maternal-stress-triggers-early-li.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2025-09-03-nature-research-paper-maternal-stress-triggers-early-li.html</guid>
-      <pubDate>Wed, 20 May 2026 13:27:45 +0000</pubDate>
-      <description>Nature research paper: Maternal stress triggers early-life eczema through fetal mast cell programming
-go.nature.com/3UPz8Vm</description>
-      <content:encoded><![CDATA[<p>Nature research paper: Maternal stress triggers early-life eczema through fetal mast cell programming</p>
-<p>go.nature.com/3UPz8Vm</p>]]></content:encoded>
     </item>
     
   </channel>
