@@ -8,7 +8,18 @@
     <description>Lab news from the Plum Lab</description>
     <language>en-us</language>
     <atom:link href="https://plum.science/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 04 Oct 2026 20:27:31 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 20:28:56 +0000</lastBuildDate>
+    
+    <item>
+      <title>Tomás S. Huerta, Kevin J. Tracey, Isaac M.</title>
+      <link>https://plum.science/news/2026-09-25-tomás-s-huerta-kevin-j-tracey-isaac-m-chiu-and-changsbr.html</link>
+      <guid isPermaLink="true">https://plum.science/news/2026-09-25-tomás-s-huerta-kevin-j-tracey-isaac-m-chiu-and-changsbr.html</guid>
+      <pubDate>Sun, 04 Oct 2026 20:28:56 +0000</pubDate>
+      <description>Tomás S. Huerta, Kevin J. Tracey, Isaac M. Chiu, and @changsbrain.bsky.social review the organization and function of vagal neuroimmune circuits, from afferent cytokine sensing to organ-specific efferent immune control. rupress.org/jem/article/...
+#BioelectronicMedicine #Neuroimmunology</description>
+      <content:encoded><![CDATA[<p>Tomás S. Huerta, Kevin J. Tracey, Isaac M. Chiu, and @changsbrain.bsky.social review the organization and function of vagal neuroimmune circuits, from afferent cytokine sensing to organ-specific efferent immune control. rupress.org/jem/article/...</p>
+<p>#BioelectronicMedicine #Neuroimmunology</p>]]></content:encoded>
+    </item>
     
     <item>
       <title>New paper alert: Germinal center interleukin-4 microniches drive tissue divergence</title>
@@ -183,17 +194,6 @@ go.nature.com/40woBkB</description>
       <pubDate>Wed, 20 May 2026 13:42:41 +0000</pubDate>
       <description>Online now:  Hyperactivation of sympathetic nerves fuels basophil infiltration in atopic dermatitis</description>
       <content:encoded><![CDATA[<p>Online now:  Hyperactivation of sympathetic nerves fuels basophil infiltration in atopic dermatitis</p><aside style="border-left:3px solid #aaa;padding:0.5em 1em;font-style:italic;">This paper by Xie et al. identifies a sympathetic nervous system-basophil axis where atopic dermatitis-induced anxiety hyperactivates skin sympathetic neurons, releasing norepinephrine to stimulate beta2-adrenergic receptors on basophils. This signaling enhances basophil motility and activates the CCL6-CCR1 chemokine pathway (CCL23-CCR1 in humans), fueling basophil infiltration and amplifying chronic skin inflammation.</aside>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Nature research paper: Environmentally driven immune imprinting protects</title>
-      <link>https://plum.science/news/2026-02-04-nature-research-paper-environmentally-driven-immune-imp.html</link>
-      <guid isPermaLink="true">https://plum.science/news/2026-02-04-nature-research-paper-environmentally-driven-immune-imp.html</guid>
-      <pubDate>Wed, 20 May 2026 13:41:47 +0000</pubDate>
-      <description>Nature research paper: Environmentally driven immune imprinting protects against allergy
-go.nature.com/46lGExb</description>
-      <content:encoded><![CDATA[<p>Nature research paper: Environmentally driven immune imprinting protects against allergy</p>
-<p>go.nature.com/46lGExb</p>]]></content:encoded>
     </item>
     
   </channel>
